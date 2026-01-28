@@ -13,57 +13,59 @@ import {
 } from "react-icons/fi";
 
 export default function Contact() {
- const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  message: "",
-});
-const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setSubmitStatus("loading");
-
-  try {
-    const response = await fetch(
-      "https://hook.eu1.make.com/exc8hbjl5ksk1uijo12ta9r7muqcmnfq",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      }
-    );
-
-    if (response.ok) {
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setSubmitStatus("idle"), 3000);
-    } else {
-      throw new Error("Form submission failed");
-    }
-  } catch (error) {
-    console.error(error);
-    setSubmitStatus("error");
-  }
-};
-
-setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        date: "",
-        time: "",
-        message: "",
-      });
-
-const handleChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value,
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    date: "",
+    time: "",
+    message: "",
   });
-};
 
+  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus("loading");
+
+    try {
+      const response = await fetch(
+        "https://hook.eu1.make.com/exc8hbjl5ksk1uijo12ta9r7muqcmnfq",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          date: "",
+          time: "",
+          message: "",
+        });
+        setTimeout(() => setSubmitStatus("idle"), 3000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    }
+  };
 
   const contactInfo = [
     {
@@ -301,7 +303,7 @@ const handleChange = (e) => {
               </div>
             </div>
 
-            {/* Additional Info */}
+            {/* Additional Info & Social Links */}
             <div className="space-y-6 sm:space-y-8">
               {/* Social Media */}
               <div className="relative bg-gradient-to-br from-[#FFC527]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/30 rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500">

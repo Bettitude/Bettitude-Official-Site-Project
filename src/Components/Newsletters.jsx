@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { FiMail, FiCheckCircle, FiArrowRight, FiStar, FiTrendingUp } from 'react-icons/fi';
 import { FaTelegram } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
+// import { FiArrowRight } from 'react-icons/fi';
 
 export default function Newsletters() {
   const [email, setEmail] = useState('');
@@ -175,6 +177,36 @@ export default function Newsletters() {
               </a>
             </div>
           </div>
+         <div className="relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 border border-[#0057B8]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 max-w-2xl mx-auto hover:border-[#0057B8]/50 transition-all duration-300 group">
+  <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/0 to-[#25D366]/0 group-hover:from-[#25D366]/5 group-hover:to-[#128C7E]/5 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
+
+  <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+    <div className="flex items-center space-x-4 text-center sm:text-left">
+      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+        <FaWhatsapp className="text-white text-3xl sm:text-4xl" />
+      </div>
+      <div>
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+          Join Our WhatsApp Community
+        </h3>
+        <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+          Get instant updates, tips & exclusive offers
+        </p>
+      </div>
+    </div>
+
+    <a
+      href="https://wa.me/234XXXXXXXXXX"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group/btn flex items-center space-x-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-[#25D366]/50 hover:scale-105 transition-all duration-300 whitespace-nowrap"
+    >
+      <span>Join WhatsApp</span>
+      <FiArrowRight className="text-lg group-hover/btn:translate-x-1 transition-transform duration-300" />
+    </a>
+  </div>
+</div>
+
 
           {/* Social Proof */}
           <div className="flex items-center justify-center space-x-3 pt-4">

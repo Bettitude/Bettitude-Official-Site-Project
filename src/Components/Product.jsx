@@ -3,6 +3,7 @@ import { FiExternalLink, FiTrendingUp, FiUsers, FiClock, FiAward, FiActivity, Fi
  import Bettisportsblog from '../assets/Bettisportsblog.png';
 import Betsport from '../assets/Betsport.png';
 import Probetfav from '../assets/Probetfav.png';
+import SportsDisDat from '../assets/SportsDisDat.png'
 
 // Placeholder images - replace with your actual imports
 // const Betsport = "https://via.placeholder.com/150";
@@ -115,7 +116,42 @@ export default function Product() {
       tiktok: null,
       reddit: "https://www.reddit.com/user/bettitude/"
     }
-  }
+  },
+  {
+   name: 'SportDisandDat',
+  icon: SportsDisDat,
+  tagline: 'Premium Sports Merchandise for True Fans',
+  description:
+    'SportDisandDat is your go-to destination for authentic sports merchandise, delivering premium jerseys, kits, accessories, and fan gear from top teams and leagues worldwide.',
+  highlights: [
+    'Authentic jerseys and official fan merchandise',
+    'Wide selection across football, basketball, and other major sports',
+    'High-quality materials with long-lasting durability',
+    'Latest season drops and limited-edition collections',
+    'Secure checkout and reliable nationwide delivery',
+    'Multiple size options with detailed fitting guides',
+    'Mobile-friendly shopping experience for fans on the move',
+    'Exclusive deals and discounts for loyal supporters'
+  ],
+  stats: [
+    { label: 'Products Available', value: '1K+', icon: FiActivity },
+    { label: 'Order Processing', value: '<24hrs', icon: FiClock },
+    { label: 'Happy Customers', value: '5K+', icon: FiTrendingUp }
+  ],
+    color: 'from-[#FFC527] to-[#ffb700]',
+    glowColor: 'shadow-[#FFC527]/50',
+    link: 'https://bettiscores.com',
+    badge: 'New',
+
+    social: {
+      instagram: "https://www.instagram.com/bettiscores",
+      facebook: null,
+      twitter: "https://x.com/bettitude",
+      linkedin: null,
+      tiktok: null,
+      reddit: "https://www.reddit.com/user/bettitude/"
+    }
+  },
 ];
 
   return (

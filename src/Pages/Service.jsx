@@ -107,7 +107,7 @@ export default function Service() {
     'Equipment for all skill levels',
     'Outdoor and indoor sports essentials'
   ],
-  website: '',
+  website: 'SportDisandDat',
   link: '',
   social: [
     { icon: FiInstagram, link: '' },
@@ -188,6 +188,14 @@ export default function Service() {
               className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white text-xs sm:text-sm lg:text-base font-semibold hover:bg-[#0057B8]/40 hover:border-[#FFC527]/50 transition-all duration-300"
             >
               BettiScores
+            </a>
+            <a 
+              href="https://bettiscores.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white text-xs sm:text-sm lg:text-base font-semibold hover:bg-[#0057B8]/40 hover:border-[#FFC527]/50 transition-all duration-300"
+            >
+              SportDisandDat
             </a>
           </div>
         </div>
