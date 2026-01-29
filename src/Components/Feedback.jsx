@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FiMail, FiMessageSquare, FiSend, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
+import { submitForm } from '../utils/formSubmit';
 
 const Feedback = () => {
   const [formData, setFormData] = useState({
@@ -22,11 +23,23 @@ const Feedback = () => {
     }
   };
 
-  const handleSubmit = () => {
-    // Handle form submission here
-    if (formData.email && formData.category && formData.area && formData.feedback) {
+  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, error
+
+  const handleSubmit = async () => {
+    if (!formData.email || !formData.category || !formData.area || !formData.feedback) return;
+
+    setSubmitStatus("loading");
+    try {
+      await submitForm("feedback", formData);
       setSubmitted(true);
+      setSubmitStatus("idle");
+      setFormData({ name: '', email: '', category: '', area: '', feedback: '' });
+      setCharCount(0);
       setTimeout(() => setSubmitted(false), 3000);
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
     }
   };
 
@@ -242,16 +255,34 @@ const Feedback = () => {
             <div className="pt-2 sm:pt-4">
               <button
                 onClick={handleSubmit}
-                className="group relative w-full px-6 sm:px-8 md:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-base sm:text-lg"
+                disabled={submitStatus === "loading"}
+                className="group relative w-full px-6 sm:px-8 md:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
-                  <span>Submit Feedback</span>
-                  <FiSend className="text-lg sm:text-xl group-hover:translate-x-2 transition-transform duration-300" />
+                  {submitStatus === "loading" ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-[#0B0F19] border-t-transparent rounded-full animate-spin"></div>
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Feedback</span>
+                      <FiSend className="text-lg sm:text-xl group-hover:translate-x-2 transition-transform duration-300" />
+                    </>
+                  )}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffb700] to-[#FFC527] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </button>
             </div>
+
+            {/* Error Message */}
+            {submitStatus === "error" && (
+              <div className="p-3 sm:p-4 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/50 rounded-lg sm:rounded-xl flex items-center space-x-2 sm:space-x-3">
+                <FiAlertCircle className="text-red-400 text-xl sm:text-2xl flex-shrink-0" />
+                <p className="text-red-300 font-semibold text-sm sm:text-base">Something went wrong. Please try again.</p>
+              </div>
+            )}
 
             {/* Success Message */}
             {submitted && (

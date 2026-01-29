@@ -10,6 +10,7 @@ import {
   FiArrowRight,
   FiLoader,
 } from "react-icons/fi";
+import { submitForm } from "../utils/formSubmit";
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -56,30 +57,18 @@ export default function Appointment() {
     setSubmitStatus("loading");
 
     try {
-      const response = await fetch(
-        "https://hook.eu1.make.com/sx83xc4gynppewmojnil0i5u3q4u96a3",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          date: "",
-          time: "",
-          message: "",
-        });
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      } else {
-        throw new Error("Form submission failed");
-      }
+      await submitForm("appointment", formData);
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        time: "",
+        message: "",
+      });
+      setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
       console.error(error);
       setSubmitStatus("error");

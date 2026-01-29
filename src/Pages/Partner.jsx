@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaTrophy, FaHandshake, FaUsers, FaRocket, FaEnvelope, FaPhone, FaMapMarkerAlt, FaBuilding, FaUser, FaPaperPlane } from 'react-icons/fa';
+import { submitForm } from '../utils/formSubmit';
 
 const Partner = () => {
   const [formData, setFormData] = useState({
@@ -18,17 +19,29 @@ const Partner = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      partnershipType: '',
-      message: ''
-    });
+  const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success, error
+
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.company || !formData.partnershipType || !formData.message) return;
+
+    setSubmitStatus("loading");
+    try {
+      await submitForm("partnership", formData);
+      setSubmitStatus("success");
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        partnershipType: '',
+        message: ''
+      });
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    }
   };
 
   const benefits = [
@@ -284,11 +297,38 @@ const Partner = () => {
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-bold py-3 sm:py-4 rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-[#FFC527]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg"
+                    disabled={submitStatus === "loading"}
+                    className="w-full bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-bold py-3 sm:py-4 rounded-lg sm:rounded-xl hover:shadow-2xl hover:shadow-[#FFC527]/50 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <FaPaperPlane />
-                    Submit Partnership Request
+                    {submitStatus === "loading" ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-[#0B0F19] border-t-transparent rounded-full animate-spin"></div>
+                        Submitting...
+                      </>
+                    ) : submitStatus === "success" ? (
+                      <>
+                        <FaPaperPlane />
+                        Request Sent!
+                      </>
+                    ) : (
+                      <>
+                        <FaPaperPlane />
+                        Submit Partnership Request
+                      </>
+                    )}
                   </button>
+
+                  {submitStatus === "success" && (
+                    <div className="p-3 sm:p-4 bg-gradient-to-r from-green-500/20 to-green-600/20 border border-green-500/50 rounded-lg sm:rounded-xl text-center">
+                      <p className="text-green-300 font-semibold text-sm sm:text-base">Thank you for your interest! We will contact you within 24-48 hours.</p>
+                    </div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <div className="p-3 sm:p-4 bg-gradient-to-r from-red-500/20 to-red-600/20 border border-red-500/50 rounded-lg sm:rounded-xl text-center">
+                      <p className="text-red-300 font-semibold text-sm sm:text-base">Something went wrong. Please try again.</p>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

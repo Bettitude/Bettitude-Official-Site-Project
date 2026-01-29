@@ -11,6 +11,7 @@ import {
   FiMapPin,
   FiClock,
 } from "react-icons/fi";
+import { submitForm } from "../utils/formSubmit";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -37,33 +38,26 @@ export default function Contact() {
     setSubmitStatus("loading");
 
     try {
-      const response = await fetch(
-        "https://hook.eu1.make.com/exc8hbjl5ksk1uijo12ta9r7muqcmnfq",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          date: "",
-          time: "",
-          message: "",
-        });
-        setTimeout(() => setSubmitStatus("idle"), 3000);
-      } else {
-        throw new Error("Form submission failed");
-      }
+      await submitForm("contact", {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      });
+      setSubmitStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        date: "",
+        time: "",
+        message: "",
+      });
+      setTimeout(() => setSubmitStatus("idle"), 3000);
     } catch (error) {
       console.error(error);
       setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
     }
   };
 
