@@ -144,6 +144,7 @@ export default function Partnership() {
                     <img
                       src={brand.logo}
                       alt={brand.name}
+                      loading="lazy"
                       className="max-w-full max-h-full object-contain"
                       onError={(e) => {
                         e.target.src = `https://ui-avatars.com/api/?name=${brand.name}&background=0057B8&color=fff&size=200&bold=true`;

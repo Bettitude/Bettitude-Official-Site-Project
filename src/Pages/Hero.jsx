@@ -251,6 +251,7 @@ export default function BettitudeHero() {
                       <img 
                         src={item.image}
                         alt={item.title}
+                        loading="lazy"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/70 via-transparent to-transparent"></div>
@@ -326,7 +327,7 @@ export default function BettitudeHero() {
         ))}
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes slowZoom {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.1); }

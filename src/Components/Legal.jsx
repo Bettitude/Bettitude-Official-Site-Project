@@ -284,7 +284,7 @@ const Legal = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
           50% { transform: translateY(-30px) translateX(15px); opacity: 0.5; }

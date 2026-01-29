@@ -141,7 +141,7 @@ export default function Footer() {
               </div>
             </a> */}
             <Link to="/">
-              <img src={Betlogo} alt="" className='h-[50px]' />
+              <img src={Betlogo} alt="" loading="lazy" className='h-[50px]' />
             </Link>
 
             <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">

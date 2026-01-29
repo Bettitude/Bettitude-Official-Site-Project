@@ -88,7 +88,7 @@ export default function Appointment() {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-[#0057B8]/10 to-[#FFC527]/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-30">
         {/* Header Section */}
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">

@@ -17,6 +17,7 @@ export default function CareerCTA() {
             <img 
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
               alt="Team"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>

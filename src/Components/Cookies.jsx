@@ -51,6 +51,7 @@ const Cookies = () => {
           <img 
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80"
             alt="Cookie Policy"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/95 via-[#0B0F19]/90 to-[#0B0F19]"></div>

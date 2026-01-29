@@ -205,7 +205,7 @@ export default function Product() {
                   
                   <div className="flex items-center space-x-3 sm:space-x-4">
                     <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br  rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl flex-shrink-0`}>
-                      <img src={product.icon} alt={product.name} className="w-full h-full object-contain p-2" />
+                      <img src={product.icon} alt={product.name} loading="lazy" className="w-full h-full object-contain p-2" />
                     </div>
                     <div>
                       <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white leading-tight">

@@ -1,54 +1,61 @@
-import React from 'react'
-import { Router, Routes, Route } from 'react-router-dom'
+import React, { lazy, Suspense } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
-import Home from './Pages/Home'
 import Footer from './Components/Footer'
-import About from './Pages/About'
-// import Blog from './Pages/Blog'
-import Service from './Pages/Service'
-import Contact from './Pages/Contact'
-import Career from './Components/Career'
-import TeamPage from './Components/Team'
-import NotFound from './Pages/NotFound'
-import Appointment from './Components/Appointment'
-import Cookies from './Components/Cookies'
-import PrivacyPolicy from './Components/PrivacyPolicy'
-import TOS from './Components/TOS'
-import Legal from './Components/Legal'
-import Newsletters from './Components/Newsletters'
-import Feedback from './Components/Feedback'
-import Partner from './Pages/Partner'
-import FooterService from './Pages/FooterService'
-import Sitemap from './Pages/Sitemap'
+
+// Eagerly load Home since it's the landing page
+import Home from './Pages/Home'
+
+// Lazy load all other routes - they split into separate chunks
+const About = lazy(() => import('./Pages/About'))
+const Service = lazy(() => import('./Pages/Service'))
+const Contact = lazy(() => import('./Pages/Contact'))
+const Career = lazy(() => import('./Components/Career'))
+const TeamPage = lazy(() => import('./Components/Team'))
+const NotFound = lazy(() => import('./Pages/NotFound'))
+const Appointment = lazy(() => import('./Components/Appointment'))
+const Cookies = lazy(() => import('./Components/Cookies'))
+const PrivacyPolicy = lazy(() => import('./Components/PrivacyPolicy'))
+const TOS = lazy(() => import('./Components/TOS'))
+const Legal = lazy(() => import('./Components/Legal'))
+const Newsletters = lazy(() => import('./Components/Newsletters'))
+const Feedback = lazy(() => import('./Components/Feedback'))
+const Partner = lazy(() => import('./Pages/Partner'))
+const FooterService = lazy(() => import('./Pages/FooterService'))
+const Sitemap = lazy(() => import('./Pages/Sitemap'))
+
+// Minimal loading fallback that matches the site's dark theme
+const PageLoader = () => (
+  <div className="min-h-screen bg-[#0B0F19] flex items-center justify-center">
+    <div className="w-10 h-10 border-4 border-[#0057B8] border-t-[#FFC527] rounded-full animate-spin"></div>
+  </div>
+)
+
 const App = () => {
   return (
     <>
       <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/product' element={<Service/>} />
-        {/* <Route path='/blog' element={<Blog/>} /> */}
-        <Route path='/contact' element={<Contact/>} />
-        <Route path='/careers' element={<Career/>} />
-        <Route path='/team' element={<TeamPage/>} />
-        <Route path='/legal' element={<Legal/>} />
-        <Route path='/newsletter' element={<Newsletters/>} />
-        <Route path='/feedback' element={<Feedback/>} />
-
-        <Route path='/terms-of-service' element={<TOS/>} />
-        <Route path='/appointment' element={<Appointment/>} />
-        <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
-        <Route path='/cookies-policy' element={<Cookies/>} />
-        <Route path='/partner' element={<Partner/>} />
-        <Route path='/services' element={<FooterService/>} />
-        <Route path='/sitemap' element={<Sitemap/>} />
-
-
-
-
-        <Route path="*" element={<NotFound/>} />
-      </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/product' element={<Service/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/careers' element={<Career/>} />
+          <Route path='/team' element={<TeamPage/>} />
+          <Route path='/legal' element={<Legal/>} />
+          <Route path='/newsletter' element={<Newsletters/>} />
+          <Route path='/feedback' element={<Feedback/>} />
+          <Route path='/terms-of-service' element={<TOS/>} />
+          <Route path='/appointment' element={<Appointment/>} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
+          <Route path='/cookies-policy' element={<Cookies/>} />
+          <Route path='/partner' element={<Partner/>} />
+          <Route path='/services' element={<FooterService/>} />
+          <Route path='/sitemap' element={<Sitemap/>} />
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
+      </Suspense>
       <Footer/>
     </>
   )

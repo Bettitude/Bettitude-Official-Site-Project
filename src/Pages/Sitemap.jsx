@@ -71,6 +71,7 @@ export default function Sitemap() {
           <img 
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
             alt="Sitemap"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/95 via-[#0B0F19]/90 to-[#0B0F19]"></div>

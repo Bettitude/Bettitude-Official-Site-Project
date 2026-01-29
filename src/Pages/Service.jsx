@@ -132,6 +132,7 @@ export default function Service() {
           <img 
             src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80"
             alt="Sports"
+            loading="lazy"
             className="w-full h-full object-cover brightness-110"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/60 via-[#0B0F19]/50 to-[#0B0F19]"></div>
@@ -221,6 +222,7 @@ export default function Service() {
                   <img 
                     src={service.bgImage}
                     alt={service.name}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-40 group-hover:opacity-60 transition-opacity duration-500`}></div>
@@ -238,7 +240,7 @@ export default function Service() {
               {/* Content Side */}
               <div className={`space-y-4 sm:space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="space-y-3 sm:space-y-4">
-                  <img src={service.image} className="w-48 sm:w-56 lg:w-72" alt={service.name} />
+                  <img src={service.image} loading="lazy" className="w-48 sm:w-56 lg:w-72" alt={service.name} />
                   <p className={`text-lg sm:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.color}`}>
                     {service.tagline}
                   </p>

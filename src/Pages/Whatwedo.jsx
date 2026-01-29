@@ -93,6 +93,7 @@ export default function Whatwedo() {
         <img 
           src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80"
           alt="What We Do Background"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
         {/* Reduced opacity gradients */}

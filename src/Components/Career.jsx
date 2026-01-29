@@ -71,6 +71,7 @@ export default function CareerFullPage() {
           <img 
             src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80"
             alt="Team collaboration"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/95 via-[#0B0F19]/90 to-[#0B0F19]"></div>
