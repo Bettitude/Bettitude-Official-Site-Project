@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiHeart, FiCoffee, FiDollarSign, FiTarget, FiUsers, FiTrendingUp, FiCheckCircle, FiArrowRight, FiAward, FiMonitor, FiServer, FiDatabase, FiZap } from 'react-icons/fi';
-
+import {Link} from 'react-router-dom'
 export default function Support() {
   const fundingOptions = [
     {
@@ -42,9 +42,9 @@ export default function Support() {
       icon: FiAward,
       title: 'Sponsorship',
       description: 'Partner with us as a sponsor and reach our engaged audience of sports enthusiasts',
-      action: 'Become Sponsor',
+      action: 'Become a Sponsor',
       color: 'from-[#0057B8] to-[#003d82]',
-      link: '#sponsorship'
+      link: 'sponorship'
     },
     {
       icon: FiMonitor,
@@ -52,7 +52,7 @@ export default function Support() {
       description: 'Showcase your brand to thousands of daily visitors through our advertising platform',
       action: 'Start Advertising',
       color: 'from-[#FFC527] to-[#ffb700]',
-      link: '#advertise'
+      link: 'advertisment'
     }
   ];
 
@@ -292,13 +292,13 @@ export default function Support() {
                   </div>
 
                   {/* Button */}
-                  <a
-                    href={option.link}
+                  <Link
+                    to={option.link}
                     className={`group/btn flex items-center justify-center space-x-2 w-full px-6 sm:px-8 py-4 sm:py-5 bg-gradient-to-r ${option.color} text-white text-base sm:text-lg font-bold rounded-xl hover:shadow-2xl transition-all duration-300 hover:scale-105`}
                   >
                     <span>{option.action}</span>
                     <FiArrowRight className="text-xl sm:text-2xl group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

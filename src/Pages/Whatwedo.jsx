@@ -19,14 +19,14 @@ export default function Whatwedo() {
       glowColor: 'shadow-[#FFC527]/50'
     },
     {
-      icon: FiBarChart2,
-      title: 'Stats Gathering',
-      description: 'There is no analytics without STATS. Finding out new betting trends is our thing—we track, analyze, and deliver.',
+      icon: FiCpu,
+      title: 'AI-Powered Sports Data',
+      description: 'Combining cutting-edge AI with comprehensive data gathering. We track, analyze, and predict with precision using machine learning algorithms that process vast amounts of real-time sports data.',
       features: [
-        'Real-time data collection',
-        'Historical trend analysis',
-        'Performance metrics',
-        'Pattern recognition'
+        'Real-time data collection & AI analysis',
+        'Predictive machine learning models',
+        'Pattern recognition algorithms',
+        'Automated trend identification'
       ],
       color: 'from-[#0057B8] to-[#003d82]',
       glowColor: 'shadow-[#0057B8]/50'
@@ -58,14 +58,14 @@ export default function Whatwedo() {
       glowColor: 'shadow-[#0057B8]/50'
     },
     {
-      icon: FiCpu,
-      title: 'Stat Research & AI',
-      description: 'Automation makes the FUN better. We constantly strive for up-to-date algorithms that predict with precision.',
+      icon: FiBarChart2,
+      title: 'iGaming & Entertainment',
+      description: 'Powering the future of gaming and entertainment with real-time data solutions, live betting integrations, and comprehensive analytics for gaming platforms worldwide.',
       features: [
-        'Machine learning models',
-        'Predictive algorithms',
-        'Automated insights',
-        'Real-time AI analysis'
+        'Live betting data integration',
+        'Real-time odds tracking',
+        'Gaming platform analytics',
+        'Player engagement metrics'
       ],
       color: 'from-[#FFC527] to-[#ffb700]',
       glowColor: 'shadow-[#FFC527]/50'

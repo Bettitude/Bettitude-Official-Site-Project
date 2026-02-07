@@ -1,5 +1,4 @@
-import React from 'react';
-import { FiHome, FiInfo, FiGrid, FiPackage, FiBriefcase, FiUsers, FiHeart, FiMail, FiCalendar, FiSend, FiMessageSquare, FiFileText, FiShield, FiBook } from 'react-icons/fi';
+import { FiHome, FiGrid, FiUsers, FiMail, FiMessageSquare, FiShield, FiBook, FiTrendingUp } from 'react-icons/fi';
 
 export default function Sitemap() {
   const sitemapSections = [
@@ -19,34 +18,45 @@ export default function Sitemap() {
       icon: FiGrid,
       color: 'from-[#0057B8] to-[#003d82]',
       links: [
-        { name: 'All Services', href: '/services', description: 'Overview of all our core services' },
-        { name: 'Betting Analytics', href: '/services#analytics', description: 'AI-driven betting predictions and analysis', sub: true },
-        { name: 'Sports Data Gathering', href: '/services#data', description: 'Real-time stats and comprehensive data', sub: true },
-        { name: 'Sports News & Updates', href: '/services#news', description: 'Live scores and breaking news coverage', sub: true },
-        { name: 'Media Production', href: '/services#media', description: 'Video analysis, podcasts, and infographics', sub: true },
-        { name: 'AI Research', href: '/services#ai-research', description: 'Cutting-edge machine learning models', sub: true },
-        { name: 'Business Consultancy', href: '/services#consultancy', description: 'Expert sports business solutions', sub: true },
+        { name: 'Our Services', href: '/our-services', description: 'Comprehensive overview of all our solutions' },
+        { name: 'What We Do', href: '/services', description: 'Core services and capabilities' },
+        { name: 'Betting Analytics', href: '/our-services#analytics', description: 'AI-driven betting predictions and analysis', sub: true },
+        { name: 'iGaming & Entertainment', href: '/our-services#igaming', description: 'Gaming platform solutions and analytics', sub: true },
+        { name: 'Live Predictions', href: '/our-services#predictions', description: 'Real-time AI-powered predictions', sub: true },
+        { name: 'Sports News', href: '/our-services#news', description: 'Live scores and breaking news coverage', sub: true },
+        { name: 'Media Production', href: '/our-services#media', description: 'Video analysis, podcasts, and infographics', sub: true },
+        { name: 'Business Consultancy', href: '/our-services#consultancy', description: 'Expert sports business solutions', sub: true },
       ]
     },
     {
-      title: 'Engagement',
-      icon: FiUsers,
+      title: 'Business',
+      icon: FiTrendingUp,
       color: 'from-[#FFC527] to-[#ffb700]',
       links: [
+        { name: 'Advertisement', href: '/advertisment', description: 'Advertise your brand with Bettitude' },
+        { name: 'Sponsorship', href: '/sponorship', description: 'Become a sponsor and partner with us' },
+        { name: 'Partnership', href: '/partner', description: 'Collaborate and grow together' },
         { name: 'Careers', href: '/careers', description: 'Join our growing team of innovators' },
-        { name: 'Partnership', href: '/partner', description: 'Collaborate with Bettitude' },
+      ]
+    },
+    {
+      title: 'Contact & Support',
+      icon: FiUsers,
+      color: 'from-[#0057B8] to-[#003d82]',
+      links: [
         { name: 'Contact Us', href: '/contact', description: 'Get in touch with our team' },
         { name: 'Book Appointment', href: '/appointment', description: 'Schedule a consultation with experts' },
+        { name: 'Support Us', href: '/support', description: 'Help us keep the lights on' },
       ]
     },
     {
       title: 'Connect & Subscribe',
       icon: FiMail,
-      color: 'from-[#0057B8] to-[#003d82]',
+      color: 'from-[#FFC527] to-[#ffb700]',
       links: [
         { name: 'Newsletter', href: '/newsletter', description: 'Subscribe for weekly insights and updates' },
         { name: 'Feedback', href: '/feedback', description: 'Share your thoughts and suggestions' },
-        { name: 'Support Us', href: '/support', description: 'Help us keep the lights on' },
+        { name: 'Community', href: '/community', description: 'Join the Bettitude community' },
       ]
     },
     {
@@ -183,9 +193,9 @@ export default function Sitemap() {
         {/* Stats Section */}
         <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { number: '20+', label: 'Pages' },
+            { number: '25+', label: 'Pages' },
             { number: '6', label: 'Core Services' },
-            { number: '10+', label: 'Resources' },
+            { number: '12+', label: 'Resources' },
             { number: '24/7', label: 'Support' }
           ].map((stat, idx) => (
             <div

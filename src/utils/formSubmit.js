@@ -5,7 +5,8 @@
 // Replace the URL below with your deployed Web App URL.
 // ============================================================
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwogi4PG3Kzy_igqk8C6BeRTXcyJN2l7CKvjyyUNZCePilUnq7Kb-DsdjPkkUcITt8T/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyN5rwDUO3YGJ1WrXLl8DcWw31dWg-IfJwtjXEiqYq8E7LsYx66tH0jz5jfiYeSLYd_rA/exec";
+// const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwogi4PG3Kzy_igqk8C6BeRTXcyJN2l7CKvjyyUNZCePilUnq7Kb-DsdjPkkUcITt8T/exec";
 
 /**
  * Submit form data to Google Apps Script.

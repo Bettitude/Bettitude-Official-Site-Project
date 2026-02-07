@@ -8,6 +8,7 @@ import {
   FiBookOpen,
   FiPhone,
   FiArrowRight,
+  FiLayers,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import Betlogo from "../assets/Betlogo.png";
@@ -97,6 +98,9 @@ export default function BettitudeNavbar() {
             <NavLink href="/product" icon={FiTrendingUp}>
               Products
             </NavLink>
+            <NavLink href="/our-services" icon={FiLayers}>
+              Services
+            </NavLink>
             <NavLink href="/about" icon={FiInfo}>
               About
             </NavLink>
@@ -151,6 +155,9 @@ export default function BettitudeNavbar() {
             </MobileNavLink>
             <MobileNavLink href="/product" icon={FiTrendingUp}>
               Products
+            </MobileNavLink>
+            <MobileNavLink href="/our-services" icon={FiLayers}>
+              Services
             </MobileNavLink>
             <MobileNavLink href="/about" icon={FiInfo}>
               About

@@ -18,6 +18,8 @@ const SPREADSHEET_IDS = {
   appointment: "1e97iCgSHSaisF5N-FfW6tLHp-HebobPCvGXhy8H3N9U",
   feedback:    "1ptcY6DhR89VSYevUt3_rUqJpwJot4fNNIjS-CHs88tA",
   partnership: "1MsFf2hNHDmN5ISwQLZQJQPo8gYEXNJdKq_AclT_GLOA",
+  advertisement: "1HGVCGlzUfCR07De_0AZf2C-XSTYngSh6I9lgs3D8CNo",
+  sponsorship:   "1sehLc_Q8nRIgjf8K21q13P9GxnK_pn8M_VFyTuoFgQo",
 };
 // =============================================================
 
@@ -76,6 +78,10 @@ function getHeaders(formType) {
       return ["Timestamp", "Name", "Email", "Category", "Area", "Feedback"];
     case "partnership":
       return ["Timestamp", "Name", "Email", "Company", "Phone", "Partnership Type", "Message"];
+    case "advertisement":
+      return ["Timestamp", "Name", "Email", "Company", "Phone", "Ad Type", "Budget", "Message"];
+    case "sponsorship":
+      return ["Timestamp", "Name", "Email", "Company", "Phone", "Sponsorship Type", "Message"];
     default:
       return ["Timestamp", "Name", "Email", "Message"];
   }
@@ -93,6 +99,10 @@ function getRowData(formType, data) {
       return [timestamp, data.name, data.email, data.category, data.area, data.feedback];
     case "partnership":
       return [timestamp, data.name, data.email, data.company, data.phone, data.partnershipType, data.message];
+    case "advertisement":
+      return [timestamp, data.name, data.email, data.company, data.phone, data.adType, data.budget, data.message];
+    case "sponsorship":
+      return [timestamp, data.name, data.email, data.company, data.phone, data.sponsorshipType, data.message];
     default:
       return [timestamp, data.name, data.email, data.message];
   }
@@ -122,6 +132,10 @@ function getUserEmailSubject(formType) {
       return "Thank you for your feedback - Bettitude";
     case "partnership":
       return "Partnership Inquiry Received - Bettitude";
+    case "advertisement":
+      return "Advertising Inquiry Received - Bettitude";
+    case "sponsorship":
+      return "Sponsorship Inquiry Received - Bettitude";
     default:
       return "We received your submission - Bettitude";
   }
@@ -144,6 +158,12 @@ function getUserEmailBody(formType, data) {
       break;
     case "partnership":
       mainMessage = "Thank you for your interest in partnering with Bettitude! Our partnership team will review your inquiry and get back to you within 24-48 business hours.";
+      break;
+    case "advertisement":
+      mainMessage = "Thank you for your interest in advertising with Bettitude! Our advertising team will review your inquiry and contact you within 24 hours to discuss your campaign.";
+      break;
+    case "sponsorship":
+      mainMessage = "Thank you for your interest in sponsoring Bettitude! Our sponsorship team will review your inquiry and reach out within 48 hours to discuss partnership opportunities.";
       break;
   }
 
@@ -327,6 +347,23 @@ function getFormDetailsHTML(formType, data) {
       addRow("Company", data.company);
       addRow("Phone", data.phone);
       addRow("Partnership Type", data.partnershipType);
+      addRow("Message", data.message);
+      break;
+    case "advertisement":
+      addRow("Name", data.name);
+      addRow("Email", data.email);
+      addRow("Company", data.company);
+      addRow("Phone", data.phone);
+      addRow("Ad Type", data.adType);
+      addRow("Budget", data.budget);
+      addRow("Message", data.message);
+      break;
+    case "sponsorship":
+      addRow("Name", data.name);
+      addRow("Email", data.email);
+      addRow("Company", data.company);
+      addRow("Phone", data.phone);
+      addRow("Sponsorship Type", data.sponsorshipType);
       addRow("Message", data.message);
       break;
   }

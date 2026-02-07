@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import ScrollToTop from './Components/ScrollToTop'
 
 // Eagerly load Home since it's the landing page
 import Home from './Pages/Home'
@@ -23,6 +24,9 @@ const Feedback = lazy(() => import('./Components/Feedback'))
 const Partner = lazy(() => import('./Pages/Partner'))
 const FooterService = lazy(() => import('./Pages/FooterService'))
 const Sitemap = lazy(() => import('./Pages/Sitemap'))
+const Advertisement = lazy(() => import('./Pages/Advertisement'))
+const Sponsorship = lazy(() => import('./Pages/Sponsorship'))
+const ServicesPage = lazy(() => import('./Pages/ServicesPage'))
 
 // Minimal loading fallback that matches the site's dark theme
 const PageLoader = () => (
@@ -53,10 +57,14 @@ const App = () => {
           <Route path='/partner' element={<Partner/>} />
           <Route path='/services' element={<FooterService/>} />
           <Route path='/sitemap' element={<Sitemap/>} />
+          <Route path='/advertisment' element={<Advertisement/>} />
+          <Route path='/sponorship' element={<Sponsorship/>} />
+          <Route path='/our-services' element={<ServicesPage/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>
       </Suspense>
       <Footer/>
+      <ScrollToTop />
     </>
   )
 }
