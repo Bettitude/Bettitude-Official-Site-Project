@@ -29,51 +29,61 @@ export default function Partnership() {
       name: "Bet365",
       logo: "https://logo.clearbit.com/bet365.com",
       category: "Sports Betting",
+      link: "https://www.bet365.com",
     },
     {
       name: "DraftKings",
       logo: "https://logo.clearbit.com/draftkings.com",
       category: "Fantasy Sports",
+      link: "https://www.draftkings.com",
     },
     {
       name: "FanDuel",
       logo: "https://logo.clearbit.com/fanduel.com",
       category: "Sports Betting",
+      link: "https://www.fanduel.com",
     },
     {
       name: "BetMGM",
       logo: "https://logo.clearbit.com/betmgm.com",
       category: "Casino & Sports",
+      link: "https://www.betmgm.com",
     },
     {
       name: "Caesars",
       logo: "https://logo.clearbit.com/caesars.com",
       category: "Entertainment",
+      link: "https://www.caesars.com",
     },
     {
       name: "PointsBet",
       logo: "https://logo.clearbit.com/pointsbet.com",
       category: "Sports Betting",
+      link: "https://www.pointsbet.com",
     },
     {
       name: "Unibet",
       logo: "https://logo.clearbit.com/unibet.com",
       category: "Online Gaming",
+      link: "https://www.unibet.com",
     },
     {
       name: "William Hill",
       logo: "https://logo.clearbit.com/williamhill.com",
       category: "Bookmaker",
+      link: "https://www.williamhill.com",
     },
     {
       name: "Paddy Power",
       logo: "https://logo.clearbit.com/paddypower.com",
       category: "Sports Betting",
+      link: "https://www.paddypower.com",
     },
     {
       name: "Betway",
       logo: "https://logo.clearbit.com/betway.com",
       category: "Online Gaming",
+      link: "https://www.betway.com",
     },
   ];
 
@@ -131,8 +141,11 @@ export default function Partnership() {
             style={{ scrollBehavior: "auto" }}
           >
             {duplicatedBrands.map((brand, index) => (
-              <div
+              <a
                 key={index}
+                href={brand.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative flex-shrink-0 w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40 bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#0057B8]/20"
               >
                 {/* Glow effect on hover */}
@@ -162,7 +175,7 @@ export default function Partnership() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -171,7 +184,7 @@ export default function Partnership() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mt-12 sm:mt-16 lg:mt-20">
           <div className="text-center space-y-1 sm:space-y-2 p-4 sm:p-5 lg:p-6 bg-[#0057B8]/10 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-300">
             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
-              10+
+              3+
             </p>
             <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">
               Global Partners

@@ -33,7 +33,7 @@ export default function Product() {
     ],
     color: 'from-[#FFC527] to-[#ffb700]',
     glowColor: 'shadow-[#FFC527]/50',
-    link: 'https://bettisports.blog',
+    link: 'http://bettisportsblog.com',
     badge: 'Most Popular',
 
     social: {
@@ -140,7 +140,7 @@ export default function Product() {
   ],
     color: 'from-[#FFC527] to-[#ffb700]',
     glowColor: 'shadow-[#FFC527]/50',
-    link: 'https://bettiscores.com',
+    link: 'http://sportsdisndat.com/',
     badge: 'New',
 
     social: {

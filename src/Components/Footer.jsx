@@ -334,7 +334,7 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
               {/* Google Play Button */}
               <a
-                href="#"
+                href="https://play.google.com/store/search?q=Bettitude+World&c=apps"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 px-5 sm:px-6 py-3 bg-[#0B0F19] border border-[#0057B8]/50 rounded-xl hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-300"
@@ -353,7 +353,7 @@ export default function Footer() {
 
               {/* Apple Store Button */}
               <a
-                href="#"
+                href="https://apps.apple.com/app/bettitude-world"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 px-5 sm:px-6 py-3 bg-[#0B0F19] border border-[#0057B8]/50 rounded-xl hover:border-[#FFC527]/50 hover:scale-105 transition-all duration-300"

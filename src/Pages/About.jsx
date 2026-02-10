@@ -79,10 +79,10 @@ export default function About() {
   ];
 
   const stats = [
-    { icon: FiUsers, value: '50K+', label: 'Monthly Users' },
-    { icon: FiGlobe, value: '50+', label: 'Countries' },
+    { icon: FiUsers, value: '5K+', label: 'Monthly Users' },
+    { icon: FiGlobe, value: '5+', label: 'Countries' },
     { icon: FiTrendingUp, value: '95%', label: 'Accuracy Rate' },
-    { icon: FiAward, value: '8+', label: 'Years Experience' }
+    { icon: FiAward, value: '2+', label: 'Years Experience' }
   ];
 
   const services = [

@@ -8,7 +8,7 @@ export default function TeamPage() {
 
   const leadership = [
     {
-      name: 'John Doe',
+      name: 'Henry Bundu',
       role: 'CEO & Founder',
       image: Profile,
       // image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
@@ -46,34 +46,34 @@ export default function TeamPage() {
   ];
 
   const departments = [
-    {
-      name: 'Analytics Team',
-      icon: FiTrendingUp,
-      color: 'from-[#0057B8] to-[#003d82]',
-      members: [
-        {
-          name: 'David Martinez',
-          role: 'Head of Analytics',
-          // image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
-          image: Profile,
-          expertise: 'Statistical Modeling, Sports Data'
-        },
-        {
-          name: 'Emma Wilson',
-          role: 'Senior Data Scientist',
-          // image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
-          image: Profile,
-          expertise: 'Machine Learning, Predictions'
-        },
-        {
-          name: 'James Brown',
-          role: 'Sports Analyst',
-          // image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80',
-          image: Profile,
-          expertise: 'Football Analytics, Research'
-        }
-      ]
-    },
+    // {
+    //   name: 'Analytics Team',
+    //   icon: FiTrendingUp,
+    //   color: 'from-[#0057B8] to-[#003d82]',
+    //   members: [
+    //     {
+    //       name: 'David Martinez',
+    //       role: 'Head of Analytics',
+    //       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80',
+    //       image: Profile,
+    //       expertise: 'Statistical Modeling, Sports Data'
+    //     },
+    //     {
+    //       name: 'Emma Wilson',
+    //       role: 'Senior Data Scientist',
+    //       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80',
+    //       image: Profile,
+    //       expertise: 'Machine Learning, Predictions'
+    //     },
+    //     {
+    //       name: 'James Brown',
+    //       role: 'Sports Analyst',
+    //       image: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80',
+    //       image: Profile,
+    //       expertise: 'Football Analytics, Research'
+    //     }
+    //   ]
+    // },
     {
       name: 'Content Team',
       icon: FiUsers,

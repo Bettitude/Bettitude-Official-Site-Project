@@ -1,67 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { FiArrowRight, FiClock, FiUser } from 'react-icons/fi';
 import { IoFootballSharp } from 'react-icons/io5';
+import { fetchLatestNews } from '../utils/newsService';
 
 const NewsHome = () => {
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
 
-  // Simulated news data - Replace with your actual API call
-  const fetchNews = async () => {
+  // Fetch latest 4 news from Google Sheets
+  const loadNews = async () => {
     setLoading(true);
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Sample news data
-    const newsData = [
-      {
-        id: 1,
-        title: "Champions League: Manchester City Advances to Quarter Finals",
-        excerpt: "An impressive display sees City dominate the round of 16 with a commanding performance...",
-        image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
-        category: "Champions League",
-        author: "John Smith",
-        date: "2 hours ago",
-        readTime: "5 min read"
-      },
-      {
-        id: 2,
-        title: "Women's World Cup: Nigeria's Super Falcons Ready for Glory",
-        excerpt: "The Nigerian women's team prepares for their upcoming World Cup campaign with renewed confidence...",
-        image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80",
-        category: "Women's Football",
-        author: "Sarah Johnson",
-        date: "5 hours ago",
-        readTime: "4 min read"
-      },
-      {
-        id: 3,
-        title: "Premier League: Title Race Intensifies in Final Weeks",
-        excerpt: "With only a few matches remaining, three teams are locked in an exciting battle for the championship...",
-        image: "https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=800&q=80",
-        category: "Premier League",
-        author: "Michael Brown",
-        date: "1 day ago",
-        readTime: "6 min read"
-      },
-      {
-        id: 4,
-        title: "Transfer News: Top Strikers Linked with Summer Moves",
-        excerpt: "The transfer window is heating up with several high-profile players considering their options...",
-        image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80",
-        category: "Transfers",
-        author: "David Williams",
-        date: "1 day ago",
-        readTime: "7 min read"
-      }
-    ];
-
-    setNews(newsData);
+    try {
+      const latestNews = await fetchLatestNews(4);
+      setNews(latestNews);
+    } catch (error) {
+      console.error("Error loading news:", error);
+      // Fallback to empty array on error
+      setNews([]);
+    }
     setLoading(false);
   };
 
   useEffect(() => {
-    fetchNews();
+    loadNews();
   }, []);
 
   // Skeleton Loader Component

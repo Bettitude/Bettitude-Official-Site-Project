@@ -8,7 +8,7 @@
 
 // ==================== CONFIGURATION ==========================
 const CONFIG = {
-  ADMIN_EMAIL: "adisoreoluwa@gmail.com",
+  ADMIN_EMAIL: "hellobetitude@gmail.com",
   BUSINESS_NAME: "Bettitude",
 };
 
@@ -18,7 +18,7 @@ const SPREADSHEET_IDS = {
   appointment: "1e97iCgSHSaisF5N-FfW6tLHp-HebobPCvGXhy8H3N9U",
   feedback:    "1ptcY6DhR89VSYevUt3_rUqJpwJot4fNNIjS-CHs88tA",
   partnership: "1MsFf2hNHDmN5ISwQLZQJQPo8gYEXNJdKq_AclT_GLOA",
-  advertisement: "1HGVCGlzUfCR07De_0AZf2C-XSTYngSh6I9lgs3D8CNo",
+  advertisement: "1HGVCGlzUfCR07De_0AZf2C-XSTYngSh6I9lgs3D8CNo",  
   sponsorship:   "1sehLc_Q8nRIgjf8K21q13P9GxnK_pn8M_VFyTuoFgQo",
 };
 // =============================================================

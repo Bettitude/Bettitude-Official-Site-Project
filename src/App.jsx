@@ -27,6 +27,8 @@ const Sitemap = lazy(() => import('./Pages/Sitemap'))
 const Advertisement = lazy(() => import('./Pages/Advertisement'))
 const Sponsorship = lazy(() => import('./Pages/Sponsorship'))
 const ServicesPage = lazy(() => import('./Pages/ServicesPage'))
+const News = lazy(() => import('./Pages/News'))
+
 
 // Minimal loading fallback that matches the site's dark theme
 const PageLoader = () => (
@@ -51,6 +53,7 @@ const App = () => {
           <Route path='/newsletter' element={<Newsletters/>} />
           <Route path='/feedback' element={<Feedback/>} />
           <Route path='/terms-of-service' element={<TOS/>} />
+          <Route path='/news' element={<News/>} />
           <Route path='/appointment' element={<Appointment/>} />
           <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
           <Route path='/cookies-policy' element={<Cookies/>} />

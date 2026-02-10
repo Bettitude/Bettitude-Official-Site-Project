@@ -89,9 +89,9 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: FiFacebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: FiTwitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: FiYoutube, href: "https://youtube.com", label: "YouTube" },
+    { icon: FiFacebook, href: "https://facebook.com/people/Bettitude/100071057204593", label: "Facebook" },
+    { icon: FiTwitter, href: "https://twitter.com/bettitude", label: "Twitter" },
+    { icon: FiYoutube, href: "https://youtube.com/@bettitudeofficial", label: "YouTube" },
   ];
 
   const additionalInfo = [

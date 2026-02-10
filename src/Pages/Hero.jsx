@@ -194,7 +194,7 @@ export default function BettitudeHero() {
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ffb700] to-[#FFC527] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               </a> */}
-              <Link to="/products" className="group relative px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-center text-base sm:text-lg">
+              <Link to="/product" className="group relative px-6 sm:px-8 lg:px-10 py-4 sm:py-5 lg:py-6 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-black rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105 text-center text-base sm:text-lg">
                 <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
                   <span>Explore Our Products</span>
                   <FiArrowRight className="text-xl sm:text-2xl group-hover:translate-x-2 transition-transform duration-300" />

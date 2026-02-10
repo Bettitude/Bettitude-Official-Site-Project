@@ -1,6 +1,6 @@
  import React, { useState } from 'react';
 import { FiExternalLink, FiFacebook, FiTwitter, FiYoutube, FiInstagram, FiLinkedin, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
-import { FaReddit, FaTiktok } from 'react-icons/fa';
+import { FaReddit, FaTiktok, FaTelegramPlane } from 'react-icons/fa';
 import ProBetPick from '../assets/ProBetPick.png'
 import BScores from '../assets/BScores.png'
 import BettiSportsLogo from '../assets/BettiSportsLogo.png'
@@ -107,12 +107,11 @@ export default function Service() {
     'Equipment for all skill levels',
     'Outdoor and indoor sports essentials'
   ],
-  website: 'SportDisandDat',
-  link: '',
+  website: 'SportsDisandDat',
+  link: 'http://sportsdisndat.com',
   social: [
-    { icon: FiInstagram, link: '' },
-    { icon: FiTwitter, link: '' },
-    { icon: FaReddit, link: '' }
+    { icon: FiInstagram, link: 'https://www.instagram.com/sportsdisndat' },
+    { icon: FiFacebook, link: 'https://www.facebook.com/share/1Kmz5r2aa8/?mibextid=wwXIfr' },
   ],
 
   color: 'from-[#FFC527] to-[#ffb700]',
@@ -157,7 +156,7 @@ export default function Service() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
-            Check out our services and discover how we're revolutionizing the sports entertainment experience
+            Check out our products and discover how we're revolutionizing the sports entertainment experience
           </p>
 
           <div className="flex justify-center">
@@ -330,13 +329,24 @@ export default function Service() {
 
               {/* Social Icons */}
               <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4 pt-4 sm:pt-6">
-                {[FiFacebook, FiTwitter, FiYoutube, FiInstagram, FiLinkedin].map((Icon, idx) => (
+                {[
+                  { icon: FiFacebook, href: 'https://facebook.com/people/Bettitude/100071057204593/' },
+                  { icon: FiTwitter, href: 'https://twitter.com/bettitude' },
+                  { icon: FiInstagram, href: 'https://instagram.com/bettitude_' },
+                  { icon: FiLinkedin, href: 'https://linkedin.com/company/bettitude' },
+                  { icon: FiYoutube, href: 'https://youtube.com/@bettitudeofficial' },
+                  { icon: FaTiktok, href: 'https://www.tiktok.com/@bettitude_' },
+                  { icon: FaReddit, href: 'https://www.reddit.com/user/bettitude/' },
+                  { icon: FaTelegramPlane, href: 'https://t.me/bettitude' },
+                ].map((social, idx) => (
                   <a
                     key={idx}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
                   >
-                    <Icon className="text-lg sm:text-xl lg:text-2xl" />
+                    <social.icon className="text-lg sm:text-xl lg:text-2xl" />
                   </a>
                 ))}
               </div>

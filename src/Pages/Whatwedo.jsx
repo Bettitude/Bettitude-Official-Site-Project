@@ -179,7 +179,7 @@ export default function Whatwedo() {
 
                 <div className="pt-4 sm:pt-6">
                   <a 
-                    href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href="/services"
                     className="inline-flex items-center space-x-2 text-[#FFC527] font-semibold text-sm sm:text-base group-hover:translate-x-2 transition-transform duration-300"
                   >
                     <span>Learn More</span>

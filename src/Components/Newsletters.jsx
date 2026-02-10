@@ -73,7 +73,7 @@ export default function Newsletters() {
             </h2>
 
             <p className="text-base sm:text-lg lg:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
-              Stay up-to-date with forecasts, posts and predictions.
+              Stay up-to-date with Bettitude and co.
             </p>
 
             <div className="flex justify-center pt-2">
@@ -196,8 +196,7 @@ export default function Newsletters() {
     </div>
 
     <a
-      href="https://wa.me/234XXXXXXXXXX"
-      target="_blank"
+      href="https://whatsapp.com/channel/0029VaA5lOD4dTnKXAvZ7D1o" 
       rel="noopener noreferrer"
       className="group/btn flex items-center space-x-2 px-5 sm:px-6 py-3 sm:py-3.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-[#25D366]/50 hover:scale-105 transition-all duration-300 whitespace-nowrap"
     >

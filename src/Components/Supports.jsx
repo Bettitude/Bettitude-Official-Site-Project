@@ -23,7 +23,7 @@ export default function Support() {
       icon: FiUsers,
       title: 'Patreon',
       description: 'Become a long-term patron with monthly recurring support for sustained growth',
-      action: 'Become Patron',
+      action: 'Become A Patron',
       color: 'from-[#FF424D] to-[#E63946]',
       link: 'https://patreon.com/Bettisportsblog?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink'
     },

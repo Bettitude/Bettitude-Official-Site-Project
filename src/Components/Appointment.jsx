@@ -22,13 +22,68 @@ export default function Appointment() {
     time: "",
     message: "",
   });
+  const [countryCode, setCountryCode] = useState("");
   const [submitStatus, setSubmitStatus] = useState("idle"); // idle, loading, success, error
+
+  const countryCodes = [
+    { code: "+1", country: "US/CA" },
+    { code: "+44", country: "UK" },
+    { code: "+61", country: "AU" },
+    { code: "+91", country: "IN" },
+    { code: "+234", country: "NG" },
+    { code: "+27", country: "ZA" },
+    { code: "+254", country: "KE" },
+    { code: "+233", country: "GH" },
+    { code: "+49", country: "DE" },
+    { code: "+33", country: "FR" },
+    { code: "+39", country: "IT" },
+    { code: "+34", country: "ES" },
+    { code: "+31", country: "NL" },
+    { code: "+46", country: "SE" },
+    { code: "+47", country: "NO" },
+    { code: "+45", country: "DK" },
+    { code: "+358", country: "FI" },
+    { code: "+48", country: "PL" },
+    { code: "+32", country: "BE" },
+    { code: "+41", country: "CH" },
+    { code: "+43", country: "AT" },
+    { code: "+353", country: "IE" },
+    { code: "+351", country: "PT" },
+    { code: "+30", country: "GR" },
+    { code: "+90", country: "TR" },
+    { code: "+7", country: "RU" },
+    { code: "+86", country: "CN" },
+    { code: "+81", country: "JP" },
+    { code: "+82", country: "KR" },
+    { code: "+55", country: "BR" },
+    { code: "+52", country: "MX" },
+    { code: "+54", country: "AR" },
+    { code: "+57", country: "CO" },
+    { code: "+56", country: "CL" },
+    { code: "+20", country: "EG" },
+    { code: "+212", country: "MA" },
+    { code: "+971", country: "UAE" },
+    { code: "+966", country: "SA" },
+    { code: "+974", country: "QA" },
+    { code: "+65", country: "SG" },
+    { code: "+60", country: "MY" },
+    { code: "+63", country: "PH" },
+    { code: "+66", country: "TH" },
+    { code: "+62", country: "ID" },
+    { code: "+84", country: "VN" },
+    { code: "+64", country: "NZ" },
+    { code: "+256", country: "UG" },
+    { code: "+255", country: "TZ" },
+    { code: "+237", country: "CM" },
+    { code: "+225", country: "CI" },
+  ];
 
   const services = [
     "Betting Consultation",
     "Sports Analysis Strategy",
-    "Premium Picks Package",
-    "VIP Membership Inquiry",
+    "Bettitude Product Inquiry",
+    "Business To Bettitude Service/Product Offering",
+    "Advertising Inquiry",
     "Partnership Discussion",
     "General Inquiry",
   ];
@@ -57,7 +112,11 @@ export default function Appointment() {
     setSubmitStatus("loading");
 
     try {
-      await submitForm("appointment", formData);
+      const submissionData = {
+        ...formData,
+        phone: `${countryCode} ${formData.phone}`.trim(),
+      };
+      await submitForm("appointment", submissionData);
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -68,6 +127,7 @@ export default function Appointment() {
         time: "",
         message: "",
       });
+      setCountryCode("");
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
       console.error(error);
@@ -279,16 +339,32 @@ export default function Appointment() {
                     <FiPhone className="text-[#FFC527]" />
                     <span>Phone Number</span>
                   </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    disabled={submitStatus === "loading"}
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="+1 (555) 123-4567"
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      value={countryCode}
+                      onChange={(e) => setCountryCode(e.target.value)}
+                      required
+                      disabled={submitStatus === "loading"}
+                      className="w-[130px] flex-shrink-0 px-2 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      <option value="">Code</option>
+                      {countryCodes.map((cc, idx) => (
+                        <option key={idx} value={cc.code} className="bg-[#0B0F19]">
+                          {cc.code} ({cc.country})
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      disabled={submitStatus === "loading"}
+                      className="flex-1 px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      placeholder="412 877 500"
+                    />
+                  </div>
                 </div>
 
                 {/* Service Selection */}
