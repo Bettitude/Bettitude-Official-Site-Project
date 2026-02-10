@@ -93,12 +93,12 @@ export default function Service() {
 },
 
 {
-  name: 'SportDisandDat',
+  name: 'SportsDisandDat',
   image: SportsDisDat,
   size: 300,
   tagline: 'Sporting Equipment & Performance Gear',
   description:
-    'SportDisandDat is a sports equipment and gear platform focused on providing reliable, performance-driven sporting essentials for athletes, teams, and fitness enthusiasts. Our mission is to support active lifestyles by making quality sports equipment accessible for training, competition, and recreation.',
+    'SportsDisandDat is a sports equipment and gear platform focused on providing reliable, performance-driven sporting essentials for athletes, teams, and fitness enthusiasts. Our mission is to support active lifestyles by making quality sports equipment accessible for training, competition, and recreation.',
   features: [
     'Professional sporting equipment',
     'Training and fitness gear',
@@ -195,7 +195,7 @@ export default function Service() {
               rel="noopener noreferrer"
               className="px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white text-xs sm:text-sm lg:text-base font-semibold hover:bg-[#0057B8]/40 hover:border-[#FFC527]/50 transition-all duration-300"
             >
-              SportDisandDat
+              SportsDisandDat
             </a>
             <a 
               href="https://igaming.bettitude.com" 

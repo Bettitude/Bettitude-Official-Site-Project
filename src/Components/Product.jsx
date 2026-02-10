@@ -118,11 +118,11 @@ export default function Product() {
     }
   },
   {
-   name: 'SportDisandDat',
+   name: 'SportsDisandDat',
   icon: SportsDisDat,
   tagline: 'Premium Sports Merchandise for True Fans',
   description:
-    'SportDisandDat is your go-to destination for authentic sports merchandise, delivering premium jerseys, kits, accessories, and fan gear from top teams and leagues worldwide.',
+    'SportsDisandDat is your go-to destination for authentic sports merchandise, delivering premium jerseys, kits, accessories, and fan gear from top teams and leagues worldwide.',
   highlights: [
     'Authentic jerseys and official fan merchandise',
     'Wide selection across football, basketball, and other major sports',

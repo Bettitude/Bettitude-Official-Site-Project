@@ -35,7 +35,7 @@ export default function Footer() {
       { name: 'BettiSportsblog', href: 'https://BettiSportsblog.com', external: true },
       { name: 'ProBetPicks', href: 'https://ProBetPicks.com', external: true },
       { name: 'BettiScores', href: 'https://BettiScores.com', external: true },
-      { name: 'SportDisandDat', href: 'https://sportdisanddat', external: true }
+      { name: 'SportsDisandDat', href: 'https://sportdisanddat', external: true }
     ],
     services: [
   { name: 'Betting Analytics', href: '/services#analytics' },
