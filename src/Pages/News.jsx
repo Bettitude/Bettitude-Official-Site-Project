@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FiArrowRight, FiClock } from 'react-icons/fi';
+import { FiArrowRight, FiClock, FiX } from 'react-icons/fi';
 import { IoFootballSharp } from 'react-icons/io5';
 import { fetchNews, fetchNewsByCategory } from '../utils/newsService';
 
@@ -7,6 +7,8 @@ const News = () => {
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
   const [activeTab, setActiveTab] = useState('All');
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // TODO: Customize these categories based on your needs
   const categories = [
@@ -44,6 +46,33 @@ const News = () => {
     setActiveTab(tab);
   };
 
+  // Handle article click
+  const handleArticleClick = (e, article) => {
+    e.preventDefault();
+    setSelectedArticle(article);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  };
+
+  // Handle modal close
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedArticle(null);
+    document.body.style.overflow = 'unset'; // Restore scrolling
+  };
+
+  // Close modal on escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        handleCloseModal();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isModalOpen]);
+
   // Skeleton Loader Component
   const SkeletonCard = () => (
     <div className="bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden animate-pulse">
@@ -62,6 +91,156 @@ const News = () => {
       </div>
     </div>
   );
+
+  // Modal Component
+  const NewsModal = () => {
+    if (!isModalOpen || !selectedArticle) return null;
+
+    return (
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn"
+        onClick={handleCloseModal}
+      >
+        <div 
+          className="relative w-full max-w-4xl max-h-[90vh] bg-gradient-to-br from-[#0B0F19] to-[#0057B8]/20 border border-[#0057B8]/50 rounded-2xl shadow-2xl overflow-hidden animate-slideUp"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close Button */}
+          <button
+            onClick={handleCloseModal}
+            className="absolute top-4 right-4 z-10 bg-[#0B0F19]/80 hover:bg-[#0057B8]/80 text-white p-2 rounded-full transition-all duration-300 hover:rotate-90"
+          >
+            <FiX className="w-6 h-6" />
+          </button>
+
+          {/* Scrollable Content */}
+          <div className="overflow-y-auto max-h-[90vh] custom-scrollbar">
+            {/* Hero Image */}
+            <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
+              <img
+                src={selectedArticle.image}
+                alt={selectedArticle.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/50 to-transparent"></div>
+              
+              {/* Category Badge */}
+              <div className="absolute top-6 left-6">
+                <span className="bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] text-sm font-bold px-4 py-2 rounded-full">
+                  {selectedArticle.category}
+                </span>
+              </div>
+            </div>
+
+            {/* Article Content */}
+            <div className="p-6 sm:p-8 md:p-10 lg:p-12">
+              {/* Title */}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 sm:mb-6 leading-tight">
+                {selectedArticle.title}
+              </h1>
+
+              {/* Meta Info */}
+              <div className="flex flex-wrap items-center gap-4 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-[#0057B8]/30">
+                <div className="flex items-center space-x-2 text-[#E0E0E0]/70">
+                  <FiClock className="text-[#FFC527]" />
+                  <span className="text-sm">{selectedArticle.date}</span>
+                </div>
+                <span className="text-[#E0E0E0]/70">•</span>
+                <span className="text-sm text-[#E0E0E0]/70">{selectedArticle.readTime}</span>
+                {selectedArticle.author && (
+                  <>
+                    <span className="text-[#E0E0E0]/70">•</span>
+                    <span className="text-sm text-[#E0E0E0]/70">By {selectedArticle.author}</span>
+                  </>
+                )}
+              </div>
+
+              {/* Excerpt */}
+              <p className="text-lg sm:text-xl text-[#FFC527] font-semibold mb-6 sm:mb-8 leading-relaxed">
+                {selectedArticle.excerpt}
+              </p>
+
+              {/* Full Content */}
+              <div className="prose prose-invert prose-lg max-w-none">
+                <div className="text-[#E0E0E0] leading-relaxed space-y-4 text-base sm:text-lg">
+                  {selectedArticle.content ? (
+                    // If you have full content in your data structure
+                    <div dangerouslySetInnerHTML={{ __html: selectedArticle.content }} />
+                  ) : (
+                    // Placeholder content - replace with actual content from your data
+                    <>
+                      <p>
+                        {selectedArticle.excerpt}
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      </p>
+                      <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                      <p>
+                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                      </p>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Share or Actions */}
+              <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#0057B8]/30">
+                <div className="flex flex-wrap gap-3">
+                  {/* <button className="px-6 py-3 bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] font-semibold rounded-xl hover:shadow-lg hover:shadow-[#FFC527]/50 transition-all duration-300">
+                    Share Article
+                  </button>
+                  <button className="px-6 py-3 bg-[#0057B8]/20 border border-[#0057B8]/50 text-white font-semibold rounded-xl hover:bg-[#0057B8]/30 transition-all duration-300">
+                    Save for Later
+                  </button> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Custom Scrollbar Styles */}
+        <style>{`
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(5, 87, 184, 0.1);
+            border-radius: 10px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 197, 39, 0.5);
+            border-radius: 10px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 197, 39, 0.7);
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes slideUp {
+            from { 
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to { 
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fadeIn {
+            animation: fadeIn 0.3s ease-out;
+          }
+          .animate-slideUp {
+            animation: slideUp 0.3s ease-out;
+          }
+        `}</style>
+      </div>
+    );
+  };
 
   return (
     <section className="w-full relative bg-[#0B0F19] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
@@ -135,10 +314,10 @@ const News = () => {
           ) : news.length > 0 ? (
             // Show actual news cards when loaded
             news.map((article) => (
-              <a
+              <button
                 key={article.id}
-                href={`/news/${article.id}`}
-                className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 hover:shadow-2xl transition-all duration-500 hover:scale-105 block"
+                onClick={(e) => handleArticleClick(e, article)}
+                className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 hover:shadow-2xl transition-all duration-500 hover:scale-105 text-left w-full cursor-pointer"
               >
                   {/* Image */}
                   <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -177,7 +356,7 @@ const News = () => {
                       </div>
                     </div>
                   </div>
-              </a>
+              </button>
             ))
           ) : (
             // No news found
@@ -187,6 +366,9 @@ const News = () => {
           )}
         </div>
       </div>
+
+      {/* Modal */}
+      <NewsModal />
     </section>
   );
 };
