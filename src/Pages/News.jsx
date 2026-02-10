@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FiArrowRight, FiClock, FiTrash2 } from 'react-icons/fi';
+import { FiArrowRight, FiClock } from 'react-icons/fi';
 import { IoFootballSharp } from 'react-icons/io5';
-import { fetchNews, fetchNewsByCategory, deleteNews } from '../utils/newsService';
+import { fetchNews, fetchNewsByCategory } from '../utils/newsService';
 
 const News = () => {
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
   const [activeTab, setActiveTab] = useState('All');
-  const [deleteLoading, setDeleteLoading] = useState(null);
 
   // TODO: Customize these categories based on your needs
   const categories = [
@@ -43,23 +42,6 @@ const News = () => {
   // Handle tab change
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-  };
-
-  // Handle delete (requires authentication/admin access in production)
-  const handleDelete = async (id) => {
-    if (!window.confirm('Are you sure you want to delete this article?')) return;
-
-    setDeleteLoading(id);
-    try {
-      await deleteNews(id);
-      // Reload news after deletion
-      await loadNews(activeTab);
-      alert('Article deleted successfully');
-    } catch (error) {
-      console.error("Error deleting article:", error);
-      alert('Failed to delete article');
-    }
-    setDeleteLoading(null);
   };
 
   // Skeleton Loader Component
@@ -153,25 +135,11 @@ const News = () => {
           ) : news.length > 0 ? (
             // Show actual news cards when loaded
             news.map((article) => (
-              <div
+              <a
                 key={article.id}
-                className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                href={`/news/${article.id}`}
+                className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 hover:shadow-2xl transition-all duration-500 hover:scale-105 block"
               >
-                {/* Delete Button (show only for admins in production) */}
-                <button
-                  onClick={() => handleDelete(article.id)}
-                  disabled={deleteLoading === article.id}
-                  className="absolute top-3 right-3 z-10 p-2 bg-red-500/90 hover:bg-red-600 text-white rounded-lg transition-all duration-300 opacity-0 group-hover:opacity-100 disabled:opacity-50"
-                  title="Delete article"
-                >
-                  {deleteLoading === article.id ? (
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  ) : (
-                    <FiTrash2 className="text-sm" />
-                  )}
-                </button>
-
-                <a href={`/news/${article.id}`} className="block">
                   {/* Image */}
                   <div className="relative h-48 sm:h-56 overflow-hidden">
                     <img
@@ -209,8 +177,7 @@ const News = () => {
                       </div>
                     </div>
                   </div>
-                </a>
-              </div>
+              </a>
             ))
           ) : (
             // No news found
