@@ -1,19 +1,118 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiClock, FiX, FiShare2, FiCopy, FiCheck, FiTwitter, FiFacebook, FiLink } from 'react-icons/fi';
 import { IoFootballSharp } from 'react-icons/io5';
-import { fetchNews, fetchNewsByCategory } from '../utils/newsService';
+import ReactMarkdown from 'react-markdown';
+import { fetchNews, fetchNewsByCategory, fetchNewsBySlug, fetchCategories } from '../utils/newsService';
+
+// ─── OG / Twitter Meta Tag Helpers ────────────────────────────────────────────
+
+const setMetaTag = (selector, attrName, attrValue, content) => {
+  let el = document.querySelector(selector);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attrName, attrValue);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+};
+
+const DEFAULT_OG = {
+  title: 'Bettitude',
+  description: 'Stay updated with the latest about Bettitude, Our Ecosystem, Products, Services, Insights and around Sports Business world as a whole',
+  image: `${window.location.origin}/BrandLogo.png`,
+  url: `${window.location.origin}/news`,
+  type: 'website',
+};
+
+const updateOGMeta = (article) => {
+  if (article) {
+    const url = `${window.location.origin}/news/${article.slug}`;
+    setMetaTag('meta[property="og:title"]',       'property', 'og:title',       article.title);
+    setMetaTag('meta[property="og:description"]',  'property', 'og:description', article.excerpt);
+    setMetaTag('meta[property="og:image"]',        'property', 'og:image',       article.image);
+    setMetaTag('meta[property="og:url"]',          'property', 'og:url',         url);
+    setMetaTag('meta[property="og:type"]',         'property', 'og:type',        'article');
+    setMetaTag('meta[name="twitter:card"]',        'name',     'twitter:card',        'summary_large_image');
+    setMetaTag('meta[name="twitter:title"]',       'name',     'twitter:title',       article.title);
+    setMetaTag('meta[name="twitter:description"]', 'name',     'twitter:description', article.excerpt);
+    setMetaTag('meta[name="twitter:image"]',       'name',     'twitter:image',       article.image);
+    document.title = `${article.title} | Bettitude`;
+  } else {
+    setMetaTag('meta[property="og:title"]',       'property', 'og:title',       DEFAULT_OG.title);
+    setMetaTag('meta[property="og:description"]',  'property', 'og:description', DEFAULT_OG.description);
+    setMetaTag('meta[property="og:image"]',        'property', 'og:image',       DEFAULT_OG.image);
+    setMetaTag('meta[property="og:url"]',          'property', 'og:url',         DEFAULT_OG.url);
+    setMetaTag('meta[property="og:type"]',         'property', 'og:type',        DEFAULT_OG.type);
+    setMetaTag('meta[name="twitter:card"]',        'name',     'twitter:card',        'summary_large_image');
+    setMetaTag('meta[name="twitter:title"]',       'name',     'twitter:title',       DEFAULT_OG.title);
+    setMetaTag('meta[name="twitter:description"]', 'name',     'twitter:description', DEFAULT_OG.description);
+    setMetaTag('meta[name="twitter:image"]',       'name',     'twitter:image',       DEFAULT_OG.image);
+    document.title = 'Bettitude';
+  }
+};
+
+// ─── Markdown Component Styles ─────────────────────────────────────────────────
+
+const markdownComponents = {
+  h2: ({ children }) => (
+    <h2 className="text-2xl sm:text-3xl font-black text-white mt-10 mb-4 leading-tight">{children}</h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="text-xl sm:text-2xl font-bold text-[#FFC527] mt-8 mb-3 leading-snug">{children}</h3>
+  ),
+  strong: ({ children }) => (
+    <strong className="font-bold text-white">{children}</strong>
+  ),
+  em: ({ children }) => (
+    <em className="italic text-[#E0E0E0]">{children}</em>
+  ),
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-4 border-[#FFC527] pl-5 my-6 italic text-[#E0E0E0]/75 leading-relaxed">
+      {children}
+    </blockquote>
+  ),
+  ul: ({ children }) => (
+    <ul className="my-4 space-y-2">{children}</ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="my-4 space-y-2 list-decimal list-inside text-[#E0E0E0]">{children}</ol>
+  ),
+  li: ({ children, ordered }) => (
+    ordered ? (
+      <li className="text-[#E0E0E0] leading-relaxed pl-1">{children}</li>
+    ) : (
+      <li className="flex items-start gap-2 text-[#E0E0E0] leading-relaxed">
+        <span className="text-[#FFC527] font-bold mt-0.5 flex-shrink-0">•</span>
+        <span>{children}</span>
+      </li>
+    )
+  ),
+  hr: () => (
+    <hr className="my-8 border-0 h-px bg-gradient-to-r from-transparent via-[#FFC527]/50 to-transparent" />
+  ),
+  img: ({ src, alt }) => (
+    <img src={src} alt={alt} className="w-full rounded-xl my-6 object-cover" loading="lazy" />
+  ),
+  a: ({ href, children }) => (
+    <a href={href} target="_blank" rel="noopener noreferrer"
+      className="text-[#FFC527] underline-offset-2 hover:underline transition-all duration-200">
+      {children}
+    </a>
+  ),
+  p: ({ children }) => (
+    <p className="text-[#E0E0E0] leading-relaxed mb-5 text-base sm:text-lg">{children}</p>
+  ),
+};
 
 // ─── Share Utilities ──────────────────────────────────────────────────────────
 
 /**
  * Build the shareable URL for an article.
- * Adjust the strategy below to match your routing:
- *   - Hash-based  : `${window.location.origin}${window.location.pathname}#article-${article.id}`
- *   - Query-param : `${window.location.origin}${window.location.pathname}?article=${article.id}`
- *   - Path-based  : `${window.location.origin}/news/${article.slug ?? article.id}`
+ * Uses path-based routing with slug for SEO-friendly URLs
  */
 const buildArticleUrl = (article) =>
-  `${window.location.origin}${window.location.pathname}?article=${article.id}`;
+  `${window.location.origin}/news/${article.slug || article.id}`;
 
 /**
  * Attempt the native Web Share API first (works on mobile + supported desktops).
@@ -194,24 +293,14 @@ const ShareButton = ({ article, stopPropagation = false }) => {
 // ─── Main News Component ──────────────────────────────────────────────────────
 
 const News = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
   const [activeTab, setActiveTab] = useState('All');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const categories = [
-    'All',
-    'Premier League',
-    'Champions League',
-    'La Liga',
-    'Serie A',
-    'Bundesliga',
-    'World Cup',
-    'Transfers',
-    "Women's Football",
-    'General',
-  ];
+  const [categories, setCategories] = useState(['All']);
 
   const loadNews = async (category = 'All') => {
     setLoading(true);
@@ -225,23 +314,47 @@ const News = () => {
     setLoading(false);
   };
 
+  // Load categories dynamically from Google Sheets on mount
+  useEffect(() => {
+    fetchCategories().then(setCategories).catch(() => setCategories(['All']));
+  }, []);
+
   useEffect(() => {
     loadNews(activeTab);
   }, [activeTab]);
+
+  // Handle slug in URL - open article automatically
+  useEffect(() => {
+    if (slug && news.length > 0) {
+      const article = news.find(a => a.slug === slug);
+      if (article) {
+        setSelectedArticle(article);
+        setIsModalOpen(true);
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  }, [slug, news]);
+
+  // Update OG / Twitter meta tags whenever an article is opened or closed
+  useEffect(() => {
+    updateOGMeta(selectedArticle);
+    return () => { if (!selectedArticle) updateOGMeta(null); };
+  }, [selectedArticle]);
 
   const handleTabChange = (tab) => setActiveTab(tab);
 
   const handleArticleClick = (e, article) => {
     e.preventDefault();
-    setSelectedArticle(article);
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
+    // Navigate to the article's slug URL
+    navigate(`/news/${article.slug}`);
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedArticle(null);
     document.body.style.overflow = 'unset';
+    // Navigate back to /news when closing modal
+    navigate('/news');
   };
 
   useEffect(() => {
@@ -336,27 +449,10 @@ const News = () => {
               </p>
 
               {/* Full Content */}
-              <div className="prose prose-invert prose-lg max-w-none">
-                <div className="text-[#E0E0E0] leading-relaxed space-y-4 text-base sm:text-lg">
-                  {selectedArticle.content ? (
-                    <div dangerouslySetInnerHTML={{ __html: selectedArticle.content }} />
-                  ) : (
-                    <>
-                      <p>{selectedArticle.excerpt}</p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
-                      </p>
-                      <p>
-                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                        sunt in culpa qui officia deserunt mollit anim id est laborum.
-                      </p>
-                    </>
-                  )}
-                </div>
+              <div className="max-w-none">
+                <ReactMarkdown components={markdownComponents}>
+                  {selectedArticle.content}
+                </ReactMarkdown>
               </div>
 
               {/* ── Share Actions (now functional) ── */}
@@ -405,7 +501,7 @@ const News = () => {
   };
 
   return (
-    <section className="w-full relative bg-[#0B0F19] min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
+    <section className="w-full relative bg-[#0B0F19] min-h-screen py-12 sm:py-16 md:py-30 lg:py-30 overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-0 w-[300px] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] bg-[#0057B8]/20 rounded-full blur-3xl animate-pulse"></div>
@@ -424,11 +520,11 @@ const News = () => {
           </div>
           <div className="space-y-3 sm:space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 leading-tight px-4">
-              Football News &
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Insights</span>
+              Bettitude Organisation
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> News & Insights</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
-              Stay updated with the latest football news, match analysis, and exclusive stories from around the world
+            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+              Stay updated and Up-To-Date with the latest about Bettitude, Our Ecosystem, Products, Services, Insights and around Sports Business world as a whole
             </p>
           </div>
           <div className="flex justify-center">

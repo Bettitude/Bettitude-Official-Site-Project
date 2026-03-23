@@ -53,6 +53,7 @@ const App = () => {
           <Route path='/newsletter' element={<Newsletters/>} />
           <Route path='/feedback' element={<Feedback/>} />
           <Route path='/terms-of-service' element={<TOS/>} />
+          <Route path='/news/:slug' element={<News/>} />
           <Route path='/news' element={<News/>} />
           <Route path='/appointment' element={<Appointment/>} />
           <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
@@ -61,7 +62,7 @@ const App = () => {
           <Route path='/services' element={<FooterService/>} />
           <Route path='/sitemap' element={<Sitemap/>} />
           <Route path='/advertisment' element={<Advertisement/>} />
-          <Route path='/sponorship' element={<Sponsorship/>} />
+          <Route path='/sponsorship' element={<Sponsorship/>} />
           <Route path='/our-services' element={<ServicesPage/>} />
           <Route path="*" element={<NotFound/>} />
         </Routes>

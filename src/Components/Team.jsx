@@ -55,7 +55,7 @@ export default function TeamPage() {
   const stats = [
     { icon: FiUsers,     value: '15+',  label: 'Team Members' },
     { icon: FiAward,     value: '3+',   label: 'Countries of Location' },
-    { icon: FiTrendingUp,value: '10+',  label: 'Combined Experience' },
+    { icon: FiTrendingUp,value: '10+',  label: 'Combined Experience (across different fields)' },
     { icon: FiHeart,     value: '101%', label: 'Passion for Sports' }
   ];
 

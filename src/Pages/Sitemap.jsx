@@ -34,7 +34,7 @@ export default function Sitemap() {
       color: 'from-[#FFC527] to-[#ffb700]',
       links: [
         { name: 'Advertisement', href: '/advertisment', description: 'Advertise your brand with Bettitude' },
-        { name: 'Sponsorship', href: '/sponorship', description: 'Become a sponsor and partner with us' },
+        { name: 'Sponsorship', href: '/sponsorship', description: 'Become a sponsor and partner with us' },
         { name: 'Partnership', href: '/partner', description: 'Collaborate and grow together' },
         { name: 'Careers', href: '/careers', description: 'Join our growing team of innovators' },
       ]

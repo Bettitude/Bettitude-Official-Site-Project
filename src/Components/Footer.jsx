@@ -28,14 +28,14 @@ export default function Footer() {
       { name: 'News', href: '/news' },
       { name: 'Our Team', href: '/team' },
       { name: 'Careers', href: '/careers' },
-      { name: 'Sponsorship', href: '/sponorship' },
+      { name: 'Sponsorship', href: 'https://bettitude.com/sponsorship' },
       { name: 'Advertisement', href: '/advertisment' },
     ],
     product: [
       { name: 'BettiSportsblog', href: 'https://BettiSportsblog.com', external: true },
       { name: 'ProBetPicks', href: 'https://ProBetPicks.com', external: true },
       { name: 'BettiScores', href: 'https://BettiScores.com', external: true },
-      { name: 'SportsDisandDat', href: 'https://sportdisanddat', external: true }
+      { name: 'SportsDisandDat', href: 'https://www.sportsdisanddat.com', external: true }
     ],
     services: [
   { name: 'Betting Analytics', href: '/services#analytics' },
@@ -48,7 +48,7 @@ export default function Footer() {
     resources: [
       // { name: 'Blog', href: '/blog' },
       // { name: 'Help Center', href: '/help' },
-      { name: 'Community', href: '/community' },
+      { name: 'Community', href: 'https://www.reddit.com/r/Bettitude' },
       { name: 'Feedback', href: '/feedback' },
       { name: 'Sitemap', href: '/sitemap' },
     ],

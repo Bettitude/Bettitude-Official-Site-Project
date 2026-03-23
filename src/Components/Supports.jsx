@@ -44,7 +44,7 @@ export default function Support() {
       description: 'Partner with us as a sponsor and reach our engaged audience of sports enthusiasts',
       action: 'Become a Sponsor',
       color: 'from-[#0057B8] to-[#003d82]',
-      link: 'sponorship'
+      link: 'sponsorship'
     },
     {
       icon: FiMonitor,

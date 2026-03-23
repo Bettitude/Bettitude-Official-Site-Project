@@ -62,7 +62,7 @@ const NewsHome = () => {
 
           <div className="space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 leading-tight px-4">
-              Football News & 
+              Organization News &
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Insights</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
@@ -90,7 +90,7 @@ const NewsHome = () => {
             news.map((article) => (
               <a
                 key={article.id}
-                href={`/news/${article.id}`}
+                href={`/news/${article.slug || article.id}`}
                 className="group bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl overflow-hidden hover:border-[#FFC527]/50 hover:shadow-2xl transition-all duration-500 hover:scale-105"
               >
                 {/* Image */}

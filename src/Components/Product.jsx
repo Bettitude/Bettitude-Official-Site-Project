@@ -140,7 +140,7 @@ export default function Product() {
   ],
     color: 'from-[#FFC527] to-[#ffb700]',
     glowColor: 'shadow-[#FFC527]/50',
-    link: 'http://sportsdisndat.com/',
+    link: 'https://www.sportsdisanddat.com',
     badge: 'New',
 
     social: {
