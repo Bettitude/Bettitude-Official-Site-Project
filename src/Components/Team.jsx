@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiLinkedin, FiTwitter, FiMail, FiUsers, FiAward, FiTrendingUp, FiHeart } from 'react-icons/fi';
 import Profile from '../assets/Profile.jpg'
+import { fetchPageImages, fetchTeamImages } from '../utils/imageService';
 
 export default function TeamPage() {
   const [hoveredMember, setHoveredMember] = useState(null);
+  const [pageImages, setPageImages] = useState({});
+  const [teamImageMap, setTeamImageMap] = useState({});
+
+  useEffect(() => {
+    fetchPageImages().then(setPageImages);
+    fetchTeamImages().then((rows) => {
+      const map = {};
+      rows.forEach(r => { if (r.name) map[r.name] = r.image_url || r.current_url; });
+      setTeamImageMap(map);
+    });
+  }, []);
 
   const leadership = [
     {
@@ -66,7 +78,7 @@ export default function TeamPage() {
       <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
+            src={pageImages.team_hero || 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80'}
             alt="Team"
             className="w-full h-full object-cover"
           />
@@ -163,7 +175,7 @@ export default function TeamPage() {
 
               <div className="relative aspect-square overflow-hidden">
                 <img
-                  src={leadership[0].image}
+                  src={teamImageMap[leadership[0].name] || leadership[0].image}
                   alt={leadership[0].name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
@@ -206,7 +218,7 @@ export default function TeamPage() {
 
                 <div className="relative aspect-square overflow-hidden">
                   <img
-                    src={member.image}
+                    src={teamImageMap[member.name] || member.image}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

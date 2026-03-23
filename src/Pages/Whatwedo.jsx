@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiTrendingUp, FiBarChart2, FiRss, FiVideo, FiCpu, FiBriefcase, FiArrowRight, FiCheck } from 'react-icons/fi';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function Whatwedo() {
   const [activeCard, setActiveCard] = useState(null);
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
 
   const services = [
     {
@@ -91,7 +94,7 @@ export default function Whatwedo() {
       {/* Background Image with Softened Overlays */}
       <div className="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80"
+          src={pageImages.whatwedo_bg || 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80'}
           alt="What We Do Background"
           loading="lazy"
           className="w-full h-full object-cover"

@@ -1,9 +1,15 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiTrendingUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { fetchPartnerImages } from "../utils/imageService";
 
 export default function Partnership() {
   const scrollRef = useRef(null);
+  const [partnerLogoMap, setPartnerLogoMap] = useState({});
+
+  useEffect(() => {
+    fetchPartnerImages().then(setPartnerLogoMap);
+  }, []);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
@@ -155,7 +161,7 @@ export default function Partnership() {
                   {/* Logo container */}
                   <div className="relative w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-md sm:rounded-lg p-2 sm:p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
-                      src={brand.logo}
+                      src={partnerLogoMap[brand.name] || brand.logo}
                       alt={brand.name}
                       loading="lazy"
                       className="max-w-full max-h-full object-contain"

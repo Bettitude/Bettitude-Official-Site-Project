@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FiAward,
   FiUsers,
@@ -17,8 +17,11 @@ import {
   FiMic,
 } from 'react-icons/fi';
 import { submitForm } from '../utils/formSubmit';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function Sponsorship() {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -162,7 +165,7 @@ export default function Sponsorship() {
       <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80"
+            src={pageImages.sponsorship_hero || 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80'}
             alt="Partnership"
             loading="lazy"
             className="w-full h-full object-cover"

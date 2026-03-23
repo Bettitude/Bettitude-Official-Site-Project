@@ -4,6 +4,15 @@
 // Handles fetching and deleting news from Google Sheets
 // ============================================================
 
+import { fetchMiscImages } from './imageService';
+
+// Module-level cache so we only call fetchMiscImages once
+let _miscImageCache = null;
+async function getMiscImages() {
+  if (!_miscImageCache) _miscImageCache = fetchMiscImages();
+  return _miscImageCache;
+}
+
 // Google Sheet ID for Bettitude News
 const GOOGLE_SHEET_ID = "1zyIN09d47sXSuZd0PWXvs3DhD0i7Td36pYjRgGqvjnU";
 const GOOGLE_SCRIPT_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:json`;
@@ -57,6 +66,8 @@ function parseGVizDate(cell) {
  */
 export async function fetchNews() {
   try {
+    const miscImages = await getMiscImages();
+    const newsFallback = miscImages.news_fallback || 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80';
     const response = await fetch(GOOGLE_SCRIPT_URL);
     const text = await response.text();
 
@@ -87,7 +98,7 @@ export async function fetchNews() {
         title,
         slug: generateSlug(title),
         excerpt:  String(cells[2]?.v || ''),
-        image:    String(cells[3]?.v || 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80'),
+        image:    String(cells[3]?.v || newsFallback),
         category: String(cells[4]?.v || 'General'),
         author:   String(cells[5]?.v || 'Bettitude'),
         date:     dateDisplay,

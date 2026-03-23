@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
   FiBarChart2,
@@ -10,9 +10,12 @@ import {
   FiTarget,
   FiZap
 } from 'react-icons/fi';
+import { fetchPageImages } from '../utils/imageService';
 
 const FooterService = () => {
   const { hash } = useLocation();
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
 
   // Ensure hash-based scrolling works after route change
   useEffect(() => {
@@ -124,7 +127,7 @@ const FooterService = () => {
       <div className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80"
+            src={pageImages.footer_service_bg || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80'}
             alt="Bettitude Services"
             className="w-full h-full object-cover"
           />

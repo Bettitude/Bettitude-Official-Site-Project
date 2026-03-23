@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { fetchPageImages } from '../utils/imageService';
 import {
   FiBarChart2,
   FiDatabase,
@@ -21,6 +22,8 @@ import {
 
 const ServicesPage = () => {
   const { hash } = useLocation();
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
 
   useEffect(() => {
     if (hash) {
@@ -201,7 +204,7 @@ const ServicesPage = () => {
       <div className="relative min-h-[60vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+            src={pageImages.services_hero || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'}
             alt="Our Services"
             loading="lazy"
             className="w-full h-full object-cover"

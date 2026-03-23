@@ -1,13 +1,16 @@
- import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiExternalLink, FiFacebook, FiTwitter, FiYoutube, FiInstagram, FiLinkedin, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import { FaReddit, FaTiktok, FaTelegramPlane } from 'react-icons/fa';
 import ProBetPick from '../assets/ProBetPick.png'
 import BScores from '../assets/BScores.png'
 import BettiSportsLogo from '../assets/BettiSportsLogo.png'
 import SportsDisDat from '../assets/SportsDis&DatM.png'
+import { fetchPageImages } from '../utils/imageService';
 // import SportsDisDatM
 export default function Service() {
   const [activeService, setActiveService] = useState(0);
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
 
   const services = [
   {
@@ -37,7 +40,7 @@ export default function Service() {
   ],
   color: 'from-[#FFC527] to-[#ffb700]',
   glowColor: 'shadow-[#FFC527]/50',
-  bgImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'
+  bgImage: pageImages.bettisports_bg || 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'
 },
 {
   name: 'Bettitude ProBetPicks',
@@ -63,7 +66,7 @@ export default function Service() {
   ],
   color: 'from-[#0057B8] to-[#003d82]',
   glowColor: 'shadow-[#0057B8]/50',
-  bgImage: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1920&q=80'
+  bgImage: pageImages.probetpicks_bg || 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1920&q=80'
 },
 {
   name: 'BettiScores',
@@ -89,7 +92,7 @@ export default function Service() {
   ],
   color: 'from-[#FFC527] to-[#ffb700]',
   glowColor: 'shadow-[#FFC527]/50',
-  bgImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80'
+  bgImage: pageImages.bettiscores_bg || 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80'
 },
 
 {
@@ -116,7 +119,7 @@ export default function Service() {
 
   color: 'from-[#FFC527] to-[#ffb700]',
   glowColor: 'shadow-[#FFC527]/50',
- bgImage: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'
+ bgImage: pageImages.sportsdisanddat_bg || 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'
 }
 
 
@@ -129,7 +132,7 @@ export default function Service() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80"
+            src={pageImages.service_hero || 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1920&q=80'}
             alt="Sports"
             loading="lazy"
             className="w-full h-full object-cover brightness-110"

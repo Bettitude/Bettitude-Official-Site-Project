@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiUsers, FiArrowRight, FiBriefcase, FiTrendingUp } from 'react-icons/fi';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function CareerCTA() {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   return (
     <section className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-[#0B0F19] overflow-hidden">
       {/* Animated background */}
@@ -15,7 +18,7 @@ export default function CareerCTA() {
           {/* Background image */}
           <div className="absolute inset-0 opacity-10">
             <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
+              src={pageImages.careerhome_bg || 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80'}
               alt="Team"
               loading="lazy"
               className="w-full h-full object-cover"

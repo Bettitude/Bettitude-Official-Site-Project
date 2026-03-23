@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiCheckCircle, FiChevronDown, FiUsers, FiGlobe, FiTrendingUp, FiAward, FiTarget, FiArrowRight, FiCode, FiCpu, FiBarChart2 } from 'react-icons/fi';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function About() {
   const [openFaq, setOpenFaq] = useState(null);
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
 
   const timeline = [
     {
@@ -110,7 +113,7 @@ export default function About() {
       <div className="relative min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1920&q=80"
+            src={pageImages.about_hero || 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1920&q=80'}
             alt="Team celebrating"
             className="w-full h-full object-cover"
           />

@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaTrophy, FaHandshake, FaUsers, FaRocket, FaEnvelope, FaPhone, FaMapMarkerAlt, FaBuilding, FaUser, FaPaperPlane } from 'react-icons/fa';
 import { submitForm } from '../utils/formSubmit';
+import { fetchPageImages } from '../utils/imageService';
 
 const Partner = () => {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -106,7 +109,7 @@ const Partner = () => {
       <div className="relative min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1920&q=80"
+            src={pageImages.partner_hero || 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1920&q=80'}
             alt="Partnership"
             className="w-full h-full object-cover"
           />

@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiHeart, FiCoffee, FiDollarSign, FiTarget, FiUsers, FiTrendingUp, FiCheckCircle, FiArrowRight, FiAward, FiMonitor, FiServer, FiDatabase, FiZap } from 'react-icons/fi';
 import {Link} from 'react-router-dom'
+import { fetchPageImages } from '../utils/imageService';
 export default function Support() {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   const fundingOptions = [
     {
       icon: FiTarget,
@@ -81,7 +84,7 @@ export default function Support() {
       <div className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80"
+            src={pageImages.support_hero_1 || 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=1920&q=80'}
             alt="Support"
             className="w-full h-full object-cover"
           />
@@ -231,7 +234,7 @@ export default function Support() {
       <div className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
+            src={pageImages.support_hero_2 || 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80'}
             alt="Partnership"
             className="w-full h-full object-cover"
           />

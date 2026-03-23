@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { FiArrowRight, FiPlay, FiUsers, FiGlobe } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { fetchHeroImages } from '../utils/imageService';
 export default function BettitudeHero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentFeatureImage, setCurrentFeatureImage] = useState(0);
   const [currentWord, setCurrentWord] = useState(0);
-  
+  const [heroImages, setHeroImages] = useState({
+    carousel_1:    'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1920&q=80',
+    carousel_2:    'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80',
+    carousel_3:    'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=1920&q=80',
+    carousel_4:    'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80',
+    carousel_5:    'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1920&q=80',
+    feature_card_1:'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=90',
+    feature_card_2:'https://www.channelstv.com/wp-content/uploads/2019/06/Megan-Rapinoe.jpg',
+    feature_card_3:'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=90',
+  });
+
+  useEffect(() => {
+    fetchHeroImages().then(setHeroImages);
+  }, []);
+
   const slides = [
-    'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1920&q=80',
-    'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1920&q=80',
-    'https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=1920&q=80',
-    'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80',
-    'https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1920&q=80'
+    heroImages.carousel_1,
+    heroImages.carousel_2,
+    heroImages.carousel_3,
+    heroImages.carousel_4,
+    heroImages.carousel_5,
   ];
 
   const alternatingWords = [
@@ -22,17 +37,17 @@ export default function BettitudeHero() {
 
   const featureImages = [
     {
-      image: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=90',
+      image: heroImages.feature_card_1,
       title: 'The Beautiful Game',
       subtitle: 'Passion. Glory. Football.'
     },
     {
-      image: 'https://www.channelstv.com/wp-content/uploads/2019/06/Megan-Rapinoe.jpg',
+      image: heroImages.feature_card_2,
       title: 'Women Football in Our Heart',
       subtitle: 'Equality. Power. Excellence.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=90',
+      image: heroImages.feature_card_3,
       title: 'Data Driving Our World',
       subtitle: 'Analytics. Insights. Success.'
     }

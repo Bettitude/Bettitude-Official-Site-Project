@@ -1,6 +1,10 @@
 import { FiHome, FiGrid, FiUsers, FiMail, FiMessageSquare, FiShield, FiBook, FiTrendingUp } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function Sitemap() {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   const sitemapSections = [
     {
       title: 'Main Pages',
@@ -79,7 +83,7 @@ export default function Sitemap() {
       <div className="relative min-h-[40vh] sm:min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80"
+            src={pageImages.sitemap_hero || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80'}
             alt="Sitemap"
             loading="lazy"
             className="w-full h-full object-cover"

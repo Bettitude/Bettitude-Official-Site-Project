@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FiUsers,
   FiTrendingUp,
@@ -16,8 +16,11 @@ import {
   FiAward,
 } from 'react-icons/fi';
 import { submitForm } from '../utils/formSubmit';
+import { fetchPageImages } from '../utils/imageService';
 
 export default function Advertisement() {
+  const [pageImages, setPageImages] = useState({});
+  useEffect(() => { fetchPageImages().then(setPageImages); }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -119,7 +122,7 @@ export default function Advertisement() {
       <div className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80"
+            src={pageImages.advertisement_hero || 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80'}
             alt="Advertising"
             loading="lazy"
             className="w-full h-full object-cover"
