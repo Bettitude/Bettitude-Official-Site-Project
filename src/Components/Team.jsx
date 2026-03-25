@@ -1,68 +1,65 @@
 import React, { useState, useEffect } from 'react';
-import { FiLinkedin, FiTwitter, FiMail, FiUsers, FiAward, FiTrendingUp, FiHeart } from 'react-icons/fi';
+import { FiLinkedin, FiTwitter, FiMail, FiInstagram, FiYoutube, FiGlobe, FiUsers, FiAward, FiTrendingUp, FiHeart, FiLoader } from 'react-icons/fi';
+// FiLinkedin … FiGlobe used inside SocialLinks component below
 import Profile from '../assets/Profile.jpg'
 import { fetchPageImages, fetchTeamImages } from '../utils/imageService';
 
+const SOCIAL_ICONS = [
+  { key: 'linkedin',  Icon: FiLinkedin,  href: (v) => v },
+  { key: 'twitter',   Icon: FiTwitter,   href: (v) => v },
+  { key: 'instagram', Icon: FiInstagram, href: (v) => v },
+  { key: 'youtube',   Icon: FiYoutube,   href: (v) => v },
+  { key: 'website',   Icon: FiGlobe,     href: (v) => v },
+  { key: 'email',     Icon: FiMail,      href: (v) => `mailto:${v}` },
+];
+
+function SocialLinks({ member }) {
+  const links = SOCIAL_ICONS.filter(s => member[s.key]);
+  if (!links.length) return null;
+  return (
+    <div className="flex flex-wrap gap-2 pt-4">
+      {links.map(({ key, Icon, href }) => (
+        <a
+          key={key}
+          href={href(member[key])}
+          target={key === 'email' ? undefined : '_blank'}
+          rel="noopener noreferrer"
+          className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300"
+        >
+          <Icon size={16} />
+        </a>
+      ))}
+    </div>
+  );
+}
+
 export default function TeamPage() {
-  const [hoveredMember, setHoveredMember] = useState(null);
-  const [pageImages, setPageImages] = useState({});
-  const [teamImageMap, setTeamImageMap] = useState({});
+  const [pageImages, setPageImages]   = useState({});
+  const [leadership, setLeadership]   = useState([]);
+  const [loading, setLoading]         = useState(true);
 
   useEffect(() => {
     fetchPageImages().then(setPageImages);
-    fetchTeamImages().then((rows) => {
-      const map = {};
-      rows.forEach(r => { if (r.name) map[r.name] = r.image_url || r.current_url; });
-      setTeamImageMap(map);
-    });
+    fetchTeamImages()
+      .then((rows) => {
+        const members = (rows || []).map((r, i) => ({
+          name:      r.name      || '',
+          role:      r.role      || '',
+          bio:       r.bio       || '',
+          image_url: r.image_url || null,
+          linkedin:  r.linkedin  || '',
+          twitter:   r.twitter   || '',
+          email:     r.email     || '',
+          instagram: r.instagram || '',
+          youtube:   r.youtube   || '',
+          website:   r.website   || '',
+          isFounder: i === 0,
+        })).filter(m => m.name);
+        setLeadership(members);
+      })
+      .catch((err) => console.error('[Team] fetch failed:', err))
+      .finally(() => setLoading(false));
   }, []);
-
-  const leadership = [
-    {
-      name: 'Bundu Henry-Combs Chukwuedo',
-      role: 'Founder, CEO & Operating Officer',
-      image: Profile,
-      bio: 'Visionary leader and founder of Bettitude, driving the mission to revolutionize sports entertainment. Combines entrepreneurial spirit with deep operational expertise to steer the company forward.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'bundu@bettitude.com'
-      }
-    },
-    {
-      name: 'Syed Ali',
-      role: 'DevOps Lead & Project Manager',
-      image: Profile,
-      bio: 'The backbone of Bettitude\'s technical operations. Syed ensures seamless deployment pipelines, infrastructure reliability, and keeps every project delivered on time and on target.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'syed@bettitude.com'
-      }
-    },
-    {
-      name: 'Hallelujah O. Salako',
-      role: 'IT Infrastructure & Operations',
-      image: Profile,
-      bio: 'Keeps the engines running. Hallelujah oversees all IT systems and operational infrastructure, ensuring the platform stays fast, secure, and available around the clock.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'hallelujah@bettitude.com'
-      }
-    },
-    {
-      name: 'Jacobs Dunga',
-      role: 'Chief, Media & Content Analyst',
-      image: Profile,
-      bio: 'The voice behind BettiSports Blog. Jacobs leads all media strategy and content analysis, delivering sharp sports insight and engaging storytelling to fans across the platform.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        email: 'jacobs@bettitude.com'
-      }
-    }
-  ];
 
   const stats = [
     { icon: FiUsers,     value: '15+',  label: 'Team Members' },
@@ -151,74 +148,65 @@ export default function TeamPage() {
             </div>
           </div>
 
-          {/* 
-            Layout: 
-              Row 1 — CEO centred (1 card, max-w-sm centred)
-              Row 2 — remaining 3 cards in a 3-col grid
-          */}
+          {/* Loading state */}
+          {loading && (
+            <div className="flex justify-center py-20">
+              <FiLoader size={32} className="text-[#FFC527] animate-spin" />
+            </div>
+          )}
 
-          {/* CEO — centred hero card */}
-          <div className="flex justify-center mb-8">
-            <div
-              onMouseEnter={() => setHoveredMember(0)}
-              onMouseLeave={() => setHoveredMember(null)}
-              className="group relative w-full max-w-sm bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/40 rounded-3xl overflow-hidden hover:border-[#FFC527] transition-all duration-500 hover:scale-105"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/10 group-hover:to-[#0057B8]/10 transition-all duration-500"></div>
+          {/* First member — centred hero card */}
+          {!loading && leadership.length > 0 && (
+            <div className="flex justify-center mb-8">
+              <div className="group relative w-full max-w-sm bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#FFC527]/40 rounded-3xl overflow-hidden hover:border-[#FFC527] transition-all duration-500 hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/10 group-hover:to-[#0057B8]/10 transition-all duration-500"></div>
 
-              {/* Founder badge */}
-              <div className="absolute top-4 right-4 z-10">
-                <span className="bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wide">
-                  Founder
-                </span>
-              </div>
+                {leadership[0].isFounder && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] text-xs font-black px-3 py-1 rounded-full uppercase tracking-wide">
+                      Founder
+                    </span>
+                  </div>
+                )}
 
-              <div className="relative aspect-square overflow-hidden">
-                <img
-                  src={teamImageMap[leadership[0].name] || leadership[0].image}
-                  alt={leadership[0].name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-60"></div>
-              </div>
-
-              <div className="relative p-8 space-y-4">
-                <div>
-                  <h3 className="text-2xl font-black text-white group-hover:text-[#FFC527] transition-colors duration-300">
-                    {leadership[0].name}
-                  </h3>
-                  <p className="text-[#0057B8] font-bold">{leadership[0].role}</p>
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={leadership[0].image_url || Profile}
+                    alt={leadership[0].name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-60"></div>
                 </div>
-                <p className="text-[#E0E0E0] leading-relaxed">{leadership[0].bio}</p>
-                <div className="flex space-x-3 pt-4">
-                  <a href={leadership[0].social.linkedin} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                    <FiLinkedin />
-                  </a>
-                  <a href={leadership[0].social.twitter} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                    <FiTwitter />
-                  </a>
-                  <a href={`mailto:${leadership[0].social.email}`} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                    <FiMail />
-                  </a>
+
+                <div className="relative p-8 space-y-4">
+                  <div>
+                    <h3 className="text-2xl font-black text-white group-hover:text-[#FFC527] transition-colors duration-300">
+                      {leadership[0].name}
+                    </h3>
+                    <p className="text-[#0057B8] font-bold">{leadership[0].role}</p>
+                  </div>
+                  <p className="text-[#E0E0E0] leading-relaxed">{leadership[0].bio}</p>
+                  <SocialLinks member={leadership[0]} />
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
-          {/* Remaining 3 members */}
+          {/* Remaining members — grid */}
+          {!loading && leadership.length === 0 && (
+            <p className="text-center text-[#E0E0E0]/60 py-10">No team members found.</p>
+          )}
           <div className="grid md:grid-cols-3 gap-8">
             {leadership.slice(1).map((member, index) => (
               <div
-                key={index + 1}
-                onMouseEnter={() => setHoveredMember(index + 1)}
-                onMouseLeave={() => setHoveredMember(null)}
+                key={member.name || index}
                 className="group relative bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-3xl overflow-hidden hover:border-[#FFC527]/50 transition-all duration-500 hover:scale-105"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/10 group-hover:to-[#0057B8]/10 transition-all duration-500"></div>
 
                 <div className="relative aspect-square overflow-hidden">
                   <img
-                    src={teamImageMap[member.name] || member.image}
+                    src={member.image_url || Profile}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -233,17 +221,7 @@ export default function TeamPage() {
                     <p className="text-[#0057B8] font-bold">{member.role}</p>
                   </div>
                   <p className="text-[#E0E0E0] leading-relaxed">{member.bio}</p>
-                  <div className="flex space-x-3 pt-4">
-                    <a href={member.social.linkedin} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                      <FiLinkedin />
-                    </a>
-                    <a href={member.social.twitter} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                      <FiTwitter />
-                    </a>
-                    <a href={`mailto:${member.social.email}`} className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300">
-                      <FiMail />
-                    </a>
-                  </div>
+                  <SocialLinks member={member} />
                 </div>
               </div>
             ))}

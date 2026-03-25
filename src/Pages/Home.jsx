@@ -8,8 +8,8 @@ import Winattitude from '../Components/Winattitude'
 import CareerCTA from '../Components/CareerHome'
 import Video from '../Components/Video'
 import Support from '../Components/Supports'
-import Announcement from '../Components/Announcement;'
 import NewsHome from '../Components/NewsHome'
+import Announcement from '../Components/Announcement;'
 
 
 const Home = () => {
@@ -21,8 +21,8 @@ const Home = () => {
       <Video/>
       <Partnership/>
       <Winattitude/>
-      <NewsHome/>
       <Announcement/>
+      <NewsHome/>
       <CareerCTA/>
       <Support/>
       <Newsletters/>

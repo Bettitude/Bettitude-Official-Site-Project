@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import ScrollToTop from './Components/ScrollToTop'
+import Announcement from './Components/Announcement;'
 
 // Eagerly load Home since it's the landing page
 import Home from './Pages/Home'
@@ -40,6 +41,7 @@ const PageLoader = () => (
 const App = () => {
   return (
     <>
+      {/* <Announcement/> */}
       <Navbar/>
       <Suspense fallback={<PageLoader />}>
         <Routes>

@@ -155,8 +155,12 @@ const SOCIAL_NETWORKS = [
     label: 'Twitter / X',
     icon: FiTwitter,
     color: '#1DA1F2',
-    buildUrl: (article, url) =>
-      `https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(url)}`,
+    buildUrl: (article, url) => {
+      const text = article.excerpt
+        ? `${article.title}\n\n${article.excerpt}`
+        : article.title;
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+    },
   },
   {
     id: 'facebook',
@@ -176,8 +180,12 @@ const SOCIAL_NETWORKS = [
       </svg>
     ),
     color: '#25D366',
-    buildUrl: (article, url) =>
-      `https://wa.me/?text=${encodeURIComponent(`${article.title} ${url}`)}`,
+    buildUrl: (article, url) => {
+      const text = article.excerpt
+        ? `${article.title}\n\n${article.excerpt}\n\n${url}`
+        : `${article.title}\n\n${url}`;
+      return `https://wa.me/?text=${encodeURIComponent(text)}`;
+    },
   },
 ];
 

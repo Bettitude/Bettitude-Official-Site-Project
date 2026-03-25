@@ -7,11 +7,12 @@
 // ============================================================
 
 const SHEET_IDS = {
-  hero:     '1tlNH509j_lwUkDtr1-YHQlbiR7xlLTr-u7EoNp4Vso0',
-  pages:    '1CPuLt8UKuqlc89L0301EO9C9FVp61oMWO4GSEbt0x_s',
-  team:     '1zt7lT_h0CzKdy3ZZq6kcLxyvHj5bvYTv7ZFjCY6qArg',
-  misc:     '1JvGk8Hg9PkRpGyreFYpNBG1nkR1eGRRhh26kNf8TDHU',
-  partners: '1MMD9wqUPELi6ogvNaVBEAK5O8-jqTRlS1hbzNz6DkUs',
+  hero:          '1tlNH509j_lwUkDtr1-YHQlbiR7xlLTr-u7EoNp4Vso0',
+  pages:         '1CPuLt8UKuqlc89L0301EO9C9FVp61oMWO4GSEbt0x_s',
+  team:          '1zt7lT_h0CzKdy3ZZq6kcLxyvHj5bvYTv7ZFjCY6qArg',
+  misc:          '1JvGk8Hg9PkRpGyreFYpNBG1nkR1eGRRhh26kNf8TDHU',
+  partners:      '1MMD9wqUPELi6ogvNaVBEAK5O8-jqTRlS1hbzNz6DkUs',
+  announcements: '1PBiPIbk1Pe6uKfOyXA4fCqHrmftzaoD0XoeGhjoW3JM',
 };
 
 // ── Hardcoded fallback URLs ──────────────────────────────────
@@ -55,8 +56,8 @@ const MISC_FALLBACKS = {
 // ── Core GViz fetch ──────────────────────────────────────────
 
 async function gvizFetch(sheetId) {
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
-  const res = await fetch(url);
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&headers=1&_=${Date.now()}`;
+  const res = await fetch(url, { cache: 'no-store' });
   const text = await res.text();
   const match = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);\s*$/);
   if (!match) throw new Error('Unexpected GViz response');
@@ -91,13 +92,19 @@ async function fetchTeamRows(sheetId) {
     if (!rows) return [];
     return rows.map((row) => {
       const c = row.c;
+      const str = (i) => c?.[i]?.v ? String(c[i].v).trim() : '';
       return {
-        id:          c?.[0]?.v ?? null,
-        name:        String(c?.[1]?.v || ''),
-        role:        String(c?.[2]?.v || ''),
-        bio:         String(c?.[3]?.v || ''),
-        image_url:   c?.[4]?.v ? String(c[4].v).trim() : null,
-        current_url: c?.[5]?.v ? String(c[5].v).trim() : null,
+        id:        c?.[0]?.v ?? null,
+        name:      str(1),
+        role:      str(2),
+        bio:       str(3),
+        image_url: str(4) || null,
+        linkedin:  str(5),
+        twitter:   str(6),
+        email:     str(7),
+        instagram: str(8),
+        youtube:   str(9),
+        website:   str(10),
       };
     }).filter(r => r.name);
   } catch {
@@ -111,17 +118,19 @@ async function fetchPartnerRows(sheetId) {
   try {
     const json = await gvizFetch(sheetId);
     const rows = json.table?.rows;
-    if (!rows) return {};
-    return rows.reduce((acc, row) => {
-      const c       = row.c;
-      const name    = c?.[1]?.v ? String(c[1].v).trim() : null;
-      const logoUrl = c?.[2]?.v ? String(c[2].v).trim() : null;
-      const fallback= c?.[4]?.v ? String(c[4].v).trim() : null;
-      if (name) acc[name] = logoUrl || fallback || null;
-      return acc;
-    }, {});
+    if (!rows) return [];
+    return rows.map((row) => {
+      const c = row.c;
+      const str = (i) => c?.[i]?.v ? String(c[i].v).trim() : '';
+      return {
+        id:          c?.[0]?.v ?? null,
+        name:        str(1),
+        logo_url:    str(2),
+        website_url: str(3),
+      };
+    }).filter(r => r.name);
   } catch {
-    return {};
+    return [];
   }
 }
 
@@ -160,11 +169,20 @@ export async function fetchTeamImages() {
 }
 
 /**
- * Partner name → logo_url map.
- * Returns {} on failure — caller keeps its own hardcoded logos.
+ * Full partner list: [{ id, name, logo_url, website_url }]
+ * Used by the Partnership carousel on the frontend.
+ */
+export async function fetchPartnerList() {
+  return fetchPartnerRows(SHEET_IDS.partners);
+}
+
+/**
+ * @deprecated — kept for backward compatibility.
+ * Prefer fetchPartnerList() for full rows.
  */
 export async function fetchPartnerImages() {
-  return fetchPartnerRows(SHEET_IDS.partners);
+  const rows = await fetchPartnerRows(SHEET_IDS.partners);
+  return rows.reduce((acc, r) => { acc[r.name] = r.logo_url; return acc; }, {});
 }
 
 /**
@@ -178,3 +196,42 @@ export async function fetchMiscImages() {
   }
   return result;
 }
+
+/**
+ * Announcements carousel items.
+ * Sheet columns: A=id, B=label, C=message, D=link_text, E=link_url, F=active (TRUE/FALSE)
+ * Returns array of { id, label, message, linkText, linkUrl }
+ * Rows where active = FALSE are excluded.
+ * Falls back to hardcoded announcements if sheet is unreachable.
+ */
+export async function fetchAnnouncements() {
+  try {
+    const json = await gvizFetch(SHEET_IDS.announcements);
+    const rows = json.table?.rows;
+    if (!rows || rows.length === 0) return ANNOUNCEMENT_FALLBACK;
+    const items = rows.map((row) => {
+      const c = row.c;
+      return {
+        id:       c?.[0]?.v ?? null,
+        label:    c?.[1]?.v ? String(c[1].v).trim() : '',
+        message:  c?.[2]?.v ? String(c[2].v).trim() : '',
+        linkText: c?.[3]?.v ? String(c[3].v).trim() : 'Learn More',
+        linkUrl:  c?.[4]?.v ? String(c[4].v).trim() : '/',
+        active:   c?.[5]?.v !== false && c?.[5]?.v !== 'FALSE',
+      };
+    }).filter(i => i.message && i.active);
+    return items.length > 0 ? items : ANNOUNCEMENT_FALLBACK;
+  } catch {
+    return ANNOUNCEMENT_FALLBACK;
+  }
+}
+
+const ANNOUNCEMENT_FALLBACK = [
+  {
+    label:    'New Feature Alert!',
+    message:  'ProBetpicks now offers live match predictions with 95% accuracy',
+    linkText: 'Learn More',
+    linkUrl:  '/products',
+    active:   true,
+  },
+];

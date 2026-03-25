@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FiTrendingUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { fetchPartnerImages } from "../utils/imageService";
+import { fetchPartnerList } from "../utils/imageService";
 
 export default function Partnership() {
   const scrollRef = useRef(null);
-  const [partnerLogoMap, setPartnerLogoMap] = useState({});
+  const [partners, setPartners] = useState([]);
 
   useEffect(() => {
-    fetchPartnerImages().then(setPartnerLogoMap);
+    fetchPartnerList().then(setPartners);
   }, []);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+    if (!scrollContainer || partners.length === 0) return;
 
     let scrollAmount = 0;
     const scrollSpeed = 0.5;
@@ -28,73 +28,10 @@ export default function Partnership() {
 
     const intervalId = setInterval(scroll, 20);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [partners]);
 
-  const brands = [
-    {
-      name: "Bet365",
-      logo: "https://logo.clearbit.com/bet365.com",
-      category: "Sports Betting",
-      link: "https://www.bet365.com",
-    },
-    {
-      name: "DraftKings",
-      logo: "https://logo.clearbit.com/draftkings.com",
-      category: "Fantasy Sports",
-      link: "https://www.draftkings.com",
-    },
-    {
-      name: "FanDuel",
-      logo: "https://logo.clearbit.com/fanduel.com",
-      category: "Sports Betting",
-      link: "https://www.fanduel.com",
-    },
-    {
-      name: "BetMGM",
-      logo: "https://logo.clearbit.com/betmgm.com",
-      category: "Casino & Sports",
-      link: "https://www.betmgm.com",
-    },
-    {
-      name: "Caesars",
-      logo: "https://logo.clearbit.com/caesars.com",
-      category: "Entertainment",
-      link: "https://www.caesars.com",
-    },
-    {
-      name: "PointsBet",
-      logo: "https://logo.clearbit.com/pointsbet.com",
-      category: "Sports Betting",
-      link: "https://www.pointsbet.com",
-    },
-    {
-      name: "Unibet",
-      logo: "https://logo.clearbit.com/unibet.com",
-      category: "Online Gaming",
-      link: "https://www.unibet.com",
-    },
-    {
-      name: "William Hill",
-      logo: "https://logo.clearbit.com/williamhill.com",
-      category: "Bookmaker",
-      link: "https://www.williamhill.com",
-    },
-    {
-      name: "Paddy Power",
-      logo: "https://logo.clearbit.com/paddypower.com",
-      category: "Sports Betting",
-      link: "https://www.paddypower.com",
-    },
-    {
-      name: "Betway",
-      logo: "https://logo.clearbit.com/betway.com",
-      category: "Online Gaming",
-      link: "https://www.betway.com",
-    },
-  ];
-
-  // Duplicate brands for seamless infinite scroll
-  const duplicatedBrands = [...brands, ...brands];
+  // Duplicate for seamless infinite scroll (need at least 2 copies to loop)
+  const duplicatedPartners = partners.length > 0 ? [...partners, ...partners] : [];
 
   return (
     <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#0B0F19] to-[#0B0F19]/95 overflow-hidden">
@@ -146,38 +83,32 @@ export default function Partnership() {
             className="flex space-x-4 sm:space-x-6 lg:space-x-8 overflow-hidden py-4 sm:py-6 lg:py-8"
             style={{ scrollBehavior: "auto" }}
           >
-            {duplicatedBrands.map((brand, index) => (
+            {duplicatedPartners.map((partner, index) => (
               <a
-                key={index}
-                href={brand.link}
+                key={`${partner.id}-${index}`}
+                href={partner.website_url || '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex-shrink-0 w-48 h-32 sm:w-56 sm:h-36 lg:w-64 lg:h-40 bg-gradient-to-br from-[#0057B8]/10 to-[#0B0F19]/50 backdrop-blur-xl border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 hover:border-[#FFC527]/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-[#0057B8]/20"
               >
-                {/* Glow effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/10 group-hover:to-[#0057B8]/10 rounded-xl sm:rounded-2xl transition-all duration-500"></div>
 
                 <div className="relative h-full flex flex-col items-center justify-center space-y-2 sm:space-y-3 lg:space-y-4">
-                  {/* Logo container */}
                   <div className="relative w-24 h-12 sm:w-28 sm:h-14 lg:w-32 lg:h-16 bg-white rounded-md sm:rounded-lg p-2 sm:p-3 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <img
-                      src={partnerLogoMap[brand.name] || brand.logo}
-                      alt={brand.name}
+                      src={partner.logo_url}
+                      alt={partner.name}
                       loading="lazy"
                       className="max-w-full max-h-full object-contain"
                       onError={(e) => {
-                        e.target.src = `https://ui-avatars.com/api/?name=${brand.name}&background=0057B8&color=fff&size=200&bold=true`;
+                        e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(partner.name)}&background=0057B8&color=fff&size=200&bold=true`;
                       }}
                     />
                   </div>
 
-                  {/* Brand info */}
                   <div className="text-center">
                     <p className="text-white font-bold text-sm sm:text-base lg:text-lg group-hover:text-[#FFC527] transition-colors duration-300">
-                      {brand.name}
-                    </p>
-                    <p className="text-[#E0E0E0] text-xs mt-0.5 sm:mt-1">
-                      {brand.category}
+                      {partner.name}
                     </p>
                   </div>
                 </div>
