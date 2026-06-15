@@ -116,7 +116,7 @@ export default function Whatwedo() {
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/40 rounded-full">
             <div className="w-2 h-2 bg-[#FFC527] rounded-full animate-pulse"></div>
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Services</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Our Services</span>
           </div>
 
           <div className="space-y-3 sm:space-y-4">
@@ -124,7 +124,7 @@ export default function Whatwedo() {
               What We Do
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Best</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed px-4">
               From cutting-edge analytics to premium content production, we deliver comprehensive solutions that keep you ahead of the game
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function Whatwedo() {
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-[#FFC527] transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">
+                <p className="text-[#B0B8C8] leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </p>
 
@@ -169,7 +169,7 @@ export default function Whatwedo() {
                   {service.features.map((feature, idx) => (
                     <div
                       key={idx}
-                      className={`flex items-start space-x-2 text-xs sm:text-sm text-[#E0E0E0] transition-all duration-500 ${
+                      className={`flex items-start space-x-2 text-xs sm:text-sm text-[#B0B8C8] transition-all duration-500 ${
                         activeCard === index ? 'opacity-100' : 'opacity-0 md:opacity-0 md:group-hover:opacity-100'
                       }`}
                       style={{ transitionDelay: `${idx * 100}ms` }}
@@ -203,7 +203,7 @@ export default function Whatwedo() {
               Ready to Experience the 
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Difference?</span>
             </h3>
-            <p className="text-base sm:text-lg text-[#E0E0E0] mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg text-[#B0B8C8] mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
               Join thousands of satisfied users who trust Bettitude for their betting intelligence and sports insights
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">

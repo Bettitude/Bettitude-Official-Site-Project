@@ -169,12 +169,12 @@ export default function BettitudeHero() {
                 </p>
               </div>
               
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] leading-relaxed font-light">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#B0B8C8] leading-relaxed font-light">
                 We at <span className="text-white font-bold">Bettitude</span>, strive and want to provide our viewers, visitors and most of all our subscribers the 
                 <span className="text-[#FFC527] font-semibold"> very best of sports entertainment</span> within our capacity.
               </p>
               
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0]/90 leading-relaxed font-light">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8]/90 leading-relaxed font-light">
                 Our people are all <span className="text-white font-semibold">Sports people</span> but at this point we want to maintain our focus on 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527] font-bold"> Football, soccer or footy</span>, 
                 for everyone where you are and whatever you call the beautiful game.
@@ -189,7 +189,7 @@ export default function BettitudeHero() {
                   className="group px-3 sm:px-4 lg:px-6 py-2 sm:py-2.5 lg:py-3 bg-gradient-to-r from-[#0057B8]/20 to-[#0057B8]/10 backdrop-blur-sm border border-[#0057B8]/40 rounded-full hover:border-[#FFC527]/60 transition-all duration-300 hover:scale-105 text-center"
                   style={{ animationDelay: `${idx * 0.1}s` }}
                 >
-                  <span className="text-[#E0E0E0] group-hover:text-[#FFC527] font-semibold text-xs sm:text-sm transition-colors duration-300">
+                  <span className="text-[#B0B8C8] group-hover:text-[#FFC527] font-semibold text-xs sm:text-sm transition-colors duration-300">
                     {feature}
                   </span>
                 </div>
@@ -228,7 +228,7 @@ export default function BettitudeHero() {
                 </div>
                 <div>
                   <p className="text-white font-black text-lg sm:text-xl lg:text-2xl">250K+</p>
-                  <p className="text-[#E0E0E0] text-xs sm:text-sm">Global Reach</p>
+                  <p className="text-[#B0B8C8] text-xs sm:text-sm">Global Reach</p>
                 </div>
               </div>
               
@@ -241,7 +241,7 @@ export default function BettitudeHero() {
                 </div>
                 <div>
                   <p className="text-white font-black text-lg sm:text-xl lg:text-2xl">50+</p>
-                  <p className="text-[#E0E0E0] text-xs sm:text-sm">Countries</p>
+                  <p className="text-[#B0B8C8] text-xs sm:text-sm">Countries</p>
                 </div>
               </div>
             </div>
@@ -293,7 +293,7 @@ export default function BettitudeHero() {
                         </p>
                         <div className="flex items-center space-x-2 mt-3">
                           <div className="h-1 w-16 bg-gradient-to-r from-[#FFC527] to-transparent rounded-full"></div>
-                          <p className="text-[#E0E0E0] text-sm">{item.subtitle}</p>
+                          <p className="text-[#B0B8C8] text-sm">{item.subtitle}</p>
                         </div>
                       </div>
                     ))}
@@ -307,7 +307,7 @@ export default function BettitudeHero() {
                         className={`transition-all duration-500 rounded-full ${
                           index === currentFeatureImage 
                             ? 'h-12 w-3 bg-gradient-to-b from-[#FFC527] to-[#ffb700] shadow-lg shadow-[#FFC527]/50' 
-                            : 'h-3 w-3 bg-[#E0E0E0]/30 hover:bg-[#E0E0E0]/60'
+                            : 'h-3 w-3 bg-[#B0B8C8]/30 hover:bg-[#B0B8C8]/60'
                         }`}
                       />
                     ))}
@@ -336,7 +336,7 @@ export default function BettitudeHero() {
             className={`transition-all duration-500 rounded-full ${
               index === currentSlide 
                 ? 'w-12 sm:w-16 h-2 sm:h-3 bg-gradient-to-r from-[#FFC527] to-[#ffb700] shadow-lg shadow-[#FFC527]/50' 
-                : 'w-2 sm:w-3 h-2 sm:h-3 bg-[#E0E0E0]/30 hover:bg-[#E0E0E0]/60'
+                : 'w-2 sm:w-3 h-2 sm:h-3 bg-[#B0B8C8]/30 hover:bg-[#B0B8C8]/60'
             }`}
           />
         ))}

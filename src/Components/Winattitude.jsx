@@ -103,7 +103,7 @@ export default function Winattitude() {
 
           {/* Description */}
           <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6 px-4">
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#B0B8C8] leading-relaxed">
               At Bettitude, we believe in winning with the right mindset.
               Whether it's
               <span className="text-[#FFC527] font-semibold"> attitude</span> or
@@ -135,7 +135,7 @@ export default function Winattitude() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Winning Mindset
                 </h3>
-                <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">
                   Cultivate the attitude of a champion with data-driven insights
                   and expert guidance
                 </p>
@@ -163,7 +163,7 @@ export default function Winattitude() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Smart Strategies
                 </h3>
-                <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">
                   Win with Bettitude by leveraging our proven algorithms and
                   expert analysis
                 </p>
@@ -191,7 +191,7 @@ export default function Winattitude() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Consistent Results
                 </h3>
-                <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">
                   Transform your attitude into success with our comprehensive
                   betting intelligence
                 </p>
@@ -213,7 +213,7 @@ export default function Winattitude() {
       </div>
 
       {/* Bottom decorative line */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#0057B8] via-[#FFC527] to-[#0057B8]"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-[#0057B8] via-[#00C853] to-[#FFC527]"></div>
     </section>
   );
 }

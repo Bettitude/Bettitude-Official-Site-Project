@@ -216,7 +216,7 @@ const ServicesPage = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 border border-[#0057B8]/50 rounded-full mb-6">
             <FiTarget className="text-[#FFC527]" />
-            <span className="text-[#E0E0E0] font-semibold">Our Services</span>
+            <span className="text-[#B0B8C8] font-semibold">Our Services</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
@@ -227,7 +227,7 @@ const ServicesPage = () => {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#E0E0E0] max-w-4xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-[#B0B8C8] max-w-4xl mx-auto mb-10">
             From cutting-edge analytics to premium content production, we deliver end-to-end solutions that help you stay ahead in the world of sports data and entertainment.
           </p>
 
@@ -255,7 +255,7 @@ const ServicesPage = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             What We <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Offer</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
             Tailored solutions designed to meet the unique needs of sports enthusiasts, betting professionals, and gaming operators.
           </p>
         </div>
@@ -285,11 +285,11 @@ const ServicesPage = () => {
                     </div>
                   </div>
 
-                  <p className="text-[#E0E0E0] text-lg leading-relaxed">
+                  <p className="text-[#B0B8C8] text-lg leading-relaxed">
                     {service.description}
                   </p>
 
-                  <p className="text-[#9CA3AF] leading-relaxed">
+                  <p className="text-[#B0B8C8] leading-relaxed">
                     {service.longDescription}
                   </p>
 
@@ -298,7 +298,7 @@ const ServicesPage = () => {
                     {service.stats.map((stat, idx) => (
                       <div key={idx} className="text-center">
                         <div className="text-2xl sm:text-3xl font-black text-[#FFC527]">{stat.value}</div>
-                        <div className="text-xs sm:text-sm text-[#E0E0E0]">{stat.label}</div>
+                        <div className="text-xs sm:text-sm text-[#B0B8C8]">{stat.label}</div>
                       </div>
                     ))}
                   </div>
@@ -319,7 +319,7 @@ const ServicesPage = () => {
                           <FiCheck className="text-[#FFC527] mt-1 flex-shrink-0" />
                           <div>
                             <h4 className="text-white font-semibold text-sm">{feature.title}</h4>
-                            <p className="text-[#9CA3AF] text-xs mt-1">{feature.desc}</p>
+                            <p className="text-[#B0B8C8] text-xs mt-1">{feature.desc}</p>
                           </div>
                         </div>
                       </div>
@@ -347,7 +347,7 @@ const ServicesPage = () => {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
               Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Bettitude</span>
             </h2>
-            <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+            <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
               What sets us apart in the sports data and analytics industry
             </p>
           </div>
@@ -362,7 +362,7 @@ const ServicesPage = () => {
                   <item.icon className="text-3xl text-[#0B0F19]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-[#E0E0E0] text-sm">{item.description}</p>
+                <p className="text-[#B0B8C8] text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -375,7 +375,7 @@ const ServicesPage = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Ready to Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Started?</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto mb-8">
             Let's discuss how Bettitude can help you achieve your goals. Book a free consultation with our team today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

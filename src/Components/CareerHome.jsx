@@ -35,7 +35,7 @@ export default function CareerCTA() {
               <div className="space-y-4 sm:space-y-6">
                 <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
                   <FiBriefcase className="text-[#FFC527] text-xs sm:text-sm" />
-                  <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Join Our Team</span>
+                  <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Join Our Team</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">
@@ -46,7 +46,7 @@ export default function CareerCTA() {
                   </span>
                 </h2>
 
-                <p className="text-base sm:text-lg lg:text-xl text-[#E0E0E0] leading-relaxed">
+                <p className="text-base sm:text-lg lg:text-xl text-[#B0B8C8] leading-relaxed">
                   Join a passionate team building the future of sports entertainment. We're looking for talented individuals across multiple departments and sports divisions.
                 </p>
               </div>
@@ -60,7 +60,7 @@ export default function CareerCTA() {
                       9+
                     </p>
                   </div>
-                  <p className="text-[#E0E0E0] font-semibold text-xs sm:text-sm md:text-base">Open Positions</p>
+                  <p className="text-[#B0B8C8] font-semibold text-xs sm:text-sm md:text-base">Open Positions</p>
                 </div>
 
                 <div className="bg-[#0057B8]/10 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl p-4 sm:p-6">
@@ -70,7 +70,7 @@ export default function CareerCTA() {
                       50+
                     </p>
                   </div>
-                  <p className="text-[#E0E0E0] font-semibold text-xs sm:text-sm md:text-base">Team Members</p>
+                  <p className="text-[#B0B8C8] font-semibold text-xs sm:text-sm md:text-base">Team Members</p>
                 </div>
               </div>
 
@@ -111,7 +111,7 @@ export default function CareerCTA() {
                       className="group bg-[#0057B8]/10 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl p-4 sm:p-5 hover:border-[#FFC527]/50 hover:bg-[#0057B8]/20 transition-all duration-300"
                     >
                       <p className="text-[#FFC527] font-bold mb-1.5 sm:mb-2 text-sm sm:text-base">{dept.title}</p>
-                      <p className="text-[#E0E0E0] text-xs sm:text-sm">{dept.items}</p>
+                      <p className="text-[#B0B8C8] text-xs sm:text-sm">{dept.items}</p>
                     </div>
                   ))}
                 </div>
@@ -130,7 +130,7 @@ export default function CareerCTA() {
                     'Skill development opportunities',
                     'Remote & flexible options'
                   ].map((benefit, idx) => (
-                    <li key={idx} className="flex items-center space-x-2.5 sm:space-x-3 text-[#E0E0E0]">
+                    <li key={idx} className="flex items-center space-x-2.5 sm:space-x-3 text-[#B0B8C8]">
                       <div className="w-4 h-4 sm:w-5 sm:h-5 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded flex items-center justify-center flex-shrink-0">
                         <span className="text-[#0B0F19] text-[10px] sm:text-xs font-bold">✓</span>
                       </div>

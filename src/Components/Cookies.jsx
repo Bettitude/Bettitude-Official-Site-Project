@@ -61,7 +61,7 @@ const Cookies = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 py-12 sm:py-16 lg:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
             <FaCookie className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Legal Policy</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Legal Policy</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
@@ -72,7 +72,7 @@ const Cookies = () => {
             Bettitude Inc.
           </p>
 
-          <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+          <p className="text-sm sm:text-base text-[#B0B8C8]/80">
             Effective Date: November, 2025
           </p>
 
@@ -90,7 +90,7 @@ const Cookies = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-[#FFC527]/0 to-[#FFC527]/0 group-hover:from-[#FFC527]/5 group-hover:to-[#0057B8]/5 rounded-2xl sm:rounded-3xl transition-all duration-500"></div>
           
           <div className="relative">
-            <p className="text-base sm:text-lg text-[#E0E0E0] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#B0B8C8] leading-relaxed">
               This Cookie Policy explains what cookies are, how Bettitude Inc.
               ("Bettitude," "We," "Us") uses cookies and similar technologies on our
               websites (Bettitude.com, BettiScores.com, ProbetPicks.com, etc.) and
@@ -113,7 +113,7 @@ const Cookies = () => {
                 What Are Cookies?
               </h2>
             </div>
-            <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
               Cookies are small text files placed on your computer, tablet, or
               mobile phone when you visit a website. They help websites function
               properly, remember preferences, and collect analytics to improve user
@@ -144,7 +144,7 @@ const Cookies = () => {
               ].map((item, i) => (
                 <li key={i} className="flex items-start group/item">
                   <div className="w-2 h-2 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-full mr-3 mt-2 flex-shrink-0 group-hover/item:scale-125 transition-transform duration-300"></div>
-                  <span className="text-sm sm:text-base lg:text-lg text-[#E0E0E0]">{item}</span>
+                  <span className="text-sm sm:text-base lg:text-lg text-[#B0B8C8]">{item}</span>
                 </li>
               ))}
             </ul>
@@ -181,10 +181,10 @@ const Cookies = () => {
                       {cookie.category}
                     </h3>
                     <div className="space-y-2">
-                      <p className="text-sm sm:text-base text-[#E0E0E0]">
+                      <p className="text-sm sm:text-base text-[#B0B8C8]">
                         <span className="text-[#FFC527] font-semibold">Purpose:</span> {cookie.purpose}
                       </p>
-                      <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+                      <p className="text-sm sm:text-base text-[#B0B8C8]/80">
                         <span className="text-[#FFC527] font-semibold">Control:</span> {cookie.control}
                       </p>
                     </div>
@@ -219,10 +219,10 @@ const Cookies = () => {
                         <td className="p-4 lg:p-5 font-semibold text-white text-sm lg:text-base">
                           {cookie.category}
                         </td>
-                        <td className="p-4 lg:p-5 text-[#E0E0E0] text-sm lg:text-base">
+                        <td className="p-4 lg:p-5 text-[#B0B8C8] text-sm lg:text-base">
                           {cookie.purpose}
                         </td>
-                        <td className="p-4 lg:p-5 text-[#E0E0E0] text-sm lg:text-base">
+                        <td className="p-4 lg:p-5 text-[#B0B8C8] text-sm lg:text-base">
                           {cookie.control}
                         </td>
                       </tr>
@@ -247,7 +247,7 @@ const Cookies = () => {
                 Third-Party Cookies
               </h2>
             </div>
-            <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
               We use third-party services like analytics providers, advertising
               networks, affiliate partners, and social media platforms. These third
               parties may set their own cookies. We recommend reviewing their
@@ -270,7 +270,7 @@ const Cookies = () => {
               </h2>
             </div>
             
-            <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] mb-6 sm:mb-8">
+            <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] mb-6 sm:mb-8">
               You can manage your cookie preferences using:
             </p>
 
@@ -279,7 +279,7 @@ const Cookies = () => {
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
                   A. Cookie Preference Center
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                   On your first visit, you can accept or reject non-essential cookies.
                   You can change preferences anytime through the Cookie Settings link in
                   the footer.
@@ -290,7 +290,7 @@ const Cookies = () => {
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-3 sm:mb-4">
                   B. Browser Controls
                 </h3>
-                <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                   You can set your browser to block or delete cookies. Note that this
                   may affect website functionality.
                 </p>
@@ -312,7 +312,7 @@ const Cookies = () => {
                 Changes to This Policy
               </h2>
             </div>
-            <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
               We may update this policy periodically. Changes will be posted on this
               page with an updated Effective Date.
             </p>
@@ -334,7 +334,7 @@ const Cookies = () => {
             </div>
             
             <div className="space-y-4 sm:space-y-5">
-              <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0]">
+              <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8]">
                 <span className="text-white font-semibold">Email:</span>{" "}
                 <a
                   href="mailto:legal@bettitude.com"
@@ -343,14 +343,14 @@ const Cookies = () => {
                   legal@bettitude.com
                 </a>
               </p>
-              <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0]">
+              <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8]">
                 <span className="text-white font-semibold">Mailing Address:</span>{" "}
                 Bettitude Inc., Legal Department, 58 Berrigan Rd, Miandetta, Tas 7320, AUS
               </p>
             </div>
             
             <div className="mt-8 pt-6 border-t border-[#0057B8]/30 text-center">
-              <p className="text-xs sm:text-sm text-[#E0E0E0]/80">
+              <p className="text-xs sm:text-sm text-[#B0B8C8]/80">
                 © {new Date().getFullYear()} Bettitude Inc. All rights reserved.
               </p>
             </div>

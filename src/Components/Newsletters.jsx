@@ -61,7 +61,7 @@ export default function Newsletters() {
           <div className="space-y-4">
             <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 border border-[#FFC527]/50 rounded-full">
               <FiMail className="text-[#FFC527] text-xs sm:text-sm" />
-              <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Stay Connected</span>
+              <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Stay Connected</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight px-4">
@@ -72,7 +72,7 @@ export default function Newsletters() {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg lg:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-[#B0B8C8] max-w-2xl mx-auto px-4">
               Stay up-to-date with Bettitude and co.
             </p>
 
@@ -86,7 +86,7 @@ export default function Newsletters() {
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-center space-x-3 bg-[#FFC527]/10 border border-[#FFC527]/30 rounded-xl p-4 hover:border-[#FFC527]/50 hover:bg-[#FFC527]/15 transition-all duration-300">
                 <benefit.icon className="text-[#FFC527] text-xl sm:text-2xl flex-shrink-0" />
-                <span className="text-[#E0E0E0] text-sm sm:text-base text-left">{benefit.text}</span>
+                <span className="text-[#B0B8C8] text-sm sm:text-base text-left">{benefit.text}</span>
               </div>
             ))}
           </div>
@@ -98,7 +98,7 @@ export default function Newsletters() {
               <label className="block text-white font-semibold text-sm sm:text-base text-left">Your Email Address</label>
 
               <div className="relative">
-                <FiMail className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-[#E0E0E0]/50 text-lg sm:text-xl" />
+                <FiMail className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 text-[#B0B8C8]/50 text-lg sm:text-xl" />
                 <input
                   type="email"
                   name="EMAIL"
@@ -106,7 +106,7 @@ export default function Newsletters() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="Enter your email address"
-                  className="w-full pl-12 sm:pl-14 pr-4 sm:pr-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#FFC527]/50 rounded-xl text-white placeholder:text-[#E0E0E0]/50 focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
+                  className="w-full pl-12 sm:pl-14 pr-4 sm:pr-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#FFC527]/50 rounded-xl text-white placeholder:text-[#B0B8C8]/50 focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
                 />
               </div>
 
@@ -115,7 +115,7 @@ export default function Newsletters() {
                 disabled={subscribeStatus === 'loading' || subscribeStatus === 'success'}
                 className={`group w-full flex items-center justify-center space-x-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 ${
                   subscribeStatus === 'success'
-                    ? 'bg-green-500 text-white'
+                    ? 'bg-[#00C853] text-white'
                     : 'bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105'
                 }`}
               >
@@ -141,7 +141,7 @@ export default function Newsletters() {
                 )}
               </button>
 
-              <p className="text-xs sm:text-sm text-[#E0E0E0]/70 text-center">
+              <p className="text-xs sm:text-sm text-[#B0B8C8]/70 text-center">
                 We respect your privacy. Unsubscribe anytime.
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function Newsletters() {
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                     Join Our Telegram Channel
                   </h3>
-                  <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+                  <p className="text-sm sm:text-base text-[#B0B8C8]/80">
                     Get instant updates, tips & exclusive content
                   </p>
                 </div>
@@ -189,7 +189,7 @@ export default function Newsletters() {
         <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
           Join Our WhatsApp Community
         </h3>
-        <p className="text-sm sm:text-base text-[#E0E0E0]/80">
+        <p className="text-sm sm:text-base text-[#B0B8C8]/80">
           Get instant updates, tips & exclusive offers
         </p>
       </div>
@@ -219,7 +219,7 @@ export default function Newsletters() {
                 </div>
               ))}
             </div>
-            <span className="text-[#E0E0E0] text-sm sm:text-base font-medium">
+            <span className="text-[#B0B8C8] text-sm sm:text-base font-medium">
               Join 10,000+ subscribers
             </span>
           </div>

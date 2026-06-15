@@ -177,7 +177,7 @@ export default function Sponsorship() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 border border-[#0057B8]/50 rounded-full mb-6">
             <FiHeart className="text-[#FFC527]" />
-            <span className="text-[#E0E0E0] font-semibold text-sm">Partner With Us</span>
+            <span className="text-[#B0B8C8] font-semibold text-sm">Partner With Us</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
@@ -188,7 +188,7 @@ export default function Sponsorship() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#E0E0E0] max-w-3xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-[#B0B8C8] max-w-3xl mx-auto mb-10">
             Join forces with Bettitude and unlock exclusive opportunities to grow your brand in the sports analytics industry.
           </p>
 
@@ -216,7 +216,7 @@ export default function Sponsorship() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Why Partner with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Bettitude</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
             Discover the advantages of becoming a strategic partner in the sports analytics ecosystem
           </p>
         </div>
@@ -233,7 +233,7 @@ export default function Sponsorship() {
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#FFC527] transition-colors duration-300">
                 {benefit.title}
               </h3>
-              <p className="text-[#E0E0E0] text-sm">{benefit.description}</p>
+              <p className="text-[#B0B8C8] text-sm">{benefit.description}</p>
             </div>
           ))}
         </div>
@@ -246,7 +246,7 @@ export default function Sponsorship() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
               Partnership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Opportunities</span>
             </h2>
-            <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+            <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
               Multiple ways to collaborate and grow together
             </p>
           </div>
@@ -261,7 +261,7 @@ export default function Sponsorship() {
                   <type.icon className="text-2xl text-[#FFC527]" />
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">{type.title}</h3>
-                <p className="text-sm text-[#E0E0E0]">{type.description}</p>
+                <p className="text-sm text-[#B0B8C8]">{type.description}</p>
               </div>
             ))}
           </div>
@@ -274,7 +274,7 @@ export default function Sponsorship() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Sponsorship <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Tiers</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
             Choose the partnership level that aligns with your goals and budget
           </p>
         </div>
@@ -302,7 +302,7 @@ export default function Sponsorship() {
                 {tier.benefits.map((benefit, idx) => (
                   <li key={idx} className="flex items-start space-x-2">
                     <FiCheck className="text-[#FFC527] mt-1 flex-shrink-0 text-sm" />
-                    <span className="text-sm text-[#E0E0E0]">{benefit}</span>
+                    <span className="text-sm text-[#B0B8C8]">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -328,7 +328,7 @@ export default function Sponsorship() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
               Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Partner Up</span>
             </h2>
-            <p className="text-lg text-[#E0E0E0]">
+            <p className="text-lg text-[#B0B8C8]">
               Tell us about your organization and partnership interests
             </p>
           </div>

@@ -153,7 +153,7 @@ export default function Appointment() {
         <div className="text-center space-y-6 mb-16">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiCalendar className="text-[#FFC527] text-sm" />
-            <span className="text-[#E0E0E0] text-sm font-semibold">
+            <span className="text-[#B0B8C8] text-sm font-semibold">
               Book Your Session
             </span>
           </div>
@@ -166,7 +166,7 @@ export default function Appointment() {
             </span>
           </h1>
 
-          <p className="text-xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed">
             Let's discuss how our services can help elevate your sports betting
             experience
           </p>
@@ -213,7 +213,7 @@ export default function Appointment() {
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start space-x-3">
                     <item.icon className="text-[#FFC527] text-xl flex-shrink-0 mt-1" />
-                    <span className="text-[#E0E0E0]">{item.text}</span>
+                    <span className="text-[#B0B8C8]">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -225,15 +225,15 @@ export default function Appointment() {
               </h3>
 
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-[#E0E0E0]">
+                <div className="flex items-center space-x-3 text-[#B0B8C8]">
                   <FiMail className="text-[#FFC527] text-xl" />
                   <span>support@bettitude.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-[#E0E0E0]">
+                <div className="flex items-center space-x-3 text-[#B0B8C8]">
                   <FiPhone className="text-[#FFC527] text-xl" />
                   <span>+61 412 877 500</span>
                 </div>
-                <div className="flex items-center space-x-3 text-[#E0E0E0]">
+                <div className="flex items-center space-x-3 text-[#B0B8C8]">
                   <FiClock className="text-[#FFC527] text-xl" />
                   <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
                 </div>
@@ -246,7 +246,7 @@ export default function Appointment() {
                 <h3 className="text-2xl font-black text-white mb-3">
                   Need Help?
                 </h3>
-                <p className="text-[#E0E0E0] mb-4">
+                <p className="text-[#B0B8C8] mb-4">
                   Our support team is available to assist you with any questions
                   about our services.
                 </p>
@@ -271,7 +271,7 @@ export default function Appointment() {
                 <h3 className="text-3xl font-black text-white">
                   Appointment Booked!
                 </h3>
-                <p className="text-[#E0E0E0] text-lg">
+                <p className="text-[#B0B8C8] text-lg">
                   Thank you! We've received your appointment request and will
                   send you a confirmation email shortly.
                 </p>
@@ -299,7 +299,7 @@ export default function Appointment() {
 
                 {/* Name Input */}
                 <div className="space-y-2">
-                  <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                  <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                     <FiUser className="text-[#FFC527]" />
                     <span>Full Name</span>
                   </label>
@@ -310,14 +310,14 @@ export default function Appointment() {
                     onChange={handleChange}
                     required
                     disabled={submitStatus === "loading"}
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#B0B8C8]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="John Doe"
                   />
                 </div>
 
                 {/* Email Input */}
                 <div className="space-y-2">
-                  <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                  <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                     <FiMail className="text-[#FFC527]" />
                     <span>Email Address</span>
                   </label>
@@ -328,14 +328,14 @@ export default function Appointment() {
                     onChange={handleChange}
                     required
                     disabled={submitStatus === "loading"}
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#B0B8C8]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="john@example.com"
                   />
                 </div>
 
                 {/* Phone Input */}
                 <div className="space-y-2">
-                  <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                  <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                     <FiPhone className="text-[#FFC527]" />
                     <span>Phone Number</span>
                   </label>
@@ -361,7 +361,7 @@ export default function Appointment() {
                       onChange={handleChange}
                       required
                       disabled={submitStatus === "loading"}
-                      className="flex-1 px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="flex-1 px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#B0B8C8]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                       placeholder="412 877 500"
                     />
                   </div>
@@ -369,7 +369,7 @@ export default function Appointment() {
 
                 {/* Service Selection */}
                 <div className="space-y-2">
-                  <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                  <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                     <FiMessageSquare className="text-[#FFC527]" />
                     <span>Service Type</span>
                   </label>
@@ -397,7 +397,7 @@ export default function Appointment() {
                 {/* Date and Time Row */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                    <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                       <FiCalendar className="text-[#FFC527]" />
                       <span>Date</span>
                     </label>
@@ -413,7 +413,7 @@ export default function Appointment() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                    <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                       <FiClock className="text-[#FFC527]" />
                       <span>Time</span>
                     </label>
@@ -437,7 +437,7 @@ export default function Appointment() {
 
                 {/* Message Textarea */}
                 <div className="space-y-2">
-                  <label className="text-[#E0E0E0] font-semibold flex items-center space-x-2">
+                  <label className="text-[#B0B8C8] font-semibold flex items-center space-x-2">
                     <FiMessageSquare className="text-[#FFC527]" />
                     <span>Additional Message (Optional)</span>
                   </label>
@@ -447,7 +447,7 @@ export default function Appointment() {
                     onChange={handleChange}
                     rows="4"
                     disabled={submitStatus === "loading"}
-                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#E0E0E0]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full px-4 py-3 bg-[#0057B8]/10 border border-[#0057B8]/30 rounded-xl text-white placeholder-[#B0B8C8]/50 focus:border-[#FFC527]/50 focus:outline-none transition-all duration-300 resize-none disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Tell us more about your needs..."
                   ></textarea>
                 </div>

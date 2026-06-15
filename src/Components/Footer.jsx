@@ -35,7 +35,8 @@ export default function Footer() {
       { name: 'BettiSportsblog', href: 'https://BettiSportsblog.com', external: true },
       { name: 'ProBetPicks', href: 'https://ProBetPicks.com', external: true },
       { name: 'BettiScores', href: 'https://BettiScores.com', external: true },
-      { name: 'SportsDisandDat', href: 'https://www.sportsdisanddat.com', external: true }
+      { name: 'SportsDisandDat', href: 'https://www.sportsdisanddat.com', external: true },
+      { name: 'BettiFantasy Games', href: 'https://btfantasyfootball.com', external: true }
     ],
     services: [
   { name: 'Betting Analytics', href: '/services#analytics' },
@@ -114,7 +115,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#0B0F19] border-t border-[#0057B8]/30">
       {/* Decorative top line */}
-      <div className="h-1 bg-gradient-to-r from-[#0057B8] via-[#FFC527] to-[#0057B8]"></div>
+      <div className="h-1 bg-gradient-to-r from-[#0057B8] via-[#00C853] to-[#FFC527]"></div>
 
       {/* Scroll to top button */}
       <button
@@ -147,27 +148,27 @@ export default function Footer() {
               <img src={Betlogo} alt="" loading="lazy" className='h-[50px]' />
             </Link>
 
-            <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">
+            <p className="text-[#B0B8C8] leading-relaxed text-sm sm:text-base">
               Your trusted partner for sports data technology, sports analytics and sports media. We bring data driven insight and content  to help you stay ontop of the game.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:hello@bettitude.com" className="flex items-center space-x-3 text-[#E0E0E0] hover:text-[#FFC527] transition-colors group">
+              <a href="mailto:hello@bettitude.com" className="flex items-center space-x-3 text-[#B0B8C8] hover:text-[#FFC527] transition-colors group">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg flex items-center justify-center group-hover:bg-[#0057B8]/40 group-hover:border-[#FFC527]/50 transition-all duration-300">
                   <FiMail className="text-[#FFC527] text-base sm:text-lg" />
                 </div>
                 <span className="text-sm sm:text-base">hello@bettitude.com</span>
               </a>
 
-              <a href="tel:+61412877500" className="flex items-center space-x-3 text-[#E0E0E0] hover:text-[#FFC527] transition-colors group">
+              <a href="tel:+61412877500" className="flex items-center space-x-3 text-[#B0B8C8] hover:text-[#FFC527] transition-colors group">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg flex items-center justify-center group-hover:bg-[#0057B8]/40 group-hover:border-[#FFC527]/50 transition-all duration-300">
                   <FiPhone className="text-[#FFC527] text-base sm:text-lg" />
                 </div>
                 <span className="text-sm sm:text-base">+61 412 877 500</span>
               </a>
 
-              <div className="flex items-start space-x-3 text-[#E0E0E0]">
+              <div className="flex items-start space-x-3 text-[#B0B8C8]">
                 <div className="w-9 h-9 sm:w-10 sm:h-10 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg flex items-center justify-center flex-shrink-0">
                   <FiMapPin className="text-[#FFC527] text-base sm:text-lg" />
                 </div>
@@ -206,7 +207,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-[#E0E0E0] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
+                    className="text-[#B0B8C8] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
                   >
                     {link.name}
                   </a>
@@ -228,7 +229,7 @@ export default function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
-                    className="text-[#E0E0E0] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
+                    className="text-[#B0B8C8] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
                   >
                     {link.name}
                   </a>
@@ -248,7 +249,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-[#E0E0E0] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
+                    className="text-[#B0B8C8] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
                   >
                     {link.name}
                   </a>
@@ -268,7 +269,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-[#E0E0E0] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
+                    className="text-[#B0B8C8] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
                   >
                     {link.name}
                   </a>
@@ -288,7 +289,7 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-[#E0E0E0] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
+                    className="text-[#B0B8C8] hover:text-[#FFC527] hover:translate-x-1 transition-all duration-300 inline-block text-sm sm:text-base"
                   >
                     {link.name}
                   </a>
@@ -307,7 +308,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg sm:text-xl">Stay Ahead of the Game</h3>
-                <p className="text-[#E0E0E0] text-sm sm:text-base">Get weekly predictions and exclusive insights</p>
+                <p className="text-[#B0B8C8] text-sm sm:text-base">Get weekly predictions and exclusive insights</p>
               </div>
             </div>
             <a
@@ -328,7 +329,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-white font-bold text-lg sm:text-xl">Download Our App</h3>
-                <p className="text-[#E0E0E0] text-sm sm:text-base">Get the full Bettitude experience on mobile</p>
+                <p className="text-[#B0B8C8] text-sm sm:text-base">Get the full Bettitude experience on mobile</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
@@ -346,7 +347,7 @@ export default function Footer() {
                   <path d="M21.39 12c0-.388-.14-.756-.452-.976l-3.382-2.792L13.792 12l3.764 3.768 3.382-2.792c.312-.22.452-.588.452-.976z" fill="#FBBC04"/>
                 </svg>
                 <div className="text-left">
-                  <p className="text-[#E0E0E0] text-[10px] sm:text-xs leading-none">GET IT ON</p>
+                  <p className="text-[#B0B8C8] text-[10px] sm:text-xs leading-none">GET IT ON</p>
                   <p className="text-white font-bold text-sm sm:text-base leading-tight">Google Play</p>
                 </div>
               </a>
@@ -362,7 +363,7 @@ export default function Footer() {
                   <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                 </svg>
                 <div className="text-left">
-                  <p className="text-[#E0E0E0] text-[10px] sm:text-xs leading-none">Download on the</p>
+                  <p className="text-[#B0B8C8] text-[10px] sm:text-xs leading-none">Download on the</p>
                   <p className="text-white font-bold text-sm sm:text-base leading-tight">App Store</p>
                 </div>
               </a>
@@ -373,7 +374,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[#0057B8]/30 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
-            <p className="text-[#E0E0E0] text-xs sm:text-sm text-center md:text-left">
+            <p className="text-[#B0B8C8] text-xs sm:text-sm text-center md:text-left">
               © {new Date().getFullYear()} Bettitude. All rights reserved. 
               <span className="inline-flex items-center ml-2 flex-wrap justify-center">
                 Made with <FiHeart className="text-[#FFC527] mx-1" /> for sports enthusiasts
@@ -383,17 +384,17 @@ export default function Footer() {
             {/* Trust Badges */}
             <div className="flex items-center flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
               <div className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg">
-                <span className="text-[#E0E0E0] text-xs font-semibold">🔒 SSL Secured</span>
+                <span className="text-[#B0B8C8] text-xs font-semibold">🔒 SSL Secured</span>
               </div>
               <div className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg">
-                <span className="text-[#E0E0E0] text-xs font-semibold">✓ Verified</span>
+                <span className="text-[#B0B8C8] text-xs font-semibold">✓ Verified</span>
               </div>
             </div>
           </div>
 
           {/* Responsible Gaming Notice */}
           <div className="mt-5 sm:mt-6 p-3 sm:p-4 bg-[#FFC527]/10 backdrop-blur-sm border border-[#FFC527]/30 rounded-lg">
-            <p className="text-[#E0E0E0] text-xs text-center leading-relaxed">
+            <p className="text-[#B0B8C8] text-xs text-center leading-relaxed">
               <strong className="text-[#FFC527]">Responsible Gaming:</strong> Betting should be fun and entertaining. 
               Please gamble responsibly and only bet what you can afford to lose. If you need help, visit BeGambleAware.org
             </p>

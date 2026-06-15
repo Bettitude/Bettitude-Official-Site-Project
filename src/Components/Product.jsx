@@ -168,7 +168,7 @@ export default function Product() {
         <div className="text-center space-y-4 sm:space-y-6 mb-12 sm:mb-16 lg:mb-20">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiTrendingUp className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Ecosystem</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Our Ecosystem</span>
           </div>
 
           <div className="space-y-3 sm:space-y-4">
@@ -176,7 +176,7 @@ export default function Product() {
               Explore Our
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Products</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed px-4">
               A comprehensive suite of tools designed to enhance your betting experience and keep you ahead of the competition
             </p>
           </div>
@@ -217,7 +217,7 @@ export default function Product() {
                     </div>
                   </div>
 
-                  <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base lg:text-lg">
+                  <p className="text-[#B0B8C8] leading-relaxed text-sm sm:text-base lg:text-lg">
                     {product.description}
                   </p>
                 </div>
@@ -235,7 +235,7 @@ export default function Product() {
                         className="flex items-start space-x-2 sm:space-x-3"
                       >
                         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#FFC527] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                        <span className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base">{highlight}</span>
+                        <span className="text-[#B0B8C8] leading-relaxed text-sm sm:text-base">{highlight}</span>
                       </div>
                     ))}
                   </div>
@@ -274,7 +274,7 @@ export default function Product() {
                           <div className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2">
                             {stat.value}
                           </div>
-                          <div className="text-[10px] sm:text-xs text-[#E0E0E0] font-medium leading-tight">
+                          <div className="text-[10px] sm:text-xs text-[#B0B8C8] font-medium leading-tight">
                             {stat.label}
                           </div>
                         </div>

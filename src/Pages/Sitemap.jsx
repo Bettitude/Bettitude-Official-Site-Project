@@ -95,14 +95,14 @@ export default function Sitemap() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 py-12 sm:py-16 lg:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
             <FiBook className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Site Navigation</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Site Navigation</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
             Sitemap
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed px-4">
             Navigate through all pages and sections of Bettitude
           </p>
 
@@ -146,7 +146,7 @@ export default function Sitemap() {
                             <h3 className="text-base sm:text-lg font-bold text-white group-hover/link:text-[#FFC527] transition-colors duration-300 mb-1">
                               {link.name}
                             </h3>
-                            <p className="text-xs sm:text-sm text-[#E0E0E0]/70 leading-relaxed">
+                            <p className="text-xs sm:text-sm text-[#B0B8C8]/70 leading-relaxed">
                               {link.description}
                             </p>
                           </div>
@@ -172,7 +172,7 @@ export default function Sitemap() {
               Can't Find What You're
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Looking For?</span>
             </h2>
-            <p className="text-sm sm:text-base text-[#E0E0E0] max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-[#B0B8C8] max-w-2xl mx-auto">
               Our team is here to help. Reach out to us directly for any questions or concerns.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4">
@@ -209,7 +209,7 @@ export default function Sitemap() {
               <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700] mb-2">
                 {stat.number}
               </div>
-              <div className="text-xs sm:text-sm text-[#E0E0E0] font-semibold">
+              <div className="text-xs sm:text-sm text-[#B0B8C8] font-semibold">
                 {stat.label}
               </div>
             </div>

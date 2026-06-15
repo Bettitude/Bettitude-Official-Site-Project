@@ -65,10 +65,10 @@ const markdownComponents = {
     <strong className="font-bold text-white">{children}</strong>
   ),
   em: ({ children }) => (
-    <em className="italic text-[#E0E0E0]">{children}</em>
+    <em className="italic text-[#B0B8C8]">{children}</em>
   ),
   blockquote: ({ children }) => (
-    <blockquote className="border-l-4 border-[#FFC527] pl-5 my-6 italic text-[#E0E0E0]/75 leading-relaxed">
+    <blockquote className="border-l-4 border-[#FFC527] pl-5 my-6 italic text-[#B0B8C8]/75 leading-relaxed">
       {children}
     </blockquote>
   ),
@@ -76,13 +76,13 @@ const markdownComponents = {
     <ul className="my-4 space-y-2">{children}</ul>
   ),
   ol: ({ children }) => (
-    <ol className="my-4 space-y-2 list-decimal list-inside text-[#E0E0E0]">{children}</ol>
+    <ol className="my-4 space-y-2 list-decimal list-inside text-[#B0B8C8]">{children}</ol>
   ),
   li: ({ children, ordered }) => (
     ordered ? (
-      <li className="text-[#E0E0E0] leading-relaxed pl-1">{children}</li>
+      <li className="text-[#B0B8C8] leading-relaxed pl-1">{children}</li>
     ) : (
-      <li className="flex items-start gap-2 text-[#E0E0E0] leading-relaxed">
+      <li className="flex items-start gap-2 text-[#B0B8C8] leading-relaxed">
         <span className="text-[#FFC527] font-bold mt-0.5 flex-shrink-0">•</span>
         <span>{children}</span>
       </li>
@@ -101,7 +101,7 @@ const markdownComponents = {
     </a>
   ),
   p: ({ children }) => (
-    <p className="text-[#E0E0E0] leading-relaxed mb-5 text-base sm:text-lg">{children}</p>
+    <p className="text-[#B0B8C8] leading-relaxed mb-5 text-base sm:text-lg">{children}</p>
   ),
 };
 
@@ -242,7 +242,7 @@ const ShareDropdown = ({ article, onClose }) => {
           <button
             key={network.id}
             onClick={() => handleSocialShare(network)}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#E0E0E0] hover:bg-[#0057B8]/20 hover:text-white transition-all duration-200 text-sm font-medium"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#B0B8C8] hover:bg-[#0057B8]/20 hover:text-white transition-all duration-200 text-sm font-medium"
           >
             <span style={{ color: network.color }}>
               <network.icon size={16} />
@@ -257,7 +257,7 @@ const ShareDropdown = ({ article, onClose }) => {
         {/* Copy link */}
         <button
           onClick={handleCopy}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#E0E0E0] hover:bg-[#0057B8]/20 hover:text-white transition-all duration-200 text-sm font-medium"
+          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#B0B8C8] hover:bg-[#0057B8]/20 hover:text-white transition-all duration-200 text-sm font-medium"
         >
           <span className={copied ? 'text-green-400' : 'text-[#FFC527]'}>
             {copied ? <FiCheck size={16} /> : <FiLink size={16} />}
@@ -287,7 +287,7 @@ const ShareButton = ({ article, stopPropagation = false }) => {
       <button
         onClick={handleClick}
         title="Share article"
-        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#0057B8]/20 border border-[#0057B8]/40 text-[#E0E0E0] hover:bg-[#FFC527]/20 hover:border-[#FFC527]/60 hover:text-[#FFC527] transition-all duration-300 text-xs font-semibold"
+        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#0057B8]/20 border border-[#0057B8]/40 text-[#B0B8C8] hover:bg-[#FFC527]/20 hover:border-[#FFC527]/60 hover:text-[#FFC527] transition-all duration-300 text-xs font-semibold"
       >
         <FiShare2 size={13} />
         Share
@@ -437,16 +437,16 @@ const News = () => {
 
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-4 mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-[#0057B8]/30">
-                <div className="flex items-center space-x-2 text-[#E0E0E0]/70">
+                <div className="flex items-center space-x-2 text-[#B0B8C8]/70">
                   <FiClock className="text-[#FFC527]" />
                   <span className="text-sm">{selectedArticle.date}</span>
                 </div>
-                <span className="text-[#E0E0E0]/70">•</span>
-                <span className="text-sm text-[#E0E0E0]/70">{selectedArticle.readTime}</span>
+                <span className="text-[#B0B8C8]/70">•</span>
+                <span className="text-sm text-[#B0B8C8]/70">{selectedArticle.readTime}</span>
                 {selectedArticle.author && (
                   <>
-                    <span className="text-[#E0E0E0]/70">•</span>
-                    <span className="text-sm text-[#E0E0E0]/70">By {selectedArticle.author}</span>
+                    <span className="text-[#B0B8C8]/70">•</span>
+                    <span className="text-sm text-[#B0B8C8]/70">By {selectedArticle.author}</span>
                   </>
                 )}
               </div>
@@ -531,7 +531,7 @@ const News = () => {
               Bettitude Organisation
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> News & Insights</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-3xl mx-auto px-4">
               Stay updated and Up-To-Date with the latest about Bettitude, Our Ecosystem, Products, Services, Insights and around Sports Business world as a whole
             </p>
           </div>
@@ -551,7 +551,7 @@ const News = () => {
                 className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 whitespace-nowrap ${
                   activeTab === category
                     ? 'bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] shadow-lg shadow-[#FFC527]/50'
-                    : 'bg-[#0057B8]/10 text-[#E0E0E0] border border-[#0057B8]/30 hover:border-[#FFC527]/50 hover:text-white'
+                    : 'bg-[#0057B8]/10 text-[#B0B8C8] border border-[#0057B8]/30 hover:border-[#FFC527]/50 hover:text-white'
                 }`}
               >
                 {category}
@@ -598,7 +598,7 @@ const News = () => {
                     <h3 className="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#FFC527] transition-colors leading-tight">
                       {article.title}
                     </h3>
-                    <p className="text-[#E0E0E0] text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
+                    <p className="text-[#B0B8C8] text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
                       {article.excerpt}
                     </p>
                   </div>
@@ -606,7 +606,7 @@ const News = () => {
 
                 {/* Meta + Share row (outside the main button to avoid nesting) */}
                 <div className="px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6">
-                  <div className="flex items-center justify-between text-[10px] sm:text-xs text-[#E0E0E0]/70 pt-3 sm:pt-4 border-t border-[#0057B8]/30">
+                  <div className="flex items-center justify-between text-[10px] sm:text-xs text-[#B0B8C8]/70 pt-3 sm:pt-4 border-t border-[#0057B8]/30">
                     <div className="flex items-center space-x-2 sm:space-x-3">
                       <div className="flex items-center space-x-1">
                         <FiClock className="text-[#FFC527]" />
@@ -624,7 +624,7 @@ const News = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-[#E0E0E0] text-lg">No news articles found in this category.</p>
+              <p className="text-[#B0B8C8] text-lg">No news articles found in this category.</p>
             </div>
           )}
         </div>

@@ -34,7 +34,7 @@ export default function BettitudeNavbar() {
     return (
       <a
         href={href}
-        className="group relative px-5 py-3 flex items-center space-x-2 text-[#E0E0E0] font-medium rounded-xl overflow-hidden transition-all duration-300 hover:text-[#FFFFFF]"
+        className="group relative px-5 py-3 flex items-center space-x-2 text-[#B0B8C8] font-medium rounded-xl overflow-hidden transition-all duration-300 hover:text-[#FFFFFF]"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#0057B8]/0 via-[#0057B8]/20 to-[#0057B8]/0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform -skew-x-12"></div>
         <div className="relative">
@@ -56,9 +56,9 @@ export default function BettitudeNavbar() {
       >
         <div className="relative">
           <div className="absolute inset-0 bg-[#FFC527] blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-300"></div>
-          <Icon className="relative text-2xl text-[#E0E0E0] group-hover:text-[#FFC527] transition-colors duration-300" />
+          <Icon className="relative text-2xl text-[#B0B8C8] group-hover:text-[#FFC527] transition-colors duration-300" />
         </div>
-        <span className="text-lg font-semibold text-[#E0E0E0] group-hover:text-[#FFFFFF] transition-colors duration-300">
+        <span className="text-lg font-semibold text-[#B0B8C8] group-hover:text-[#FFFFFF] transition-colors duration-300">
           {children}
         </span>
         <FiArrowRight className="ml-auto text-[#0057B8] group-hover:text-[#FFC527] group-hover:translate-x-1 transition-all duration-300" />
@@ -75,7 +75,7 @@ export default function BettitudeNavbar() {
       }`}
     >
       {/* Top accent line */}
-      <div className="h-1 bg-gradient-to-r from-[#0057B8] via-[#FFC527] to-[#0057B8]"></div>
+      <div className="h-1 bg-gradient-to-r from-[#0057B8] via-[#00C853] to-[#FFC527]"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">

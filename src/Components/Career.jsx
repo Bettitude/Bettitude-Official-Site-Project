@@ -81,7 +81,7 @@ export default function CareerFullPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center space-y-8 py-30">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiUsers className="text-[#FFC527] text-sm" />
-            <span className="text-[#E0E0E0] text-sm font-semibold">Join Our Team</span>
+            <span className="text-[#B0B8C8] text-sm font-semibold">Join Our Team</span>
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight">
@@ -92,7 +92,7 @@ export default function CareerFullPage() {
             </span>
           </h1>
 
-          <p className="text-xl lg:text-2xl text-[#E0E0E0] max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-[#B0B8C8] max-w-4xl mx-auto leading-relaxed">
             Apply for various Corporate Positions such as Marketer, Influencer, Analyst, Accounting, etc AND divisional Roles in Sports such as… Soccer/football | Basketball | Cricket | Aussie rules | gridiron/NFL, etc.
           </p>
 
@@ -124,7 +124,7 @@ export default function CareerFullPage() {
             <h2 className="text-4xl lg:text-5xl font-black text-white">
               Available Positions
             </h2>
-            <p className="text-xl text-[#E0E0E0]">Explore opportunities across multiple departments</p>
+            <p className="text-xl text-[#B0B8C8]">Explore opportunities across multiple departments</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -152,7 +152,7 @@ export default function CareerFullPage() {
             <h2 className="text-4xl lg:text-5xl font-black text-white">
               Why Work With Us?
             </h2>
-            <p className="text-xl text-[#E0E0E0]">Benefits that empower your growth</p>
+            <p className="text-xl text-[#B0B8C8]">Benefits that empower your growth</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -168,7 +168,7 @@ export default function CareerFullPage() {
                     <benefit.icon className="text-[#0B0F19] text-3xl" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{benefit.title}</h3>
-                  <p className="text-[#E0E0E0] leading-relaxed">{benefit.description}</p>
+                  <p className="text-[#B0B8C8] leading-relaxed">{benefit.description}</p>
                 </div>
               </div>
             ))}
@@ -194,7 +194,7 @@ export default function CareerFullPage() {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Talk with us</span>
                 </h3>
                 
-                <p className="text-lg text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed">
+                <p className="text-lg text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed">
                   We are available to have a chat and schedule a good time that will suit you. Digital meetings can be hosted by us via Zoom application or Microsoft Teams once a good time is reached and agreed upon. Please endeavor to have supporting documents required for the recruitment process.
                 </p>
               </div>
@@ -226,7 +226,7 @@ export default function CareerFullPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
-              <span className="text-[#E0E0E0] text-sm font-semibold">How It Works</span>
+              <span className="text-[#B0B8C8] text-sm font-semibold">How It Works</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-white">
               Learn Our
@@ -265,7 +265,7 @@ export default function CareerFullPage() {
                       <h3 className="text-2xl font-bold text-white group-hover:text-[#FFC527] transition-colors duration-300">
                         {step.title}
                       </h3>
-                      <p className="text-[#E0E0E0] leading-relaxed">
+                      <p className="text-[#B0B8C8] leading-relaxed">
                         {step.description}
                       </p>
                     </div>

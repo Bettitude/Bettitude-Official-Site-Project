@@ -124,7 +124,7 @@ export default function About() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 lg:space-y-8 py-12 sm:py-16 lg:py-20">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiTarget className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">About Bettitude Inc.</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">About Bettitude Inc.</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight px-4">
@@ -137,7 +137,7 @@ export default function About() {
             transparent and entertaining insights
           </p>
 
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8] max-w-4xl mx-auto leading-relaxed px-4">
             through sports data technology for analytics and engaging media. Bettitude Inc. is a leading sports data technology company dedicated to transforming the way fans engage with sports through the power of statistics, content, and entertainment. Reaching over 50,000+ users every month, our platforms create unmissable experiences through market-leading editorial, data, analytics, and AI-powered insights.
           </p>
 
@@ -165,7 +165,7 @@ export default function About() {
                   <p className="text-2xl sm:text-3xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
                     {stat.value}
                   </p>
-                  <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">{stat.label}</p>
+                  <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] font-semibold">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -183,15 +183,15 @@ export default function About() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Story</span>
               </h2>
               
-              <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                 Our journey began modestly in <span className="text-[#FFC527] font-bold">2016</span> as a one-page side project, driven by a passion for understanding the "why" behind sporting outcomes and a belief that data could make sports more enjoyable and rewarding for everyone.
               </p>
 
-              <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                 Over the years, Bettitude has evolved from a simple concept into a <span className="text-white font-semibold">robust and advanced project</span>. We have completely rebuilt our platforms, moving beyond older designs to create a seamless and modern user experience (UX) and user interface (UI) that are built on the latest technologies.
               </p>
 
-              <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                 This evolution has been fueled by a deep commitment to innovation, leveraging <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527] font-bold">real-time data from powerful APIs</span> and integrating sophisticated Artificial Intelligence (AI) and predictive modeling. Our technology is designed not just to present information, but to generate insights and make sports more accessible and interactive for our community.
               </p>
             </div>
@@ -200,22 +200,22 @@ export default function About() {
               <div className="bg-gradient-to-br from-[#0057B8]/20 to-transparent backdrop-blur-sm border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[#FFC527]/50 transition-all duration-300">
                 <FiCode className="text-[#FFC527] text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4" />
                 <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">Modern Tech Stack</h3>
-                <p className="text-[#E0E0E0] text-xs sm:text-sm">Built on latest technologies with seamless UX/UI</p>
+                <p className="text-[#B0B8C8] text-xs sm:text-sm">Built on latest technologies with seamless UX/UI</p>
               </div>
               <div className="bg-gradient-to-br from-[#FFC527]/20 to-transparent backdrop-blur-sm border border-[#FFC527]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[#0057B8]/50 transition-all duration-300 mt-4 sm:mt-6 lg:mt-8">
                 <FiCpu className="text-[#0057B8] text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4" />
                 <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">AI-Powered</h3>
-                <p className="text-[#E0E0E0] text-xs sm:text-sm">Sophisticated AI and predictive modeling</p>
+                <p className="text-[#B0B8C8] text-xs sm:text-sm">Sophisticated AI and predictive modeling</p>
               </div>
               <div className="bg-gradient-to-br from-[#FFC527]/20 to-transparent backdrop-blur-sm border border-[#FFC527]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[#0057B8]/50 transition-all duration-300 -mt-2 sm:-mt-4">
                 <FiBarChart2 className="text-[#0057B8] text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4" />
                 <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">Real-Time Data</h3>
-                <p className="text-[#E0E0E0] text-xs sm:text-sm">Powered by advanced APIs for live insights</p>
+                <p className="text-[#B0B8C8] text-xs sm:text-sm">Powered by advanced APIs for live insights</p>
               </div>
               <div className="bg-gradient-to-br from-[#0057B8]/20 to-transparent backdrop-blur-sm border border-[#0057B8]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-[#FFC527]/50 transition-all duration-300 mt-2 sm:mt-4">
                 <FiGlobe className="text-[#FFC527] text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4" />
                 <h3 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">Global Reach</h3>
-                <p className="text-[#E0E0E0] text-xs sm:text-sm">Serving users across 50+ countries</p>
+                <p className="text-[#B0B8C8] text-xs sm:text-sm">Serving users across 50+ countries</p>
               </div>
             </div>
           </div>
@@ -234,13 +234,13 @@ export default function About() {
           <div className="text-center mb-12 sm:mb-16 lg:mb-20 space-y-4 sm:space-y-6">
             <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
               <FiTarget className="text-[#FFC527] text-xs sm:text-sm" />
-              <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Vision</span>
+              <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Our Vision</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white px-4 leading-tight">
               To become the world's most
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> trusted and entertaining platform</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-[#B0B8C8] max-w-3xl mx-auto px-4">
               for sports predictions intelligence, entertainment and fan engagement
             </p>
           </div>
@@ -259,7 +259,7 @@ export default function About() {
                   Our Value Proposition
                 </h3>
                 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#E0E0E0] leading-relaxed max-w-3xl mx-auto">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#B0B8C8] leading-relaxed max-w-3xl mx-auto">
                   We combine <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700] font-bold">API & AI-driven analytics</span>, expert insights, and deep sports data to give bettors a <span className="text-white font-semibold">competitive edge</span>
                 </p>
 
@@ -276,7 +276,7 @@ export default function About() {
               {/* Our Services & */}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Our Services</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8] max-w-3xl mx-auto px-4">
               Creating value for users, subscribers, and followers through our flagship products
             </p>
           </div>
@@ -294,7 +294,7 @@ export default function About() {
                     <service.icon className="text-[#0B0F19] text-lg sm:text-xl lg:text-2xl" />
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">{service.description}</p>
+                  <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">{service.description}</p>
                 </div>
               </div>
             ))}
@@ -315,7 +315,7 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white">
               Our Journey
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0]">Building excellence, one milestone at a time</p>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8]">Building excellence, one milestone at a time</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
@@ -331,7 +331,7 @@ export default function About() {
                     {item.year}
                   </div>
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">{item.description}</p>
+                  <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -344,7 +344,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16 space-y-3 sm:space-y-4">
             <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
-              <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">FAQ</span>
+              <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">FAQ</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white px-4">
               BETTITUDE Help Desk:
@@ -376,7 +376,7 @@ export default function About() {
                   } overflow-hidden`}
                 >
                   <div className="px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6">
-                    <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] leading-relaxed">{faq.answer}</p>
+                    <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               </div>

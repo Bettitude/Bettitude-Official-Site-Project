@@ -65,7 +65,7 @@ const NewsHome = () => {
               Organization News &
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Insights</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-2xl mx-auto px-4">
               Stay updated with the latest football news, match analysis, and exclusive stories from around the world
             </p>
           </div>
@@ -114,12 +114,12 @@ const NewsHome = () => {
                   <h3 className="text-base sm:text-lg font-bold text-white mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#FFC527] transition-colors leading-tight">
                     {article.title}
                   </h3>
-                  <p className="text-[#E0E0E0] text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
+                  <p className="text-[#B0B8C8] text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2 leading-relaxed">
                     {article.excerpt}
                   </p>
 
                   {/* Meta Info */}
-                  <div className="flex items-center justify-between text-[10px] sm:text-xs text-[#E0E0E0]/70 pt-3 sm:pt-4 border-t border-[#0057B8]/30">
+                  <div className="flex items-center justify-between text-[10px] sm:text-xs text-[#B0B8C8]/70 pt-3 sm:pt-4 border-t border-[#0057B8]/30">
                     <div className="flex items-center space-x-2 sm:space-x-3">
                       <div className="flex items-center space-x-1">
                         <FiClock className="text-[#FFC527]" />

@@ -120,7 +120,7 @@ const Partner = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 lg:space-y-8 py-12 sm:py-16 lg:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
             <FaHandshake className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Partnership Opportunities</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Partnership Opportunities</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight px-4">
@@ -133,7 +133,7 @@ const Partner = () => {
             Together
           </p>
 
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8] max-w-4xl mx-auto leading-relaxed px-4">
             Join us in transforming how fans engage with sports through the power of data,  and entertainment. Partner with a company reaching 5000+ users monthly across 50+ countries.
           </p>
 
@@ -151,7 +151,7 @@ const Partner = () => {
               Partnership
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Benefits</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8] max-w-3xl mx-auto">
               Discover the advantages of partnering with Bettitude Inc.
             </p>
           </div>
@@ -171,7 +171,7 @@ const Partner = () => {
                       <Icon className="text-[#0B0F19] text-lg sm:text-xl lg:text-2xl" />
                     </div>
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">{benefit.title}</h3>
-                    <p className="text-sm sm:text-base text-[#E0E0E0] leading-relaxed">{benefit.description}</p>
+                    <p className="text-sm sm:text-base text-[#B0B8C8] leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               );
@@ -190,14 +190,14 @@ const Partner = () => {
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 sm:mb-6">
                   Get in Touch
                 </h2>
-                <p className="text-sm sm:text-base text-[#E0E0E0] mb-6 sm:mb-8">
+                <p className="text-sm sm:text-base text-[#B0B8C8] mb-6 sm:mb-8">
                   Fill out the form below and our partnership team will reach out to you within 24-48 hours.
                 </p>
 
                 <div className="space-y-4 sm:space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                      <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                         Full Name *
                       </label>
                       <div className="relative">
@@ -207,14 +207,14 @@ const Partner = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
                           placeholder="John Doe"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                      <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                         Email Address *
                       </label>
                       <div className="relative">
@@ -224,7 +224,7 @@ const Partner = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
                           placeholder="john@company.com"
                         />
                       </div>
@@ -233,7 +233,7 @@ const Partner = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                      <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                         Company Name *
                       </label>
                       <div className="relative">
@@ -243,14 +243,14 @@ const Partner = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
                           placeholder="Your Company"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                      <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                         Phone Number
                       </label>
                       <div className="relative">
@@ -260,7 +260,7 @@ const Partner = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
+                          className="w-full pl-11 sm:pl-12 pr-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all text-sm sm:text-base"
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
@@ -268,7 +268,7 @@ const Partner = () => {
                   </div>
 
                   <div>
-                    <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                    <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                       Partnership Type *
                     </label>
                     <select
@@ -285,7 +285,7 @@ const Partner = () => {
                   </div>
 
                   <div>
-                    <label className="block text-[#E0E0E0] font-semibold mb-2 text-sm sm:text-base">
+                    <label className="block text-[#B0B8C8] font-semibold mb-2 text-sm sm:text-base">
                       Message *
                     </label>
                     <textarea
@@ -293,7 +293,7 @@ const Partner = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="5"
-                      className="w-full px-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all resize-none text-sm sm:text-base"
+                      className="w-full px-4 py-2.5 sm:py-3 bg-[#0B0F19]/50 border border-[#0057B8]/30 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 focus:ring-2 focus:ring-[#FFC527] focus:border-transparent outline-none transition-all resize-none text-sm sm:text-base"
                       placeholder="Tell us about your interest in partnering with Bettitude..."
                     ></textarea>
                   </div>
@@ -359,12 +359,12 @@ const Partner = () => {
                           {info.link ? (
                             <a 
                               href={info.link}
-                              className="text-[#E0E0E0] hover:text-[#FFC527] transition-colors text-xs sm:text-sm break-all"
+                              className="text-[#B0B8C8] hover:text-[#FFC527] transition-colors text-xs sm:text-sm break-all"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="text-[#E0E0E0] text-xs sm:text-sm">{info.value}</p>
+                            <p className="text-[#B0B8C8] text-xs sm:text-sm">{info.value}</p>
                           )}
                         </div>
                       </div>
@@ -382,7 +382,7 @@ const Partner = () => {
                 <h3 className="text-xl sm:text-2xl font-black text-white mb-3 sm:mb-4">
                   Quick Response
                 </h3>
-                <p className="text-[#E0E0E0] mb-3 sm:mb-4 text-sm sm:text-base">
+                <p className="text-[#B0B8C8] mb-3 sm:mb-4 text-sm sm:text-base">
                   Our partnership team typically responds within 24-48 hours during business days.
                 </p>
                 <div className="inline-flex items-center space-x-2 px-3 py-1.5 bg-[#FFC527]/20 backdrop-blur-sm border border-[#FFC527]/50 rounded-full">
@@ -399,7 +399,7 @@ const Partner = () => {
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[#FFC527] to-[#ffb700] rounded-lg sm:rounded-xl mx-auto">
                   <FaTrophy className="text-[#0B0F19] text-xl sm:text-2xl" />
                 </div>
-                <p className="text-[#E0E0E0] text-xs sm:text-sm leading-relaxed">
+                <p className="text-[#B0B8C8] text-xs sm:text-sm leading-relaxed">
                   Join <span className="text-[#FFC527] font-bold">5000+</span> users and <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527] font-bold">leading brands</span> in our global sports community.
                 </p>
               </div>

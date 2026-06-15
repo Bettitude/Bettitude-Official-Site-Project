@@ -138,7 +138,7 @@ const FooterService = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 border border-[#0057B8]/50 rounded-full">
             <FiTarget className="text-[#FFC527]" />
-            <span className="text-[#E0E0E0] font-semibold">What We Do</span>
+            <span className="text-[#B0B8C8] font-semibold">What We Do</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white">
@@ -149,7 +149,7 @@ const FooterService = () => {
             </span>
           </h1>
 
-          <p className="text-lg text-[#E0E0E0] max-w-4xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-4xl mx-auto">
             Transforming sports data into actionable insights through advanced AI,
             comprehensive analytics, and cutting-edge technology solutions
           </p>
@@ -178,7 +178,7 @@ const FooterService = () => {
                   </div>
                 </div>
 
-                <p className="text-[#E0E0E0] text-lg">{service.description}</p>
+                <p className="text-[#B0B8C8] text-lg">{service.description}</p>
 
                 <div>
                   <h3 className="text-white font-bold flex items-center mb-3">
@@ -191,7 +191,7 @@ const FooterService = () => {
                         className="flex items-start space-x-2 bg-[#0B0F19]/40 border border-[#0057B8]/20 rounded-lg p-3"
                       >
                         <span className="w-2 h-2 mt-2 bg-[#FFC527] rounded-full" />
-                        <span className="text-sm text-[#E0E0E0]">{feature}</span>
+                        <span className="text-sm text-[#B0B8C8]">{feature}</span>
                       </div>
                     ))}
                   </div>

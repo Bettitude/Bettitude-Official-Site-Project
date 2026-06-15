@@ -125,7 +125,7 @@ export default function Contact() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-8 py-12 sm:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiMail className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">
               Get In Touch
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function Contact() {
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg md:text-xl text-[#B0B8C8] max-w-3xl mx-auto px-4">
             We're here to help! Choose the best way to connect with us
           </p>
 
@@ -180,7 +180,7 @@ export default function Contact() {
                     <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white group-hover:text-[#FFC527] transition-colors duration-300">
                       {info.title}
                     </h3>
-                    <p className="text-[#E0E0E0] leading-relaxed text-sm sm:text-base min-h-[50px] sm:min-h-[60px]">
+                    <p className="text-[#B0B8C8] leading-relaxed text-sm sm:text-base min-h-[50px] sm:min-h-[60px]">
                       {info.description}
                     </p>
                   </div>
@@ -214,7 +214,7 @@ export default function Contact() {
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white">
                     Send Us a Message
                   </h2>
-                  <p className="text-[#E0E0E0] text-sm sm:text-base">
+                  <p className="text-[#B0B8C8] text-sm sm:text-base">
                     Fill out the form below and we'll get back to you as soon as
                     possible
                   </p>
@@ -231,7 +231,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="Enter your full name"
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
                       required
                     />
                   </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email address"
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300"
                       required
                     />
                   </div>
@@ -261,7 +261,7 @@ export default function Contact() {
                       onChange={handleChange}
                       rows="5"
                       placeholder="Tell us how we can help you..."
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#E0E0E0]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300 resize-none"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-[#0B0F19]/80 border-2 border-[#0057B8]/50 rounded-lg sm:rounded-xl text-white placeholder-[#B0B8C8]/50 text-sm sm:text-base focus:border-[#FFC527] focus:outline-none transition-colors duration-300 resize-none"
                       required
                     />
                   </div>
@@ -273,7 +273,7 @@ export default function Contact() {
                     }
                     className={`group w-full flex items-center justify-center space-x-2 px-6 sm:px-8 py-4 sm:py-5 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 ${
                       submitStatus === "success"
-                        ? "bg-green-500 text-white"
+                        ? "bg-[#00C853] text-white"
                         : "bg-gradient-to-r from-[#FFC527] to-[#ffb700] text-[#0B0F19] hover:shadow-2xl hover:shadow-[#FFC527]/50 hover:scale-105"
                     }`}
                   >
@@ -308,7 +308,7 @@ export default function Contact() {
                   <h3 className="text-xl sm:text-2xl font-bold text-white">
                     Follow Us
                   </h3>
-                  <p className="text-[#E0E0E0] text-sm sm:text-base">
+                  <p className="text-[#B0B8C8] text-sm sm:text-base">
                     Stay connected on social media for the latest updates
                   </p>
 
@@ -320,7 +320,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={social.label}
-                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
+                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#B0B8C8] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
                       >
                         <social.icon className="text-xl sm:text-2xl" />
                       </a>
@@ -349,7 +349,7 @@ export default function Contact() {
                           <p className="text-white font-semibold text-sm sm:text-base">
                             {item.label}
                           </p>
-                          <p className="text-[#E0E0E0] text-xs sm:text-sm">
+                          <p className="text-[#B0B8C8] text-xs sm:text-sm">
                             {item.text}
                           </p>
                         </div>
@@ -369,7 +369,7 @@ export default function Contact() {
                     <p className="text-white font-bold text-base sm:text-lg">
                       Quick Response
                     </p>
-                    <p className="text-[#E0E0E0] text-xs sm:text-sm">
+                    <p className="text-[#B0B8C8] text-xs sm:text-sm">
                       We typically respond within 24 hours
                     </p>
                   </div>

@@ -145,7 +145,7 @@ export default function Service() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6 lg:space-y-8 py-12 sm:py-21 lg:py-30">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <div className="w-2 h-2 bg-[#FFC527] rounded-full animate-pulse"></div>
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">Our Services</span>
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">Our Services</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight px-4">
@@ -158,7 +158,7 @@ export default function Service() {
             Combined!
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-[#E0E0E0] max-w-3xl mx-auto px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-2xl text-[#B0B8C8] max-w-3xl mx-auto px-4">
             Check out our products and discover how we're revolutionizing the sports entertainment experience
           </p>
 
@@ -254,7 +254,7 @@ export default function Service() {
                   <p className={`text-lg sm:text-xl lg:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${service.color}`}>
                     {service.tagline}
                   </p>
-                  <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] leading-relaxed">
+                  <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] leading-relaxed">
                     {service.description}
                   </p>
                 </div>
@@ -267,14 +267,14 @@ export default function Service() {
                       className="flex items-start space-x-2 bg-[#0057B8]/10 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl p-3 sm:p-4 hover:border-[#FFC527]/50 transition-all duration-300"
                     >
                       <FiCheckCircle className="text-[#FFC527] text-base sm:text-lg flex-shrink-0 mt-0.5" />
-                      <span className="text-[#E0E0E0] text-xs sm:text-sm font-medium">{feature}</span>
+                      <span className="text-[#B0B8C8] text-xs sm:text-sm font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Social Links */}
                 <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
-                  <span className="text-[#E0E0E0] text-sm sm:text-base font-semibold">Connect:</span>
+                  <span className="text-[#B0B8C8] text-sm sm:text-base font-semibold">Connect:</span>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     {service.social.map((social, idx) => (
                       <a
@@ -282,7 +282,7 @@ export default function Service() {
                         href={social.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#B0B8C8] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
                       >
                         <social.icon className="text-base sm:text-xl" />
                       </a>
@@ -326,7 +326,7 @@ export default function Service() {
                 </span>
               </h3>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#E0E0E0] max-w-2xl mx-auto px-4">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#B0B8C8] max-w-2xl mx-auto px-4">
                 Join thousands of sports enthusiasts experiencing the future of sports media and betting intelligence
               </p>
 
@@ -347,7 +347,7 @@ export default function Service() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
+                    className="w-12 h-12 sm:w-14 sm:h-14 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/30 rounded-lg sm:rounded-xl flex items-center justify-center text-[#B0B8C8] hover:text-[#FFC527] hover:border-[#FFC527]/50 hover:scale-110 transition-all duration-300"
                   >
                     <social.icon className="text-lg sm:text-xl lg:text-2xl" />
                   </a>

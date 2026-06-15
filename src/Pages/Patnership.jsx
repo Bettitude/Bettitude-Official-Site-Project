@@ -45,7 +45,7 @@ export default function Partnership() {
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiTrendingUp className="text-[#FFC527] text-xs sm:text-sm" />
-            <span className="text-[#E0E0E0] text-xs sm:text-sm font-semibold">
+            <span className="text-[#B0B8C8] text-xs sm:text-sm font-semibold">
               Trusted Partnerships
             </span>
           </div>
@@ -59,7 +59,7 @@ export default function Partnership() {
                 Best
               </span>
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-[#B0B8C8] max-w-2xl mx-auto">
               We collaborate with industry-leading brands to bring you the most
               reliable betting insights and premium experiences
             </p>
@@ -123,7 +123,7 @@ export default function Partnership() {
             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
               3+
             </p>
-            <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">
+            <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] font-semibold">
               Global Partners
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function Partnership() {
             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
               50+
             </p>
-            <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">
+            <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] font-semibold">
               Markets Covered
             </p>
           </div>
@@ -141,7 +141,7 @@ export default function Partnership() {
             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
               24/7
             </p>
-            <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">
+            <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] font-semibold">
               Live Support
             </p>
           </div>
@@ -150,7 +150,7 @@ export default function Partnership() {
             <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
               100%
             </p>
-            <p className="text-xs sm:text-sm lg:text-base text-[#E0E0E0] font-semibold">
+            <p className="text-xs sm:text-sm lg:text-base text-[#B0B8C8] font-semibold">
               Secure Platform
             </p>
           </div>

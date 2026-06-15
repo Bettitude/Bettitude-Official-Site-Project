@@ -24,7 +24,7 @@ function SocialLinks({ member }) {
           href={href(member[key])}
           target={key === 'email' ? undefined : '_blank'}
           rel="noopener noreferrer"
-          className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#E0E0E0] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300"
+          className="w-10 h-10 bg-[#0057B8]/20 rounded-lg flex items-center justify-center text-[#B0B8C8] hover:text-[#FFC527] hover:bg-[#0057B8]/40 transition-all duration-300"
         >
           <Icon size={16} />
         </a>
@@ -86,7 +86,7 @@ export default function TeamPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center space-y-8 py-30">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/50 rounded-full">
             <FiUsers className="text-[#FFC527] text-sm" />
-            <span className="text-[#E0E0E0] text-sm font-semibold">Meet The Team</span>
+            <span className="text-[#B0B8C8] text-sm font-semibold">Meet The Team</span>
           </div>
 
           <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight">
@@ -97,7 +97,7 @@ export default function TeamPage() {
             </span>
           </h1>
 
-          <p className="text-xl lg:text-2xl text-[#E0E0E0] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl lg:text-2xl text-[#B0B8C8] max-w-3xl mx-auto leading-relaxed">
             A diverse team of passionate sports enthusiasts, engineers, and content creators united by one mission: revolutionizing sports entertainment
           </p>
 
@@ -124,7 +124,7 @@ export default function TeamPage() {
                   <p className="text-4xl lg:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FFC527] to-[#ffb700]">
                     {stat.value}
                   </p>
-                  <p className="text-[#E0E0E0] font-semibold">{stat.label}</p>
+                  <p className="text-[#B0B8C8] font-semibold">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -142,7 +142,7 @@ export default function TeamPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-black text-white">Leadership Team</h2>
-            <p className="text-xl text-[#E0E0E0]">Guiding Bettitude to excellence</p>
+            <p className="text-xl text-[#B0B8C8]">Guiding Bettitude to excellence</p>
             <div className="flex justify-center pt-2">
               <div className="h-1 w-20 bg-gradient-to-r from-[#FFC527] to-[#0057B8] rounded-full"></div>
             </div>
@@ -185,7 +185,7 @@ export default function TeamPage() {
                     </h3>
                     <p className="text-[#0057B8] font-bold">{leadership[0].role}</p>
                   </div>
-                  <p className="text-[#E0E0E0] leading-relaxed">{leadership[0].bio}</p>
+                  <p className="text-[#B0B8C8] leading-relaxed">{leadership[0].bio}</p>
                   <SocialLinks member={leadership[0]} />
                 </div>
               </div>
@@ -194,7 +194,7 @@ export default function TeamPage() {
 
           {/* Remaining members — grid */}
           {!loading && leadership.length === 0 && (
-            <p className="text-center text-[#E0E0E0]/60 py-10">No team members found.</p>
+            <p className="text-center text-[#B0B8C8]/60 py-10">No team members found.</p>
           )}
           <div className="grid md:grid-cols-3 gap-8">
             {leadership.slice(1).map((member, index) => (
@@ -220,7 +220,7 @@ export default function TeamPage() {
                     </h3>
                     <p className="text-[#0057B8] font-bold">{member.role}</p>
                   </div>
-                  <p className="text-[#E0E0E0] leading-relaxed">{member.bio}</p>
+                  <p className="text-[#B0B8C8] leading-relaxed">{member.bio}</p>
                   <SocialLinks member={member} />
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default function TeamPage() {
                 Want to Join Our
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]"> Amazing Team?</span>
               </h3>
-              <p className="text-xl text-[#E0E0E0] max-w-2xl mx-auto">
+              <p className="text-xl text-[#B0B8C8] max-w-2xl mx-auto">
                 We're always looking for talented, passionate individuals who share our vision of revolutionizing sports entertainment
               </p>
               <div className="pt-4">

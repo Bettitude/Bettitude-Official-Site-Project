@@ -128,7 +128,7 @@ const Legal = () => {
             </span>
           </h1>
 
-          <p className="text-xl text-[#E0E0E0] leading-relaxed max-w-3xl">
+          <p className="text-xl text-[#B0B8C8] leading-relaxed max-w-3xl">
             Welcome to the Legal Hub for <span className="text-white font-bold">Bettitude Inc.</span> and its associated
             properties, including <span className="text-[#FFC527] font-semibold">Bettiscores.com</span> and <span className="text-[#FFC527] font-semibold">ProBetPicks.com</span>. This page
             serves as a central location for accessing the formal agreements and
@@ -138,7 +138,7 @@ const Legal = () => {
 
           <div className="mt-8 inline-flex items-center space-x-2 px-6 py-3 bg-[#0057B8]/20 backdrop-blur-sm border border-[#0057B8]/40 rounded-full">
             <div className="w-2 h-2 bg-[#FFC527] rounded-full animate-pulse"></div>
-            <span className="text-[#E0E0E0] font-semibold text-sm">Your engagement with any Bettitude platform signifies acceptance</span>
+            <span className="text-[#B0B8C8] font-semibold text-sm">Your engagement with any Bettitude platform signifies acceptance</span>
           </div>
         </div>
       </div>
@@ -173,13 +173,13 @@ const Legal = () => {
                           <span className="text-[#FFC527] font-black text-lg">{section.id}.</span>
                           <h2 className="text-2xl font-black text-white">{section.title}</h2>
                         </div>
-                        <p className="text-[#E0E0E0] text-sm font-semibold">{section.subtitle}</p>
+                        <p className="text-[#B0B8C8] text-sm font-semibold">{section.subtitle}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[#E0E0E0] leading-relaxed mb-6">
+                  <p className="text-[#B0B8C8] leading-relaxed mb-6">
                     {section.description}
                   </p>
 
@@ -195,7 +195,7 @@ const Legal = () => {
                         }}
                       >
                         <div className="w-2 h-2 bg-[#FFC527] rounded-full mt-2 flex-shrink-0 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#FFC527]/50"></div>
-                        <p className="text-[#E0E0E0] text-sm leading-relaxed">{highlight}</p>
+                        <p className="text-[#B0B8C8] text-sm leading-relaxed">{highlight}</p>
                       </div>
                     ))}
                   </div>
@@ -232,7 +232,7 @@ const Legal = () => {
                 
                 <div className="h-1 w-16 bg-gradient-to-r from-[#FFC527] to-transparent rounded-full mb-6"></div>
                 
-                <p className="text-[#E0E0E0] text-lg leading-relaxed mb-8">
+                <p className="text-[#B0B8C8] text-lg leading-relaxed mb-8">
                   For questions about legal documents, data issues, or compliance matters, our legal team is here to assist you.
                 </p>
 
@@ -263,7 +263,7 @@ const Legal = () => {
                     <div className="w-3 h-3 bg-[#FFC527] rounded-full"></div>
                     <p className="text-white font-bold text-lg">Mailing Address</p>
                   </div>
-                  <p className="text-[#E0E0E0] leading-relaxed">
+                  <p className="text-[#B0B8C8] leading-relaxed">
                     <span className="text-white font-semibold">Bettitude Inc.</span><br />
                     Legal Department<br />
                    25 Ladbroke Avenue<br />
@@ -278,7 +278,7 @@ const Legal = () => {
 
         {/* Footer Note */}
         <div className="mt-16 text-center">
-          <p className="text-[#E0E0E0] text-sm">
+          <p className="text-[#B0B8C8] text-sm">
             Last Updated: November 2025 • All policies are subject to change with notice
           </p>
         </div>

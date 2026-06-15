@@ -134,7 +134,7 @@ export default function Advertisement() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="inline-flex items-center space-x-2 px-4 py-2 bg-[#0057B8]/20 border border-[#0057B8]/50 rounded-full mb-6">
             <FiTarget className="text-[#FFC527]" />
-            <span className="text-[#E0E0E0] font-semibold text-sm">Reach Sports Enthusiasts</span>
+            <span className="text-[#B0B8C8] font-semibold text-sm">Reach Sports Enthusiasts</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
@@ -145,7 +145,7 @@ export default function Advertisement() {
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-[#E0E0E0] max-w-3xl mx-auto mb-10">
+          <p className="text-lg sm:text-xl text-[#B0B8C8] max-w-3xl mx-auto mb-10">
             Connect your brand with millions of passionate sports fans. Our platform offers premium advertising opportunities with measurable results.
           </p>
 
@@ -179,7 +179,7 @@ export default function Advertisement() {
                 <stat.icon className="text-2xl text-[#0B0F19]" />
               </div>
               <h3 className="text-3xl sm:text-4xl font-black text-white mb-1">{stat.value}</h3>
-              <p className="text-[#E0E0E0] text-sm">{stat.label}</p>
+              <p className="text-[#B0B8C8] text-sm">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -191,7 +191,7 @@ export default function Advertisement() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Advertising <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Formats</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
             Choose from a variety of high-impact advertising formats designed to maximize your brand exposure
           </p>
         </div>
@@ -208,12 +208,12 @@ export default function Advertisement() {
               <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#FFC527] transition-colors duration-300">
                 {format.title}
               </h3>
-              <p className="text-[#E0E0E0] mb-6">{format.description}</p>
+              <p className="text-[#B0B8C8] mb-6">{format.description}</p>
               <div className="grid grid-cols-2 gap-3">
                 {format.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center space-x-2">
                     <FiCheck className="text-[#FFC527] flex-shrink-0" />
-                    <span className="text-sm text-[#E0E0E0]">{feature}</span>
+                    <span className="text-sm text-[#B0B8C8]">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -230,7 +230,7 @@ export default function Advertisement() {
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">
                 Know Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Audience</span>
               </h2>
-              <p className="text-lg text-[#E0E0E0] mb-8">
+              <p className="text-lg text-[#B0B8C8] mb-8">
                 Our audience consists of highly engaged sports enthusiasts who are passionate about sports analytics, betting insights, and staying ahead of the game.
               </p>
               <div className="space-y-6">
@@ -254,22 +254,22 @@ export default function Advertisement() {
               <div className="bg-[#111827]/80 border border-[#0057B8]/30 rounded-2xl p-6 text-center">
                 <FiZap className="text-4xl text-[#FFC527] mx-auto mb-3" />
                 <h4 className="text-white font-bold mb-2">High Intent</h4>
-                <p className="text-sm text-[#E0E0E0]">Users actively seeking sports data</p>
+                <p className="text-sm text-[#B0B8C8]">Users actively seeking sports data</p>
               </div>
               <div className="bg-[#111827]/80 border border-[#0057B8]/30 rounded-2xl p-6 text-center">
                 <FiDollarSign className="text-4xl text-[#FFC527] mx-auto mb-3" />
                 <h4 className="text-white font-bold mb-2">Premium Spending</h4>
-                <p className="text-sm text-[#E0E0E0]">Higher than average disposable income</p>
+                <p className="text-sm text-[#B0B8C8]">Higher than average disposable income</p>
               </div>
               <div className="bg-[#111827]/80 border border-[#0057B8]/30 rounded-2xl p-6 text-center">
                 <FiUsers className="text-4xl text-[#FFC527] mx-auto mb-3" />
                 <h4 className="text-white font-bold mb-2">Loyal Community</h4>
-                <p className="text-sm text-[#E0E0E0]">Strong retention and engagement</p>
+                <p className="text-sm text-[#B0B8C8]">Strong retention and engagement</p>
               </div>
               <div className="bg-[#111827]/80 border border-[#0057B8]/30 rounded-2xl p-6 text-center">
                 <FiAward className="text-4xl text-[#FFC527] mx-auto mb-3" />
                 <h4 className="text-white font-bold mb-2">Brand Advocates</h4>
-                <p className="text-sm text-[#E0E0E0]">Active social media sharers</p>
+                <p className="text-sm text-[#B0B8C8]">Active social media sharers</p>
               </div>
             </div>
           </div>
@@ -282,7 +282,7 @@ export default function Advertisement() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4">
             Advertising <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Packages</span>
           </h2>
-          <p className="text-lg text-[#E0E0E0] max-w-2xl mx-auto">
+          <p className="text-lg text-[#B0B8C8] max-w-2xl mx-auto">
             Flexible packages designed to meet your marketing objectives and budget
           </p>
         </div>
@@ -303,12 +303,12 @@ export default function Advertisement() {
                 </div>
               )}
               <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-              <p className="text-[#E0E0E0] mb-6">{pkg.description}</p>
+              <p className="text-[#B0B8C8] mb-6">{pkg.description}</p>
               <ul className="space-y-3 mb-8">
                 {pkg.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start space-x-3">
                     <FiCheck className="text-[#FFC527] mt-1 flex-shrink-0" />
-                    <span className="text-[#E0E0E0]">{feature}</span>
+                    <span className="text-[#B0B8C8]">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -334,7 +334,7 @@ export default function Advertisement() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
               Start Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0057B8] to-[#FFC527]">Campaign</span>
             </h2>
-            <p className="text-lg text-[#E0E0E0]">
+            <p className="text-lg text-[#B0B8C8]">
               Fill out the form below and our advertising team will get in touch within 24 hours
             </p>
           </div>
