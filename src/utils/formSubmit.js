@@ -22,21 +22,13 @@ export async function submitForm(formType, formData) {
     ...formData,
   };
 
-  const response = await fetch(GOOGLE_SCRIPT_URL, {
+  await fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
+    mode: "no-cors",
     headers: { "Content-Type": "text/plain" },
     body: JSON.stringify(payload),
   });
 
-  if (!response.ok) {
-    throw new Error("Network response was not ok");
-  }
-
-  const result = await response.json();
-
-  if (result.status !== "success") {
-    throw new Error(result.message || "Submission failed");
-  }
-
-  return result;
+  // no-cors returns an opaque response — if fetch didn't throw, the request reached Google
+  return { status: "success", message: "Form submitted successfully" };
 }
